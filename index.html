@@ -159,11 +159,81 @@
 		}
 		
 	
+	/*function CargarNoticiasHome()
+	{
+		setTimeout(CargarNoticiasHome,60000);
+			$.ajax(
+			{
+
+				type: "POST",
+				url: "http://166.78.193.53/APPSintesis/php/CargarNoticiasHome.php",
+				data: "",
+				cache: false,
+				success: function(message)
+				{	
+				$('#ContenedorSlides').html(message);
+				
+				}
+			});
+
+	} 
+	
+	function CargarNoticiasPlaza(plaza)
+	{
+			$.ajax(
+			{
+
+				type: "POST",
+				url: "http://166.78.193.53/APPSintesis/php/CargarNoticiasPlazas.php",
+				data: "plaza="+plaza,
+				cache: false,
+				success: function(message)
+				{
+				$("#plaza").html(message);
+				
+				}
+			});
+
+	} 
+
+
+	function LeerNota(id)
+	{
+			$.ajax(
+			{
+
+				type: "POST",
+				url: "http://166.78.193.53/APPSintesis/php/Nota.php",
+				data: "id="+id,
+				cache: false,
+				success: function(message)
+				{
+					
+				message=message.split("&");
+				$("#NotaSeccion").addClass(message[0]);
+				$('#NotaSeccion').html(message[1]);
+				$('#ContImagen').html(message[2]);
+				$('#ContTitulo').html(message[3]);
+				$('#ContSumario').html(message[4]);
+				$('#ContAutor').html(message[5]);
+				$('#ContFecha').html(message[6]);
+				$('#ContNota').html(message[7]);
+				$('#ExtrasPlaza').html(message[8]);
+				
+				}
+			});
+	}
+//CargarNoticiasHome();*/
+
+/*$(window).load(function() {
+      $('#cargando').hide();
+});*/
 
 </script>
 
 </head>
 <body>
+<!--<div class="lb-overlay" id="cargando" style="display:'none'"> <img src="imagenes/loading.gif"> </div>-->
 
 <!-- Home -->
 <div id="home" class="content" >
@@ -624,7 +694,7 @@
            
             <div class="SlideVerticalImagen"><img src="imagenes/imagenes-articulos/6.jpg" > </div>
             <div class="SlideVerticalContenido">
-              <div class="SlideVerticalTitulo">Recibira Puebla el Grand Slam...</div>
+              <div class="SlideVerticalTitulo">Recibirá Puebla el Grand Slam...</div>
               <div class="SlideVerticalAutor">Alma Liliana Velazquez /Síntesis</div>
               <div class="SlideVerticalFecha">2013-03-28 17:40:48</div>
             </div>
@@ -1067,7 +1137,7 @@ return false;
 
 <div id="panelSecciones"  class="panelSeccion"> 
   <a href="#home" onClick="$('#panelSecciones').css('left','-250%');">
-  <div class="panelSeccionTitulo" style="background-image:url(imagenes/iconos/azules/home@2x.png);"> Home </div>
+  <div class="panelSeccionTitulo"> Home </div>
   
   <div class="paneSeccionEdicion"> Secciones </div>
   </a>
@@ -1139,7 +1209,7 @@ return false;
   
   <div style=" display:inline-block;padding-left:20px;"> <a href="#galeria"> <img src="imagenes/iconos/azules/galeria@2x.png" width="50" > </a> </div>
   
-  <div style=" display:inline-block;padding-left:20px;"> <a href="javascript:;" onClick="pagSinte();"> <img src="imagenes/iconos/azules/web@2x.png" width="50" > </a> </div>
+  <div style=" display:inline-block;padding-left:20px;"> <a href="http://166.78.193.53/" target="_blank"> <img src="imagenes/iconos/azules/web@2x.png" width="50" > </a> </div>
   
    <div style=" float:right; display:inline-block; padding-right:20px;"> <a href="#guia"> <img src="imagenes/iconos/azules/guia@2x.png" width="50" > </a> </div>
    

@@ -3,7 +3,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.app.sintesis"
         version   = "0.0.1">
-    <name>APP Síntesis</name>
+    <name>Síntesis</name>
 
     <description>
         Síntesis
@@ -29,6 +29,8 @@
     <preference name="target-device"    value="universal" />
     <preference name="fullscreen"       value="true" />
 	<preference name="webviewbounce" value="false" />
+	<preference name="stay-in-webview" value="true" />
+	 <preference name="ios-statusbarstyle" value="black-translucen" />
 
     <icon src="imagenes/iconos/iconos/1024.png" />
     <icon src="imagenes/iconos/iconos/1024.png"   gap:platform="android"    gap:density="ldpi" />
