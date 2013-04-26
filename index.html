@@ -187,7 +187,8 @@
 					}).done(function(msg){
 						datos = JSON.parse(msg);
 						
-							$("#cont_slideprincipal").html(datos);
+							//$("#cont_slideprincipal").html(datos);
+							//var slidePrincipal = document.getElementById('cont_slideprincipal'); 
 							/*
 							<a href="#nota" onclick="LeerNota('.$id_nota_app.')">
       <div class="ContenedorContenidoPrincipal">
@@ -202,17 +203,19 @@
       </div>
       </a>
 							*/
-							/*for(i=0;i<datos.length;i++)
+							for(i=0;i<datos.length;i++)
 							{
 								for(var dat in datos)
 								{
+									//slidePrincipal.innerHTML=slidePrincipal.innerHTML
+									
 									$('table').append('<tr>'+
-									'<td>'+datos[i].id+'</td>'+
-									'<td>'+datos[i].dat1+'</td>'+
-									'<td>'+datos[i].dat2+'</td>'+
+									'<td>'+datos[i].id_nota_app+'</td>'+
+									'<td>'+datos[i].imagen+'</td>'+
+									'<td>'+datos[i].titulo+'</td>'+
 									'</tr>');
 								}
-							}*/
+							}
 						});
             });
 		
@@ -322,7 +325,11 @@
 <div id="ContenedorSlides"> 
   <!--Slide Principal-->
    <div  class="SlidePrincipal ContenedorSlidePrincipal" id="cont_slideprincipal">
-   		<a href="#nota">
+   <table>
+   
+   
+   </table>
+   		<!--<a href="#nota">
         <div style="display:inline-block; overflow:hidden">
           <div class="SlidePrincipalImagen"> <img src="imagenes/imagenes-articulos/1.jpg"> </div>
           <div class="SlidePrincipalContenido">
@@ -367,12 +374,12 @@
         </div>
         </a> 
         
-        <!--<div style="display:inline-block; overflow:hidden">
+        <div style="display:inline-block; overflow:hidden">
           <div class="PublicidadSlidePrincipal">
           <img src="imagenes/publicidad/9.jpg">
           </div>
-        </div>-->
-      
+        </div>
+-->      
       
     </div>
   <!--Slide Principal--> 

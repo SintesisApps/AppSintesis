@@ -8,10 +8,10 @@ include('../../funciones.php');
 //Consulta de datos
 	if(isset($_POST['accion'])){
 		if($_POST['accion'] == 'leer'){
-			$arr = "mensaje";
-			//$arr = array();
+			//$arr = "mensaje";
+			$arr = array();
 			$i=0;//contador
-			/*
+			
 			$select_app="SELECT * FROM app_articulos WHERE posicion='Slide-Principal' AND estatus='1' ORDER BY id DESC";
 	$r_app=mysql_query($select_app,$conexion);
 	while($f_app=mysql_fetch_assoc($r_app)):
@@ -45,7 +45,7 @@ include('../../funciones.php');
 		$SeccionSlidePrincipal=$f_se['seccion'];
 		$SeccionSlidePrincipal=utf8_encode($SeccionSlidePrincipal);
 	endwhile;
-		
+		/*
 		$html.='
 	<a href="#nota" onclick="LeerNota('.$id_nota_app.')">
       <div class="ContenedorContenidoPrincipal">
@@ -59,13 +59,13 @@ include('../../funciones.php');
         </div>
       </div>
       </a>
-	';
+	';*/
 	
 	$arr[$i] = array(
 					'id_nota_app' => $id_nota_app,
 					'url_dominio' => $url_dominio,
 					'imagen' => $imagen,
-					'titulo' => $TituloSlidePrincipal;
+					'titulo' => $TituloSlidePrincipal,
 					'seccion_slice' => $SeccionSlidePrincipal,
 					'autor_slide' => $AutorSlidePrincipal,
 					'fecha_creacion' => $Fecha_CreacionSlidePrincipal,
@@ -77,7 +77,7 @@ include('../../funciones.php');
 
 endwhile;
 			
-			*/
+			
 			
 			echo json_encode($arr);
 		}
