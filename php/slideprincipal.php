@@ -63,7 +63,7 @@ include('../../funciones.php');
 	
 	$arr[$i] = array(
 					'id_nota_app' => $id_nota_app,
-					'url_dominio' => $url_dominio,
+					'url_dominio' => 'http://166.78.193.53/',
 					'imagen' => $imagen,
 					'titulo' => $TituloSlidePrincipal,
 					'seccion_slice' => $SeccionSlidePrincipal,
