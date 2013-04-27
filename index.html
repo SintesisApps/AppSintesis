@@ -208,11 +208,20 @@
 								
 									//slidePrincipal.innerHTML=slidePrincipal.innerHTML
 									
-									$('table').append('<tr>'+
-									'<td>'+datos[i].id_nota_app+'</td>'+
-									'<td>'+datos[i].imagen+'</td>'+
-									'<td>'+datos[i].titulo+'</td>'+
-									'</tr>');
+									$('div#cont_slideprincipal').append(
+									'<a href="#nota" onclick="LeerNota('+datos[i].id_nota_app+')">'+
+									'<div class="ContenedorContenidoPrincipal">'+
+									'<div class="SlidePrincipalImagen" > <img src="'+datos[i].url_dominio+'/images/imagenes-articulos/'+datos[i].imagen+'" > </div>'+
+									'<div class="SlidePrincipalContenido">'+
+									  '<div class="SlidePrincipalTitulo">'+datos[i].titulo+'</div>'+
+									  '<div class="SlidePrincipalSeccion">'+datos[i].seccion_slice+'</div>'+
+									 ' <div class="SlidePrincipalAutor">'+datos[i].autor_slide+'</div>'+
+									  '<div class="SlidePrincipalFecha">'+datos[i].fecha_creacion+'</div>'+
+									 ' <div class="SlidePrincipalSumario">'+datos[i].sumario_slide+'</div>'+
+									'</div>'+
+									'</div>'+
+									'</a>'
+									);
 								
 							}
 						});
@@ -324,10 +333,7 @@
 <div id="ContenedorSlides"> 
   <!--Slide Principal-->
    <div  class="SlidePrincipal ContenedorSlidePrincipal" id="cont_slideprincipal">
-   <table>
-   
-   
-   </table>
+  
    		<!--<a href="#nota">
         <div style="display:inline-block; overflow:hidden">
           <div class="SlidePrincipalImagen"> <img src="imagenes/imagenes-articulos/1.jpg"> </div>
