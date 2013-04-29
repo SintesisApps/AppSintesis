@@ -184,6 +184,7 @@
 				slidePrincipal();
 				slideMiniatura();
 				slideVertical();
+				//galeriaImagenes();
 				
 				
 				
@@ -232,6 +233,21 @@
 				}
 				});
 			}
+			
+			function galeriaImagenes ()
+			{
+				$.ajax({
+					type: "POST",
+				url: "http://166.78.193.53/APPSintesis/php/galeria_imagenes.php",
+				data: "",
+				cache: false,
+				success: function(message)
+				{	
+				$('#content_slideVertical').html(message);
+				}
+				});
+			}
+			
 		
 	</script>
     <!-- fin carga de noticias-->
