@@ -4,7 +4,7 @@ include("../../includes/conexion.php");
 include('../../funciones.php'); 
 //Slide Principal
 
-
+$html="";
 //Consulta de datos
 	if(isset($_POST['accion'])){
 		if($_POST['accion'] == 'leer'){
@@ -45,7 +45,7 @@ include('../../funciones.php');
 		$SeccionSlidePrincipal=$f_se['seccion'];
 		$SeccionSlidePrincipal=utf8_encode($SeccionSlidePrincipal);
 	endwhile;
-		/*
+		
 		$html.='
 	<a href="#nota" onclick="LeerNota('.$id_nota_app.')">
       <div class="ContenedorContenidoPrincipal">
@@ -59,10 +59,11 @@ include('../../funciones.php');
         </div>
       </div>
       </a>
-	';*/
+	';
+	/*
 	$arr[$i] = array(
 					'id_nota_app' => $html,
-					);
+					);*/
 	
 	/*
 	$arr[$i] = array(
@@ -76,14 +77,15 @@ include('../../funciones.php');
 					'sumario_slide' => $SumarioSlidePrincipal,
 				);
 	*/
-	$i++;
+	//$i++;
 	
 
 endwhile;
 			
 			
 			
-			echo json_encode($arr);
+			//echo json_encode($arr);
+			echo $html;
 		}
 	}else{
 		echo 0;
