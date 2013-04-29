@@ -180,7 +180,12 @@
     <!-- carga de noticias -->
     <script>
 			$(document).ready(function() {
-                $.ajax({
+				slide_principal();
+              
+            });
+			function slide_principal()
+			{
+				  $.ajax({
 					type: "POST",
 				url: "http://166.78.193.53/APPSintesis/php/slideprincipal.php",
 				data: "",
@@ -189,55 +194,8 @@
 				{	
 				$('#cont_slideprincipal').html(message);
 				}
-					/*
-					type:"POST",
-					url:"http://166.78.193.53/APPSintesis/php/CargarNoticiasHome.php",
-					data:"accion=leer"
-					}).done(function(msg){
-						datos = JSON.parse(msg);*/
-							
-							/*
-							
-							for(i=0;i<=datos.length;i++)
-							{
-								
-								
-								$('div#cont_slideprincipal').append(
-								'<a href="#nota">'+
-								'<div style="display:inline-block; overflow:hidden">'+
-								' <div class="SlidePrincipalImagen"> <img src="imagenes/imagenes-articulos/1.jpg"> </div>'+
-								'<div class="SlidePrincipalContenido">'+
-								'<div class="SlidePrincipalTitulo">'+datos[i].imagen+'</div>'+
-								'<div class="SlidePrincipalSeccion">'+datos[i].seccion_slice+'</div>'+
-								'<div class="SlidePrincipalAutor">'+datos[i].autor_slide+'</div>'+
-								'<div class="SlidePrincipalFecha">'+datos[i].fecha_creacion+'</div>'+
-								'<div class="SlidePrincipalSumario">'+datos[i].sumario_slide+'</div>'+
-								'</div>'+
-								'</div>'+
-								'</a>'
-								);*/
-        
-         /*
-								
-									
-									$('div#cont_slideprincipal').html(
-									'<a href="#nota" onclick="LeerNota('+datos[i].id_nota_app+')">'+
-									'<div class="ContenedorContenidoPrincipal">'+
-									'<div class="SlidePrincipalImagen" > <img src="'+datos[i].url_dominio+'/images/imagenes-articulos/'+datos[i].imagen+'" > </div>'+
-									'<div class="SlidePrincipalContenido">'+
-									  '<div class="SlidePrincipalTitulo">'+datos[i].titulo+'</div>'+
-									  '<div class="SlidePrincipalSeccion">'+datos[i].seccion_slice+'</div>'+
-									 ' <div class="SlidePrincipalAutor">'+datos[i].autor_slide+'</div>'+
-									  '<div class="SlidePrincipalFecha">'+datos[i].fecha_creacion+'</div>'+
-									 ' <div class="SlidePrincipalSumario">'+datos[i].sumario_slide+'</div>'+
-									'</div>'+
-									'</div>'+
-									'</a>'
-									);
-								
-							}*/
-						});
-            });
+				});
+			}
 		
 	</script>
     <!-- fin carga de noticias-->
@@ -344,7 +302,7 @@
 </div>
 <div id="ContenedorSlides"> 
   <!--Slide Principal-->
-   <div  class="SlidePrincipal ContenedorSlidePrincipal" id="cont_slideprincipal">
+   <div  class="SlidePrincipal ContenedorSlidePrincipal">
   <!--
    		<a href="#nota">
         <div style="display:inline-block; overflow:hidden">

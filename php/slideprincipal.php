@@ -6,8 +6,8 @@ include('../../funciones.php');
 
 $html="";
 //Consulta de datos
-	if(isset($_POST['accion'])){
-		if($_POST['accion'] == 'leer'){
+	/*if(isset($_POST['accion'])){
+		if($_POST['accion'] == 'leer'){*/
 			//$arr = "mensaje";
 			$arr = array();
 			$i=0;//contador
@@ -48,7 +48,7 @@ $html="";
 		
 		$html.='
 	<a href="#nota" onclick="LeerNota('.$id_nota_app.')">
-      <div class="ContenedorContenidoPrincipal">
+      <div class="ContenedorContenidoPrincipal" style="display:inline-block; overflow:hidden">
         <div class="SlidePrincipalImagen" > <img src="'.$url_dominio_.'/images/imagenes-articulos/'.$imagen.'" > </div>
         <div class="SlidePrincipalContenido">
           <div class="SlidePrincipalTitulo">'.$TituloSlidePrincipal.'</div>
@@ -86,11 +86,11 @@ endwhile;
 			
 			//echo json_encode($arr);
 			echo $html;
-		}
+	/*	}
 	}else{
 		echo 0;
 	}
-
+*/
 
 
 
