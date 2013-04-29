@@ -1132,7 +1132,7 @@ body{
 .contvideogaleriaimg{
 	width:100%;
 	height:45%;
-	text-align:center;
+	text-align:left;
 	}
 .VideoImagen{
 	background-image:url(imagenes/borde-video.png);
@@ -1157,6 +1157,7 @@ body{
 	font-size:12px;
 	background-color: rgba(0,0,0,.3);
 	color:#939393;
+	text-align:left;
 	/*color:#29A9E0;*/
 	}
 
