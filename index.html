@@ -181,9 +181,20 @@
     <script>
 			$(document).ready(function() {
                
-				slidePrincipal();
-				slideMiniatura();
+				//slidePrincipal();
+				//slideMiniatura();
 				//slideVertical();
+				$.ajax({
+					type: "POST",
+				url: "http://166.78.193.53/APPSintesis/php/slideprincipal.php",
+				data: "",
+				cache: false,
+				success: function(message)
+				{	
+				$('#cont_slideprincipal').html(message);
+				}
+				});
+				
 				
             });
 			
@@ -197,6 +208,18 @@
 				success: function(message)
 				{	
 				$('#cont_slideprincipal').html(message);
+				}
+				});
+				
+				/*SLIDE MINIATURAS*/
+				$.ajax({
+					type: "POST",
+				url: "http://166.78.193.53/APPSintesis/php/slide_miniatura.php",
+				data: "",
+				cache: false,
+				success: function(message)
+				{	
+				$('#cont_slidemini').html(message);
 				}
 				});
 			}
@@ -433,7 +456,7 @@
   <!--Slide Vertical-->
   <div class="DivVertical">
     <div  class="ContenedorSlideVertical" id="content_slideVertical" >
-     <!-- <div > <a href="#nota" onclick="LeerNota('.$id_nota_app.')">
+     <div > <a href="#nota" onclick="LeerNota('.$id_nota_app.')">
         <div class="SlideVerticalArticulo">
           <div class="SlideVerticalSeccion"><img src="imagenes/iconos/secciones/orbe.png"></div>
           <div class="SlideVerticalImagen"><img src="imagenes/imagenes-articulos/6.jpg" > </div>
@@ -484,7 +507,7 @@
             <div class="SlideVerticalFecha">2013-03-28 17:40:48</div>
           </div>
         </div>
-        </a> </div>-->
+        </a> </div>
         
     </div>
   </div>
