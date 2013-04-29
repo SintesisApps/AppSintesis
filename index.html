@@ -181,14 +181,23 @@
     <script>
 			$(document).ready(function() {
                 $.ajax({
+					type: "POST",
+				url: "http://166.78.193.53/APPSintesis/php/CargarNoticiasHome.php",
+				data: "",
+				cache: false,
+				success: function(message)
+				{	
+				$('#ContenedorSlides').html(message);
+				}
+					/*
 					type:"POST",
-					url:"http://166.78.193.53/APPSintesis/php/slideprincipal.php",
+					url:"http://166.78.193.53/APPSintesis/php/CargarNoticiasHome.php",
 					data:"accion=leer"
 					}).done(function(msg){
-						datos = JSON.parse(msg);
-						$('#cont_slideprincipal').html(msg);
+						datos = JSON.parse(msg);*/
 							
 							/*
+							
 							for(i=0;i<=datos.length;i++)
 							{
 								
