@@ -195,22 +195,6 @@
 				}
 				});
 				
-				
-            });
-			
-			function slidePrincipal()
-			{
-				/* $.ajax({
-					type: "POST",
-				url: "http://166.78.193.53/APPSintesis/php/slideprincipal.php",
-				data: "",
-				cache: false,
-				success: function(message)
-				{	
-				$('#cont_slideprincipal').html(message);
-				}
-				});
-				*/
 				/*SLIDE MINIATURAS*/
 				$.ajax({
 					type: "POST",
@@ -222,6 +206,24 @@
 				$('#cont_slidemini').html(message);
 				}
 				});
+				
+				
+            });
+			
+			function slidePrincipal()
+			{
+				 $.ajax({
+					type: "POST",
+				url: "http://166.78.193.53/APPSintesis/php/slideprincipal.php",
+				data: "",
+				cache: false,
+				success: function(message)
+				{	
+				$('#cont_slideprincipal').html(message);
+				}
+				});
+				
+				
 			}
 			function slideMiniatura()
 			{
