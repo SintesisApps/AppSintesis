@@ -1132,8 +1132,17 @@ body{
 .contvideogaleriaimg{
 	width:100%;
 	height:45%;
-	text-align:left;
+	text-align:center;
 	}
+/*contenedor secundario video*/
+.contvideogaleriaimg_secundario
+{
+	width:90%;
+	height:45%;
+	text-align:left;
+}
+
+
 .VideoImagen{
 	background-image:url(imagenes/borde-video.png);
 	background-repeat:no-repeat;

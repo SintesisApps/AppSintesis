@@ -38,9 +38,7 @@ while($f_app=mysql_fetch_assoc($r_app)):
 		$html.='<div class="ContSlideMiniaturas">
 					<a href="#nota" onclick="LeerNota('.$id_nota_app.')">
 						<div class="SlideMiniaturasImagen"><img src="'.$url_dominio_.'/images/imagenes-articulos/'.$imagen.'"></div>
-					  <div class="SlideMiniaturasContenido">
-						<h2>'.$TituloSlideMiniaturas.'</h2>
-					  </div>
+					  <div class="SlideMiniaturasContenido">'.$TituloSlideMiniaturas.'</div>
 					</a>
 				</div>
 		';
