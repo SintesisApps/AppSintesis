@@ -180,13 +180,7 @@
     <!-- carga de noticias -->
     <script>
 			$(document).ready(function() {
-               slidePrincipal();
-            });
-			
-			function slidePrincipal()
-			{
-				alert("SP");
-				 $.ajax({
+                $.ajax({
 					type: "POST",
 				url: "http://166.78.193.53/APPSintesis/php/slideprincipal.php",
 				data: "",
@@ -196,7 +190,7 @@
 				$('#cont_slideprincipal').html(message);
 				}
 				});
-			}
+            });
 		
 	</script>
     <!-- fin carga de noticias-->
