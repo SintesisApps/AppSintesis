@@ -186,33 +186,44 @@
 					data:"accion=leer"
 					}).done(function(msg){
 						datos = JSON.parse(msg);
-						alert("num de datos:"+datos.length);
-					
 						
-							for(i=1;i<=datos.length;i++)
-							{
-								
-									
-									$('div#cont_slideprincipal').append(
-									'<a href="#nota" onclick="LeerNota('+datos[i].id_nota_app+')">'+
-									'<div class="ContenedorContenidoPrincipal" style="display:inline-block; overflow:hidden">'+
-									'<div class="SlidePrincipalImagen" > <img src="'+datos[i].url_dominio+'/images/imagenes-articulos/'+datos[i].imagen+'" > </div>'+
-									'<div class="SlidePrincipalContenido">'+
-									  '<div class="SlidePrincipalTitulo">'+datos[i].titulo+'</div>'+
-									  '<div class="SlidePrincipalSeccion">'+datos[i].seccion_slice+'</div>'+
-									 ' <div class="SlidePrincipalAutor">'+datos[i].autor_slide+'</div>'+
-									  '<div class="SlidePrincipalFecha">'+datos[i].fecha_creacion+'</div>'+
-									 ' <div class="SlidePrincipalSumario">'+datos[i].sumario_slide+'</div>'+
-									'</div>'+
-									'</div>'+
-									'</a>'
-									);
-									
-								
-							}
-							
+							//$("#cont_slideprincipal").html(datos);
+							//var slidePrincipal = document.getElementById('cont_slideprincipal'); 
 							/*
-							$('div#cont_slideprincipal').append(
+							<a href="#nota" onclick="LeerNota('.$id_nota_app.')">
+      <div class="ContenedorContenidoPrincipal">
+        <div class="SlidePrincipalImagen" > <img src="'.$url_dominio_.'/images/imagenes-articulos/'.$imagen.'" > </div>
+        <div class="SlidePrincipalContenido">
+          <div class="SlidePrincipalTitulo">'.$TituloSlidePrincipal.'</div>
+          <div class="SlidePrincipalSeccion">'.$SeccionSlidePrincipal.'</div>
+          <div class="SlidePrincipalAutor">'.$AutorSlidePrincipal.'</div>
+          <div class="SlidePrincipalFecha">'.$Fecha_CreacionSlidePrincipal.'</div>
+          <div class="SlidePrincipalSumario">'.$SumarioSlidePrincipal.'</div>
+        </div>
+      </div>
+      </a>
+							*/
+							for(i=0;i<datos.length;i++)
+							{
+								$('div#cont_slideprincipal').append(
+								'<a href="#nota">'+
+								'<div style="display:inline-block; overflow:hidden">'+
+								' <div class="SlidePrincipalImagen"> <img src="imagenes/imagenes-articulos/1.jpg"> </div>'+
+								'<div class="SlidePrincipalContenido">'+
+								'<div class="SlidePrincipalTitulo"> Signan convenio para obras en pueblos indígenas </div>'+
+								'<div class="SlidePrincipalSeccion"> METRÓPOLI </div>'+
+								'<div class="SlidePrincipalAutor"> Clauda Aguilar/Síntesis </div>'+
+								'<div class="SlidePrincipalFecha"> 2013-03-28 14:27:29 </div>'+
+								'<div class="SlidePrincipalSumario"> Sumario </div>'+
+								'</div>'+
+								'</div>'+
+								'</a>'
+								);
+        
+         
+								
+									/*
+									$('div#cont_slideprincipal').append(
 									'<a href="#nota" onclick="LeerNota('+datos[i].id_nota_app+')">'+
 									'<div class="ContenedorContenidoPrincipal">'+
 									'<div class="SlidePrincipalImagen" > <img src="'+datos[i].url_dominio+'/images/imagenes-articulos/'+datos[i].imagen+'" > </div>'+
@@ -225,8 +236,9 @@
 									'</div>'+
 									'</div>'+
 									'</a>'
-									);
-							*/
+									);*/
+								
+							}
 						});
             });
 		
@@ -335,9 +347,9 @@
 </div>
 <div id="ContenedorSlides"> 
   <!--Slide Principal-->
-   <!--<div  class="SlidePrincipal ContenedorSlidePrincipal" id="cont_slideprincipal">
+   <div  class="SlidePrincipal ContenedorSlidePrincipal" id="cont_slideprincipal">
   
-   		<a href="#nota">
+   		<!--<a href="#nota">
         <div style="display:inline-block; overflow:hidden">
           <div class="SlidePrincipalImagen"> <img src="imagenes/imagenes-articulos/1.jpg"> </div>
           <div class="SlidePrincipalContenido">
@@ -387,9 +399,9 @@
           <img src="imagenes/publicidad/9.jpg">
           </div>
         </div>
+-->      
       
-      
-    </div>-->
+    </div>
   <!--Slide Principal--> 
   
   <!--Slide Miniaturas-->
