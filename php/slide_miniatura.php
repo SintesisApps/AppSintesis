@@ -33,18 +33,7 @@ while($f_app=mysql_fetch_assoc($r_app)):
 	
 	$select_se="SELECT seudonimo FROM secciones WHERE id='".$Id_SeccionSlideMiniaturas."'";
 	
-	/*
-$html.='<div class="panelSwipe SubContenedorSlideMiniaturas">
-				<a href="#nota" onclick="LeerNota('.$id_nota_app.')">
-					<div class="SubContenedorSlideMiniaturas">
-					  <div class="SlideMiniaturasImagen"><img src="'.$url_dominio_.'/images/imagenes-articulos/'.$imagen.'"></div>
-					  <div class="SlideMiniaturasContenido">
-						<h2>'.$TituloSlideMiniaturas.'</h2>
-					  </div>
-					</div>
-				</a>
-		</div>
-		';*/
+	
 		
 		$html.='<div class="ContSlideMiniaturas">
 					<a href="#nota" onclick="LeerNota('.$id_nota_app.')">

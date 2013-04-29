@@ -52,10 +52,16 @@ while($f_app=mysql_fetch_assoc($r_app)):
 						  <div class="SlideVerticalTitulo">'.$TituloSlideVertical.'</div>
 						  <div class="SlideVerticalAutor">'.$AutorSlideVertical.'</div>
 						  <div class="SlideVerticalFecha">'.$Fecha_CreacionSlideVertical.'</div>
-						  <div class="SlideVerticalSumario">'.$SumarioSlideVertical.'</div>
+						 
 						</div>
 					</div>
-				</a></div>';
+				</a></div>
+				<div > 
+            <div class="PublicidadSlideVertical">
+                <img src="imagenes/publicidad/3.jpg">
+            </div>
+        </div>';
+				// <div class="SlideVerticalSumario">'.$SumarioSlideVertical.'</div>
 		endwhile;
 		echo $html;
 
