@@ -180,7 +180,14 @@
     <!-- carga de noticias -->
     <script>
 			$(document).ready(function() {
-                $.ajax({
+               
+				
+				
+            });
+			
+			function slidePrincipal()
+			{
+				 $.ajax({
 					type: "POST",
 				url: "http://166.78.193.53/APPSintesis/php/slideprincipal.php",
 				data: "",
@@ -190,7 +197,21 @@
 				$('#cont_slideprincipal').html(message);
 				}
 				});
-            });
+			}
+			function slideMiniatura()
+			{
+				/*SLIDE MINIATURAS*/
+				$.ajax({
+					type: "POST",
+				url: "http://166.78.193.53/APPSintesis/php/slide_miniatura.php",
+				data: "",
+				cache: false,
+				success: function(message)
+				{	
+				$('#cont_slidemini').html(message);
+				}
+				});
+			}
 		
 	</script>
     <!-- fin carga de noticias-->
@@ -297,7 +318,7 @@
 </div>
 <div id="ContenedorSlides"> 
   <!--Slide Principal-->
-   <div  class="SlidePrincipal ContenedorSlidePrincipal">
+   <div  class="SlidePrincipal ContenedorSlidePrincipal" id="cont_slideprincipal">
   <!--
    		<a href="#nota">
         <div style="display:inline-block; overflow:hidden">
@@ -356,8 +377,9 @@
   
   <!--Slide Miniaturas-->
   <div  class="ContenedorSlideMiniaturas">
-    <div  class="SubContenedorSlideMiniaturas">
-      <div class="ContSlideMiniaturas">
+    <div  class="SubContenedorSlideMiniaturas" id="cont_slidemini">
+    
+      <!--<div class="ContSlideMiniaturas">
         <div class="SlideMiniaturasImagen" ><img src="imagenes/imagenes-articulos/5.jpg" width="100%"></div>
         <div class="SlideMiniaturasContenido"> Dialogan Osorio Chong y Aguirre sobre situación en Guerrero... </div>
       </div>
@@ -387,7 +409,7 @@
       <div class="ContSlideMiniaturas">
         <div class="SlideMiniaturasImagen" ><img src="imagenes/imagenes-articulos/4.jpg" width="100%"></div>
         <div class="SlideMiniaturasContenido"> Dialogan Osorio Chong y Aguirre sobre situación en Guerrero... </div>
-      </div>
+      </div>-->
     </div>
   </div>
   <!--Slide Miniaturas--> 
