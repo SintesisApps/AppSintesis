@@ -187,12 +187,32 @@
 					}).done(function(msg){
 						datos = JSON.parse(msg);
 						alert("num de datos:"+datos.length);
+					
 						/*
 							for(i=0;i<datos.length;i++)
 							{
 								
 									
 									$('div#cont_slideprincipal').append(
+									'<a href="#nota" onclick="LeerNota('+datos[i].id_nota_app+')">'+
+									'<div class="ContenedorContenidoPrincipal" style="display:inline-block; overflow:hidden">'+
+									'<div class="SlidePrincipalImagen" > <img src="'+datos[i].url_dominio+'/images/imagenes-articulos/'+datos[i].imagen+'" > </div>'+
+									'<div class="SlidePrincipalContenido">'+
+									  '<div class="SlidePrincipalTitulo">'+datos[i].titulo+'</div>'+
+									  '<div class="SlidePrincipalSeccion">'+datos[i].seccion_slice+'</div>'+
+									 ' <div class="SlidePrincipalAutor">'+datos[i].autor_slide+'</div>'+
+									  '<div class="SlidePrincipalFecha">'+datos[i].fecha_creacion+'</div>'+
+									 ' <div class="SlidePrincipalSumario">'+datos[i].sumario_slide+'</div>'+
+									'</div>'+
+									'</div>'+
+									'</a>'
+									);
+									
+								
+							}*/
+							
+							/*
+							$('div#cont_slideprincipal').append(
 									'<a href="#nota" onclick="LeerNota('+datos[i].id_nota_app+')">'+
 									'<div class="ContenedorContenidoPrincipal">'+
 									'<div class="SlidePrincipalImagen" > <img src="'+datos[i].url_dominio+'/images/imagenes-articulos/'+datos[i].imagen+'" > </div>'+
@@ -206,8 +226,7 @@
 									'</div>'+
 									'</a>'
 									);
-								
-							}*/
+							*/
 						});
             });
 		

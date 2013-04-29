@@ -1,0 +1,5 @@
+<?php
+/*slide miniaturas*/
+
+
+?>
