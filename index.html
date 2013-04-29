@@ -186,9 +186,13 @@
 					data:"accion=leer"
 					}).done(function(msg){
 						datos = JSON.parse(msg);
+						$('#cont_slideprincipal').html(msg);
 							
+							/*
 							for(i=0;i<=datos.length;i++)
-							{/*
+							{
+								
+								
 								$('div#cont_slideprincipal').append(
 								'<a href="#nota">'+
 								'<div style="display:inline-block; overflow:hidden">'+
@@ -220,9 +224,9 @@
 									'</div>'+
 									'</div>'+
 									'</a>'
-									);*/
+									);
 								
-							}
+							}*/
 						});
             });
 		

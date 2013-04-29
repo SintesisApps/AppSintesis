@@ -60,7 +60,11 @@ include('../../funciones.php');
       </div>
       </a>
 	';*/
+	$arr[$i] = array(
+					'id_nota_app' => $html,
+					);
 	
+	/*
 	$arr[$i] = array(
 					'id_nota_app' => $id_nota_app,
 					'url_dominio' => 'http://166.78.193.53/',
@@ -71,7 +75,7 @@ include('../../funciones.php');
 					'fecha_creacion' => $Fecha_CreacionSlidePrincipal,
 					'sumario_slide' => $SumarioSlidePrincipal,
 				);
-	
+	*/
 	$i++;
 	
 
