@@ -14,7 +14,7 @@ while($imagen=mysql_fetch_array($array_app))
 	$ruta=$url_dominio_.'/images/imagenes-galeria/'.$imagen['imagen'];
 	if (file_exists($ruta))
 	{
-		$html.='<li><a href="#"><img src="'.$ruta.'" alt="" /></a></li>';
+		$html.='<li><a href="#"><img src="'.$ruta.'" alt="" width="150" height="150" /></a></li>';
 	}
 	
 }
