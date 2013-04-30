@@ -9,11 +9,7 @@ $select_app="SELECT * FROM galeria_videos  WHERE status='1' ORDER BY fecha DESC 
 $r_app=mysql_query($select_app,$conexion);
 $i=0;//cuenta el  video principal
 
-while($video=mysql_fetch_array($r_app))
-{
-	if($i==0)//video principal
-	{
-		$html.='
+$html.='
 		<div id="videogaleria">
       	<div class="VideoTituloPrincipal">
         	<strong>Confía EPN en superar prospectivas de crecimiento</strong>
@@ -28,12 +24,7 @@ while($video=mysql_fetch_array($r_app))
       </div>
 		';
 		
-		$i++;
-	}
-		
-	
-	
-}
+
 
 echo $html;
 
