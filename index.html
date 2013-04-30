@@ -346,8 +346,8 @@
 
 function LeerNota(id)
 	{
-		$('#NotaTitulo').html("Nose titulo extra");
-			/*$.ajax(
+		//$('.NotaTitulo').html("Nose titulo extra");
+			$.ajax(
 			{
 
 				type: "POST",
@@ -356,7 +356,8 @@ function LeerNota(id)
 				cache: false,
 				success: function(message)
 				{
-					
+					$('.NotaContenedor').html(message);
+					/*
 				message=message.split("&");
 				$("#NotaSeccion").addClass(message[0]);
 				$('#NotaSeccion').html(message[1]);
@@ -366,10 +367,10 @@ function LeerNota(id)
 				$('#ContAutor').html(message[5]);
 				$('#ContFecha').html(message[6]);
 				$('#ContNota').html(message[7]);
-				$('#ExtrasPlaza').html(message[8]);
+				$('#ExtrasPlaza').html(message[8]);*/
 				
 				}
-			});*/
+			});
 	}
 
 
@@ -529,7 +530,8 @@ function LeerNota(id)
   <div>
   	<div class="NotaContenedor">
     		<!--Slide Principal-->
-   <div id="Gallery"  class="SlidePrincipal ImagenesNota" >
+            <!--
+   		<div id="Gallery"  class="SlidePrincipal ImagenesNota" >
    		
         <div style="display:inline-block; overflow:hidden">
           <div class="ImagenesNotaImagen">
@@ -557,7 +559,7 @@ function LeerNota(id)
         </div>
       
       
-    </div>
+   		 </div>
   
   
         <div class="NotaTitulo"> Kristen Stewart la actriz menos atractiva de Hollywood </div>
@@ -594,7 +596,6 @@ function LeerNota(id)
                     </a>
              </div>
              
-             
              <div class="NotaExtraContenedor">
                     <a href="#nota" onclick="LeerNota('.$id_nota_app.')">
                     <div class="NotaExtraTitulo borde_metropoli">
@@ -639,7 +640,7 @@ function LeerNota(id)
                     </a>
              </div>
          </div>
-            
+            -->
       </div>
   </div>
 </div>
