@@ -16,7 +16,11 @@ while($imagen=mysql_fetch_array($r_app))
 	{
 		//$html.='<li><a href="http://166.78.193.53/images/imagenes-galeria/'.$imagen['imagen'].'"><img src="http://166.78.193.53/images/imagenes-galeria/'.$imagen['imagen'].'" alt="" width="150" height="150" /></a></li>';
 		
-		$html.='<li><a href="http://166.78.193.53/images/imagenes-galeria/globo2.jpg"><img src="http://166.78.193.53/images/imagenes-galeria/globo2.jpg" width="150" height="150" alt="" /></a></li>';
+		$html.='<li><a href="http://166.78.193.53/images/imagenes-galeria/globo2.jpg"><img src="http://166.78.193.53/images/imagenes-galeria/globo2.jpg" width="150" height="150" alt="" /></a></li>
+    <li><a href="http://166.78.193.53/images/imagenes-galeria/globo2.jpg"><img src="http://166.78.193.53/images/imagenes-galeria/globo2.jpg" width="150" height="150" alt="" /></a></li>
+    <li><a href="http://166.78.193.53/images/imagenes-galeria/globo2.jpg"><img src="http://166.78.193.53/images/imagenes-galeria/globo2.jpg" width="150" height="150" alt="" /></a></li>
+    <li><a href="http://166.78.193.53/images/imagenes-galeria/globo2.jpg"><img src="http://166.78.193.53/images/imagenes-galeria/globo2.jpg" width="150" height="150" alt="" /></a></li>
+    <li><a href="http://166.78.193.53/images/imagenes-galeria/globo2.jpg"><img src="http://166.78.193.53/images/imagenes-galeria/globo2.jpg" width="150" height="150" alt="" /></a></li>';
 		
 	}
 		
