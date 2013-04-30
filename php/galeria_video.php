@@ -35,8 +35,6 @@ while($video=mysql_fetch_array($r_app))
 	
 }
 
-$html.="";
-
 echo $html;
 
 
