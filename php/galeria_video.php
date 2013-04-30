@@ -26,6 +26,7 @@ while($video=mysql_fetch_array($r_app))
 		';
 }
 
+/*
 $html.='<div class="contvideogaleriaimg"> 
       	<div class="contvideogaleriaimg_secundario">';
 
@@ -48,7 +49,7 @@ $html.='<div class="contvideogaleriaimg">
 $html.='</div></div>';
 
 
-
+*/
 
 echo $html;
 
