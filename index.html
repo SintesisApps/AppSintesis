@@ -356,8 +356,8 @@ function LeerNota(id)
 				cache: false,
 				success: function(message)
 				{
-					$('#contenedor_Nota').html(message);
-					/*
+					//$('#contenedor_Nota').html(message);
+					
 				message=message.split("&");
 				$("#NotaSeccion").addClass(message[0]);
 				$('#NotaSeccion').html(message[1]);
@@ -367,7 +367,7 @@ function LeerNota(id)
 				$('#ContAutor').html(message[5]);
 				$('#ContFecha').html(message[6]);
 				$('#ContNota').html(message[7]);
-				$('#ExtrasPlaza').html(message[8]);*/
+				$('#ExtrasPlaza').html(message[8]);
 				
 				}
 			});

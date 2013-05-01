@@ -6,7 +6,7 @@ include('../../funciones.php');
 
 $id=$_POST['id'];
 
-/*
+
 $select_app="SELECT * FROM app_articulos WHERE id='".$id."'";
 	$r_app=mysql_query($select_app,$conexion);
 	while($f_app=mysql_fetch_assoc($r_app)):
@@ -109,8 +109,8 @@ $ContenidoExtra.='
 			';
 endwhile;
 
-$html.="&".$ContenidoExtra;*/
-
+$html.="&".$ContenidoExtra;
+/*
 $html='
 <div id="contenedor_Nota">
 <div id="Gallery"  class="SlidePrincipal ImagenesNota" >
@@ -223,7 +223,7 @@ $html='
              </div>
          </div>
 	</div>
-';
+';*/
 echo $html;
 
 
