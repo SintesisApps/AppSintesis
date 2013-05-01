@@ -345,11 +345,13 @@ body{
 	background-position: top;
 	background-size:contain;
 	background-repeat:no-repeat;
-	height:130px;
+	/*height:130px;*/
 	font-size:12px;
 	padding-top:45px;
 	padding-left:15px;
-	max-width:345px;
+	/*max-width:345px;*/
+	width:363px;
+	height:185px;
 	
 	
 	
