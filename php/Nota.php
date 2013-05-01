@@ -116,7 +116,7 @@ $select_ar="SELECT titulo,sumario,id_seccion,autor,fecha_creacion,nota FROM arti
 $ContenidoExtra.='
 			<div class="NotaExtraContenedor">
             	<div class="NotaExtraTitulo back_'.$SeccionSeudonimo.'">
-					'.$Titulo.'
+					fhfhfhgh
 				</div>
 				
 				<div class="NotaExtraImagen">
