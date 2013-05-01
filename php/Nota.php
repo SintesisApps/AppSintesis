@@ -41,7 +41,7 @@ $select_app="SELECT * FROM app_articulos WHERE id='".$id."'";
 					'sumario' => $Sumario,
 					'autor' => $Autor,
 					'nota' => $Nota,
-					'autor' => $imagen,
+					'imagen' => $imagen,
 					'fecha' => $Fecha_Creacion,
 				);
 		
