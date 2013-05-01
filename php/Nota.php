@@ -39,16 +39,24 @@ $select_app="SELECT * FROM app_articulos WHERE id='".$id."'";
 		$Nota=utf8_decode($Nota);*/
 		$Nota=strip_tags($Nota);
 		$Nota=utf8_encode($Nota);
-		
+		$arr1[$i] = array(
+					'titulo' => $Titulo,
+					'sumario' => $Sumario,
+					'autor' => $Autor,
+					'nota' => $Nota,
+					'imagen' => $imagen,
+					'fecha' => $Fecha_Creacion,
+					
+				);
 		
 	endwhile;
 	
-	$imagen=$url_dominio_.'/images/imagenes-articulos/'.$imagen;
+	$imagen2=$url_dominio_.'/images/imagenes-articulos/'.$imagen;
 	$Nota=str_replace($imagen,'',$Nota);
 	$Nota=str_replace('<img src="" alt="" />','',$Nota);
 	
 	
-	$imagen='<img src="'.$imagen.'">';
+	$imagen2='<img src="'.$imagen.'">';
 	
 	$select_se="SELECT seccion,seudonimo FROM secciones WHERE id='".$Id_Seccion."'";
 	$r_se=mysql_query($select_se,$conexion);
@@ -57,17 +65,17 @@ $select_app="SELECT * FROM app_articulos WHERE id='".$id."'";
 		$SeccionSeudonimo=$f_se['seudonimo'];
 		$Seccion=utf8_encode($Seccion);
 	endwhile;
-endwhile;
-
-$arr1[$i] = array(
-					'titulo' => $Titulo,
+	$arr1[$i]=array(
+	'titulo' => $Titulo,
 					'sumario' => $Sumario,
 					'autor' => $Autor,
 					'nota' => $Nota,
 					'imagen' => $imagen,
 					'fecha' => $Fecha_Creacion,
-					'seccion' => $Seccion,
-				);
+	'seccion' => $Seccion,
+	);
+	
+endwhile;
 
 /*
 $html="back_".$SeccionSeudonimo.'&'.$Seccion.'&'.$imagen.'&'.$Titulo.'&'.$Sumario.'&'.$Autor.'&'.$Fecha_Creacion.'&'.$Nota;
