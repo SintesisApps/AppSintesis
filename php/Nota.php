@@ -112,6 +112,7 @@ endwhile;
 $html.="&".$ContenidoExtra;*/
 
 $html='
+<div id="contenedor_Nota">
 <div id="Gallery"  class="SlidePrincipal ImagenesNota" >
    		
         <div style="display:inline-block; overflow:hidden">
@@ -143,7 +144,7 @@ $html='
    		 </div>
   
   
-        <div class="NotaTitulo"> Kristen Stewart la actriz menos atractiva de Hollywood </div>
+        <div class="NotaTitulo"> Kristen Stewart la actriz NOTA PHP </div>
         <div class="NotaSumario">Kristen Stweart. La estrella de Twilight es la primera de nueve de la lista de un portal británico para encontrar a la actriz de Hollywood menos sexy. </div>
         
          <div class="NotaAutor">AP/Roswell</div>
@@ -221,6 +222,7 @@ $html='
                     </a>
              </div>
          </div>
+	</div>
 ';
 echo $html;
 

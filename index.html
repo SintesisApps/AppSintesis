@@ -356,7 +356,7 @@ function LeerNota(id)
 				cache: false,
 				success: function(message)
 				{
-					$('.NotaContenedor').html(message);
+					$('#contenedor_Nota').html(message);
 					/*
 				message=message.split("&");
 				$("#NotaSeccion").addClass(message[0]);
@@ -527,10 +527,9 @@ function LeerNota(id)
   <div class="back_nacion NotaSeccion">
   	PUEBLA
   </div>
-  <div>
-  	<div class="NotaContenedor">
-    		<!--Slide Principal-->
-            <!--
+  <div id="contenedor_Nota">
+  	<!--<div class="NotaContenedor">
+            
    		<div id="Gallery"  class="SlidePrincipal ImagenesNota" >
    		
         <div style="display:inline-block; overflow:hidden">
@@ -640,8 +639,8 @@ function LeerNota(id)
                     </a>
              </div>
          </div>
-            -->
-      </div>
+            
+      </div>-->
   </div>
 </div>
 <!--Nota--> 
