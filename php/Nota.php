@@ -82,7 +82,7 @@ $select_app="SELECT * FROM app_articulos WHERE id='".$id."'";
 	
 endwhile;
 
-/*
+
 $html="back_".$SeccionSeudonimo.'&'.$Seccion.'&'.$imagen.'&'.$Titulo.'&'.$Sumario.'&'.$Autor.'&'.$Fecha_Creacion.'&'.$Nota;
 
 	  
@@ -141,7 +141,7 @@ $ContenidoExtra.='
 endwhile;
 
 $html.="&".$ContenidoExtra;
-$arr1["nota_extra"]=$ContenidoExtra;*/
+$arr1["nota_extra"]=$ContenidoExtra;
 //echo $html;
  echo  json_encode($arr1);
 
