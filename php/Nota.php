@@ -35,6 +35,8 @@ $select_app="SELECT * FROM app_articulos WHERE id='".$id."'";
 		
 		$imagen=extraer_imagen($Nota);
 		$imagen=utf8_decode($imagen);
+		$Nota=extraer_nota($Nota);
+		$Nota=utf8_decode($Nota);
 		
 		$arr1[$i] = array(
 					'titulo' => $Titulo,
