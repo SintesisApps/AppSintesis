@@ -361,9 +361,11 @@ body{
 /*Video*/
 .Video img {
 	width: 100%;
-	height:80px;
+	/*height:80px;*/
+	height:90px;
 	margin:5px;
-	max-width:345px;
+/*	max-width:345px;*/
+max-width:341px;
 	
 }
 /*Video*/
