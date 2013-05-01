@@ -31,21 +31,15 @@ $select_app="SELECT * FROM app_articulos WHERE id='".$id."'";
 		$Titulo=utf8_encode($Titulo);
 		$Sumario=utf8_encode($Sumario);
 		$Autor=utf8_encode($Autor);
-		$Nota=utf8_encode($Nota);
+		//$Nota=utf8_encode($Nota);
 		
 		$imagen=extraer_imagen($Nota);
 		$imagen=utf8_decode($imagen);
-		$Nota=extraer_nota($Nota);
-		$Nota=utf8_decode($Nota);
+		/*$Nota=extraer_nota($Nota);
+		$Nota=utf8_decode($Nota);*/
+		$Nota=strip_tags($Nota);
+		$Nota=utf8_encode($Nota);
 		
-		$arr1[$i] = array(
-					'titulo' => $Titulo,
-					'sumario' => $Sumario,
-					'autor' => $Autor,
-					'nota' => $Nota,
-					'imagen' => $imagen,
-					'fecha' => $Fecha_Creacion,
-				);
 		
 	endwhile;
 	
@@ -55,15 +49,25 @@ $select_app="SELECT * FROM app_articulos WHERE id='".$id."'";
 	
 	
 	$imagen='<img src="'.$imagen.'">';
-	/*
+	
 	$select_se="SELECT seccion,seudonimo FROM secciones WHERE id='".$Id_Seccion."'";
 	$r_se=mysql_query($select_se,$conexion);
 	while($f_se=mysql_fetch_assoc($r_se)):
 		$Seccion=$f_se['seccion'];
 		$SeccionSeudonimo=$f_se['seudonimo'];
 		$Seccion=utf8_encode($Seccion);
-	endwhile;*/
+	endwhile;
 endwhile;
+
+$arr1[$i] = array(
+					'titulo' => $Titulo,
+					'sumario' => $Sumario,
+					'autor' => $Autor,
+					'nota' => $Nota,
+					'imagen' => $imagen,
+					'fecha' => $Fecha_Creacion,
+					'seccion' => $Seccion,
+				);
 
 /*
 $html="back_".$SeccionSeudonimo.'&'.$Seccion.'&'.$imagen.'&'.$Titulo.'&'.$Sumario.'&'.$Autor.'&'.$Fecha_Creacion.'&'.$Nota;
