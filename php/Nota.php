@@ -6,7 +6,6 @@ include('../../funciones.php');
 
 $id=$_POST['id'];
 $arr1 = array();
-$ContenidoExtra="";
 $i=0;
 
 
@@ -78,7 +77,7 @@ $select_app="SELECT * FROM app_articulos WHERE id='".$id."'";
 	
 endwhile;
 
-
+/*
 $html="back_".$SeccionSeudonimo.'&'.$Seccion.'&'.$imagen.'&'.$Titulo.'&'.$Sumario.'&'.$Autor.'&'.$Fecha_Creacion.'&'.$Nota;
 
 	  
@@ -136,10 +135,9 @@ $ContenidoExtra.='
 			';
 endwhile;
 
-//$html.="&".$ContenidoExtra;
+$html.="&".$ContenidoExtra;
 
-//echo $html;
-//array_push($arr1, $ContenidoExtra);
+echo $html;*/
  echo  json_encode($arr1);
 
 ?>
