@@ -5,6 +5,8 @@ include('../../funciones.php');
 
 
 $id=$_POST['id'];
+$arr1 = array();
+$i=0;
 
 
 $select_app="SELECT * FROM app_articulos WHERE id='".$id."'";
@@ -33,6 +35,16 @@ $select_app="SELECT * FROM app_articulos WHERE id='".$id."'";
 		
 		$imagen=extraer_imagen($Nota);
 		$imagen=utf8_decode($imagen);
+		
+		$arr[$i] = array(
+					'titulo' => $Titulo,
+					'sumario' => $Sumario,
+					'autor' => $Autor,
+					'nota' => $Nota,
+					'autor' => $imagen,
+					'fecha' => $Fecha_Creacion,
+				);
+		
 	endwhile;
 	
 	$imagen=$url_dominio_.'/images/imagenes-articulos/'.$imagen;
@@ -112,6 +124,6 @@ endwhile;
 $html.="&".$ContenidoExtra;
 
 echo $html;*/
-
+ echo json_encode($arr1);
 
 ?>
