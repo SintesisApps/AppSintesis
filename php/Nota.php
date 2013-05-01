@@ -116,7 +116,7 @@ $select_ar="SELECT titulo,sumario,id_seccion,autor,fecha_creacion,nota FROM arti
 $ContenidoExtra.='
 			<div class="NotaExtraContenedor">
             	<div class="NotaExtraTitulo back_'.$SeccionSeudonimo.'">
-					fhfhfhgh
+					'.$Titulo.'
 				</div>
 				
 				<div class="NotaExtraImagen">
@@ -139,7 +139,7 @@ endwhile;
 //$html.="&".$ContenidoExtra;
 
 //echo $html;
-array_push($arr1, $ContenidoExtra);
+//array_push($arr1, $ContenidoExtra);
  echo  json_encode($arr1);
 
 ?>
