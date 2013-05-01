@@ -36,7 +36,7 @@ $select_app="SELECT * FROM app_articulos WHERE id='".$id."'";
 		$imagen=extraer_imagen($Nota);
 		$imagen=utf8_decode($imagen);
 		
-		$arr[$i] = array(
+		$arr1[$i] = array(
 					'titulo' => $Titulo,
 					'sumario' => $Sumario,
 					'autor' => $Autor,
@@ -124,6 +124,6 @@ endwhile;
 $html.="&".$ContenidoExtra;
 
 echo $html;*/
- echo json_encode($arr1);
+ echo  json_encode($arr1);
 
 ?>
