@@ -7,7 +7,7 @@ include('../../funciones.php');
 $id=$_POST['id'];
 $arr1 = array();
 $i=0;
-$ContenidoExtra="";
+$ContenidoExtra2="";
 
 
 $select_app="SELECT * FROM app_articulos WHERE id='".$id."'";
@@ -27,28 +27,20 @@ $select_app="SELECT * FROM app_articulos WHERE id='".$id."'";
 		$Id_Seccion=$f_ar['id_seccion'];
 		$Autor=$f_ar['autor'];
 		$Nota=$f_ar['nota'];
-		$Fecha_Creacion=$f_ar['fecha_creacion'];
+		$Fecha_Creacion_p=$f_ar['fecha_creacion'];
 		
-		$Titulo=utf8_encode($Titulo);
-		$Sumario=utf8_encode($Sumario);
-		$Autor=utf8_encode($Autor);
+		$Titulo_p=utf8_encode($Titulo);
+		$Sumario_p=utf8_encode($Sumario);
+		$Autor_p=utf8_encode($Autor);
 		//$Nota=utf8_encode($Nota);
 		
 		$imagen=extraer_imagen($Nota);
-		$imagen=utf8_decode($imagen);
+		$imagen_p=utf8_decode($imagen);
 		/*$Nota=extraer_nota($Nota);
 		$Nota=utf8_decode($Nota);*/
 		$Nota=strip_tags($Nota);
-		$Nota=utf8_encode($Nota);
-		$arr1[$i] = array(
-					'titulo' => $Titulo,
-					'sumario' => $Sumario,
-					'autor' => $Autor,
-					'nota' => $Nota,
-					'imagen' => $imagen,
-					'fecha' => $Fecha_Creacion,
-					
-				);
+		$Nota_p=utf8_encode($Nota);
+		
 		
 	endwhile;
 	
@@ -69,16 +61,7 @@ $select_app="SELECT * FROM app_articulos WHERE id='".$id."'";
 	
 	
 	$pseudo='<div class="back_'.$SeccionSeudonimo.' NotaSeccion">'.$Seccion.'</div>';
-	$arr1[$i]=array(
-	'titulo' => $Titulo,
-					'sumario' => $Sumario,
-					'autor' => $Autor,
-					'nota' => $Nota,
-					'imagen' => $imagen,
-					'fecha' => $Fecha_Creacion,
-	'seccion' => $Seccion,
-	'seccion_pseudo' => $pseudo,
-	);
+	
 	
 endwhile;
 
@@ -138,11 +121,25 @@ $ContenidoExtra.='
 				</a>
             </div>
 			';
+			
+			$ContenidoExtra2.="hola<br>";
 endwhile;
 
 $html.="&".$ContenidoExtra;
-$arr1["nota_extra"]=$ContenidoExtra;
+//$arr1["nota_extra"]=$ContenidoExtra;
 //echo $html;
+$arr1[$i]=array(
+	'titulo' => $Titulo_p,
+					'sumario' => $Sumario_p,
+					'autor' => $Autor_p,
+					'nota' => $Nota_p,
+					'imagen' => $imagen_p,
+					'fecha' => $Fecha_Creacion_p,
+	'seccion' => $Seccion,
+	'seccion_pseudo' => $pseudo,
+	'nota_extra' => $ContenidoExtra,
+	
+	);
  echo  json_encode($arr1);
 
 ?>
