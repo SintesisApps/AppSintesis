@@ -374,7 +374,12 @@ function LeerNota(id)
 					'</div>'
 					);
 					
-					$('.').html();
+					/*seccon titulo*/
+					
+					
+					elemento2 = document.getElementById('ref_contenedor_Nota');
+					elemento2.parentNode.insertBefore(datos[i].seccion_pseudo,elemento2);
+					/*fin*/
 					
 					$('.NotaTitulo').html(
 					datos[i].titulo
@@ -394,6 +399,11 @@ function LeerNota(id)
 					$('.NotaCompleta').html(
 					datos[i].nota
 					);
+					
+					$('.ExtrasPlaza').html(
+					datos[i].nota_extra
+					);
+					
 					
 					}
 					//$('#contenedor_Nota').html(message);
@@ -564,11 +574,11 @@ function LeerNota(id)
     </div>
     <div style=" display:inline-block; width:75%; vertical-align: top; padding-top:10px; text-align:center;"> <img src="imagenes/logo.png" height="25"> </div>
   </div>
-  <div class="back_nacion NotaSeccion">
-  	<!--PUEBLA-->
-  </div>
-  <div id="contenedor_Nota">
-  	<div class="NotaContenedor">
+ <!-- <div class="back_nacion NotaSeccion" id="name_section">
+
+  </div>-->
+  <div id="contenedor_Nota" id="ref_contenedor_Nota">
+  	<div class="NotaContenedor" >
             
    		<div id="Gallery"  class="SlidePrincipal ImagenesNota" >
    		

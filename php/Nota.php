@@ -7,6 +7,7 @@ include('../../funciones.php');
 $id=$_POST['id'];
 $arr1 = array();
 $i=0;
+$ContenidoExtra="";
 
 
 $select_app="SELECT * FROM app_articulos WHERE id='".$id."'";
@@ -65,6 +66,9 @@ $select_app="SELECT * FROM app_articulos WHERE id='".$id."'";
 		$SeccionSeudonimo=$f_se['seudonimo'];
 		$Seccion=utf8_encode($Seccion);
 	endwhile;
+	
+	
+	$pseudo='<div class="back_'.$SeccionSeudonimo.' NotaSeccion">'.$Seccion.'</div>';
 	$arr1[$i]=array(
 	'titulo' => $Titulo,
 					'sumario' => $Sumario,
@@ -73,11 +77,12 @@ $select_app="SELECT * FROM app_articulos WHERE id='".$id."'";
 					'imagen' => $imagen,
 					'fecha' => $Fecha_Creacion,
 	'seccion' => $Seccion,
+	'seccion_pseudo' => $pseudo,
 	);
 	
 endwhile;
 
-/*
+
 $html="back_".$SeccionSeudonimo.'&'.$Seccion.'&'.$imagen.'&'.$Titulo.'&'.$Sumario.'&'.$Autor.'&'.$Fecha_Creacion.'&'.$Nota;
 
 	  
@@ -136,8 +141,8 @@ $ContenidoExtra.='
 endwhile;
 
 $html.="&".$ContenidoExtra;
-
-echo $html;*/
+$arr1["nota_extra"]=$ContenidoExtra;
+//echo $html;
  echo  json_encode($arr1);
 
 ?>
