@@ -357,8 +357,10 @@ function LeerNota(id)
 				success: function(message)
 				{
 					datos = JSON.parse(message);
+					alert ("datos:"+datos);
 					for(i=0;i<datos.length;i++)
 					{
+						/*
 					
 					$('.ImagenesNotaImagen').html(
 					'<img src="imagenes/imagenes-articulos/'+datos[i].imagen+'">'+
@@ -390,7 +392,7 @@ function LeerNota(id)
 					$('.NotaCompleta').html(
 					datos[i].nota
 					);
-					
+					*/
 					}
 					//$('#contenedor_Nota').html(message);
 					
