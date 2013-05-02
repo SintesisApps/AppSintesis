@@ -180,13 +180,23 @@
     <!-- carga de noticias -->
     <script>
 			$(document).ready(function() {
+				
+				//verificamos la conexion
+				if(navigator.connection.type != Connection.NONE)
+				{//return true; // si esta conectado
+					slidePrincipal();
+					slideMiniatura();
+					slideVertical();
+					galeriaImagenes();
+					galeria_video();	
+					minuto_minuto();
+				}	
+				else
+				{
+					alert("Sin conexion");
+				}
                
-				slidePrincipal();
-				slideMiniatura();
-				slideVertical();
-				galeriaImagenes();
-				galeria_video();	
-				minuto_minuto();
+				
 				
 				
 				
