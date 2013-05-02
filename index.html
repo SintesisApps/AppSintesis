@@ -181,7 +181,7 @@
     <script>
 			$(document).ready(function() {
 				
-
+				checkConnection();
 				//alert("conexion:"+navigator.connection.type);
 					slidePrincipal();
 					slideMiniatura();
@@ -196,6 +196,26 @@
 				
 				
             });
+			
+			/*CONEXION*/
+			function checkConnection() {
+        var networkState = navigator.connection.type;
+
+        var states = {};
+        states[Connection.UNKNOWN]  = 'Unknown connection';
+        states[Connection.ETHERNET] = 'Ethernet connection';
+        states[Connection.WIFI]     = 'WiFi connection';
+        states[Connection.CELL_2G]  = 'Cell 2G connection';
+        states[Connection.CELL_3G]  = 'Cell 3G connection';
+        states[Connection.CELL_4G]  = 'Cell 4G connection';
+        states[Connection.CELL]     = 'Cell generic connection';
+        states[Connection.NONE]     = 'No network connection';
+
+        return alert('Connection type: ' + states[networkState]);
+    }
+
+			
+			/*FIN CONEXION*/
 			
 			function slidePrincipal()
 			{
@@ -351,7 +371,6 @@
 
 function LeerNota(id)
 	{
-		//$('.NotaTitulo').html("Nose titulo extra");
 			$.ajax(
 			{
 
@@ -362,7 +381,6 @@ function LeerNota(id)
 				success: function(message)
 				{
 					datos = JSON.parse(message);
-					//alert ("datos:"+datos);
 					for(i=0;i<datos.length;i++)
 					{
 						
@@ -383,10 +401,8 @@ function LeerNota(id)
 					$('.NotaSeccion').html(
 					datos[i].seccion
 					);
-					//alert("pseudo:"+datos[i].seccion_pseudo+"nombre de la clase:back_"+datos[i].seccion_pseudo);
-					/*pseudo back_nacion NotaSeccion*/
-					//$('.NotaSeccion').attr('class', 'back_'+datos[i].seccion_pseudo+' NotaSeccion');
-					$("#name_section").removeAttr("class");//removemos el  que tiene 
+					
+					$("#name_section").removeAttr("class");
 					$("#name_section").addClass('back_'+datos[i].seccion_pseudo);
 					$("#name_section").addClass('NotaSeccion');
 					
