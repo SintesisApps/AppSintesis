@@ -378,6 +378,8 @@ function LeerNota(id)
 					$('.NotaSeccion').html(
 					datos[i].seccion
 					);
+					/*pseudo back_nacion NotaSeccion*/
+					$('.NotaSeccion').attr('class', 'back_'+datos[i].seccion_pseudo+' NotaSeccion');
 					
 					$('.NotaTitulo').html(
 					datos[i].titulo
@@ -1071,7 +1073,7 @@ return false;
     Director de la Redacción.<br>
     <strong>Erick Becerra.</strong>
     <p>&nbsp;</p>
-    Para cualquier problema sobre la aplicación contactanos <a class="" href="mailto:admin-web@sintesisdigital.com.mx" style="width:150px; margin:auto;">
+    Para cualquier problema sobre la aplicación contactanos <a class="" href="mailto:admin-web@sintesisdigital.com.mx" style="width:150px; margin:auto; margin-top:10px;">
     <div class="BotonDialogoInfo"> Contactanos </div>
     </a>
     <p>&nbsp;</p>

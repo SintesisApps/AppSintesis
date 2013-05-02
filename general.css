@@ -598,6 +598,8 @@ body{
 	margin-top:20px;
 	padding:5px;
 	width:90%;
+	color:#4D4D4D;
+	font-weight:bold;
 	max-width:350px;
 	-moz-border-radius:5px 5px 5px;
 	-webkit-border-radius: 5px 5px 5px;
@@ -605,19 +607,20 @@ body{
 	}
 .NotaExtraImagen img{
 	margin:auto;
-	margin-top:20px;
+	margin-top:15px;
 	width:90%;
 	}
 .NotaExtraSumario{
 	margin:auto;
-	margin-top:20px;
+	margin-top:15px;
 	width:90%;
 	max-width:350px;
 	text-align:justify;
+	color:#666666;
 	}
 .NotaExtraLeerMas{
 	margin:auto;
-	margin-top:20px;
+	margin-top:19px;
 	padding:10px;
 	border:3px #FFF solid;
 	width:70%;
@@ -886,7 +889,7 @@ body{
 	
 	}
 	.borde_velocidad{
-		border: 2px #051e2b solid;
+		border: 3px #051e2b solid;
 	}
 	.back_velocidad{
 	background-color:#051e2b;
@@ -903,7 +906,7 @@ body{
 	color:#FFFFFF;
 	}
 	.borde_arte_y_cultura{
-		border: 2px #263975 solid;
+		border: 3px #263975 solid;
 	}
 	
 	
@@ -915,7 +918,7 @@ body{
 	background-color:#e0d060;
 	}
 	.borde_recorridos{
-		border: 2px #263975 solid;
+		border: 3px #263975 solid;
 	}
 	
 	
@@ -924,7 +927,7 @@ body{
 	
 	}
 	.borde_circus{
-		border: 2px #dc5692 solid;
+		border: 3px #dc5692 solid;
 	}
 	.back_circus{
 	background-color:#dc5692;
@@ -938,7 +941,7 @@ body{
 	background-color:#b2cde0;
 	}
 	.borde_la_tarea{
-	border: 2px #b2cde0 solid;
+	border: 3px #b2cde0 solid;
 	}
 	
 	
@@ -951,7 +954,7 @@ body{
 	color:#FFFFFF;
 	}
 	.borde_catedral{
-	border: 2px #de7438 solid;
+	border: 3px #de7438 solid;
 	}
 	
 	
@@ -963,7 +966,7 @@ body{
 	color:#FFF;
 	}
 	.borde_metropoli{
-	border: 2px #5abfcf solid;
+	border: 3px #5abfcf solid;
 	}
 	
 	
@@ -975,7 +978,7 @@ body{
 	color:#FFFFFF;
 	}
 	.borde_justicia{
-	border: 2px #9a1f27 solid;
+	border: 3px #9a1f27 solid;
 	}
 	
 	
@@ -986,7 +989,7 @@ body{
 	background-color:rgba(216,199,0,.8);
 	}
 	.borde_cronos{
-	border: 2px rgb(216,199,0) solid;
+	border: 3px rgb(216,199,0) solid;
 	}
 	
 	
@@ -998,7 +1001,7 @@ body{
 	color:#FFFFFF;
 	}
 	.borde_tecno{
-	border: 2px #028fa5 solid;
+	border: 3px #028fa5 solid;
 	}
 	
 	
@@ -1010,7 +1013,7 @@ body{
 	background-color:#ecdcc4;
 	}
 	.borde_vox{
-	border: 2px #ecdcc4 solid;
+	border: 3px #ecdcc4 solid;
 	}
 	
 	
@@ -1022,7 +1025,7 @@ body{
 	background-color:#ec9e43;
 	}
 	.borde_social{
-	border: 2px #ec9e43 solid;
+	border: 3px #ec9e43 solid;
 	}
 	
 	
@@ -1035,7 +1038,7 @@ body{
 	color:#FFFFFF;
 	}
 	.borde_cultural{
-	border: 2px #675440 solid;
+	border: 3px #675440 solid;
 	}
 	
 	
@@ -1046,7 +1049,7 @@ body{
 	background-color:#c6d444;
 	}
 	.borde_educativa{
-	border: 2px #c6d444 solid;
+	border: 3px #c6d444 solid;
 	}
 	
 	
@@ -1059,7 +1062,7 @@ body{
 	color:#FFFFFF;
 	}
 	.borde_percapita{
-	border: 2px #074365 solid;
+	border: 3px #074365 solid;
 	}
 	
 	
@@ -1070,7 +1073,7 @@ body{
 	background-color:#baae93;
 	}
 	.borde_terra{
-	border: 2px #baae93 solid;
+	border: 3px #baae93 solid;
 	}
 	
 	
@@ -1082,7 +1085,7 @@ body{
 	color:#FFFFFF;
 	}
 	.borde_nacion{
-	border: 1px #36a3b8 solid;
+	border: 3px #36a3b8 solid;
 	}
 	
 	
@@ -1095,7 +1098,7 @@ body{
 	color:#FFFFFF;
 	}
 	.borde_orbe{
-	border: 1px #675440 solid;
+	border: 3px #675440 solid;
 	}
 	
 	<!--Colores de Secciones-->
