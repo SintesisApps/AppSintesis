@@ -436,7 +436,10 @@ function LeerNota(id)
 			});
 	}
 
-
+function mensaje(seccion)
+{
+	alert("seccion: "+seccion);
+}
 
 </script>
 
@@ -1112,12 +1115,12 @@ return false;
 <!--Panel de Secciones-->
 
 <div id="panelSecciones"  class="panelSeccion"> 
-  <a href="#home" onClick="$('#panelSecciones').css('left','-250%');">
+  <a href="#home" onClick="$('#panelSecciones').css('left','-250%');)">
   <div class="panelSeccionTitulo" style="background-image:url(imagenes/iconos/azules/home@2x.png);"> Home </div>
   
   <div class="paneSeccionEdicion"> Secciones </div>
   </a>
-  <a href="#secciones" onClick="$('#panelSecciones').css('left','-250%');">
+  <a href="#secciones" onClick="$('#panelSecciones').css('left','-250%'), mensaje('nacion');">
   <div class="panelSeccionTitulo" style="background-image:url(imagenes/iconos/azules/nacion@2x.png);"> Nación </div>
   </a>
   <div class="panelSeccionSpacer"> </div>
