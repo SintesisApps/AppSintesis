@@ -388,10 +388,11 @@ function LeerNota(id)
 					$('.NotaSeccion').html(
 					datos[i].seccion
 					);
+					alert("pseudo:"+datos[i].seccion_pseudo+"nombre de la clase:"+"back_"+datos[i].seccion_pseudo);
 					/*pseudo back_nacion NotaSeccion*/
 					//$('.NotaSeccion').attr('class', 'back_'+datos[i].seccion_pseudo+' NotaSeccion');
 					$("#name_section").removeAttr("class");//removemos el  que tiene 
-					$("#name_section").addClass('back_'+datos[i].seccion_pseudo+' NotaSeccion');
+					$("#name_section").addClass('back_'+datos[i].seccion_pseudo);
 					
 					$('.NotaTitulo').html(
 					datos[i].titulo
