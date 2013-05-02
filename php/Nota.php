@@ -102,20 +102,23 @@ $select_ar="SELECT titulo,sumario,id_seccion,autor,fecha_creacion,nota FROM arti
 
 $ContenidoExtra.='
 			<div class="NotaExtraContenedor">
-            	<div class="NotaExtraTitulo back_'.$SeccionSeudonimo.'">
-					'.$Titulo.'
-				</div>
+				<a href="#nota" onclick="LeerNota('.$id_nota_app.')">
+					<div class="NotaExtraTitulo borde_'.$SeccionSeudonimo.'">
+						'.$Titulo.'
+					</div>
+				</a>	
+			
 				
 				<div class="NotaExtraImagen">
 					<img src="'.$imagen.'">
 				</div>
 				
 				<div class="NotaExtraSumario">
-					'.$Sumario.'
+					'.substr($Sumario,0,80).'...
 				</div>
 				
 				<a href="#nota" onclick="LeerNota('.$id_nota_app.')">
-				<div class="NotaExtraLeerMas back_'.$SeccionSeudonimo.'">
+				<div class="NotaExtraLeerMas borde_'.$SeccionSeudonimo.'">
 					Leer Más
 				</div>
 				</a>
