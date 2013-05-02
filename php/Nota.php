@@ -60,7 +60,7 @@ $select_app="SELECT * FROM app_articulos WHERE id='".$id."'";
 	endwhile;
 	
 	
-	$pseudo='<div class="back_'.$SeccionSeudonimo.' NotaSeccion">'.$Seccion.'</div>';
+	
 	
 	
 endwhile;

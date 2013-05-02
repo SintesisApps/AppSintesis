@@ -379,15 +379,16 @@ function LeerNota(id)
 					'</div>'
 					);
 					
-					
+					document.getElementById("name_section").innerHTML="";
 					$('.NotaSeccion').html(
 					datos[i].seccion
 					);
-					alert("pseudo:"+datos[i].seccion_pseudo+"nombre de la clase:back_"+datos[i].seccion_pseudo);
+					//alert("pseudo:"+datos[i].seccion_pseudo+"nombre de la clase:back_"+datos[i].seccion_pseudo);
 					/*pseudo back_nacion NotaSeccion*/
 					//$('.NotaSeccion').attr('class', 'back_'+datos[i].seccion_pseudo+' NotaSeccion');
 					$("#name_section").removeAttr("class");//removemos el  que tiene 
 					$("#name_section").addClass('back_'+datos[i].seccion_pseudo);
+					$("#name_section").addClass('NotaSeccion');
 					
 					$('.NotaTitulo').html(
 					datos[i].titulo
