@@ -379,7 +379,9 @@ function LeerNota(id)
 					datos[i].seccion
 					);
 					/*pseudo back_nacion NotaSeccion*/
-					$('.NotaSeccion').attr('class', 'back_'+datos[i].seccion_pseudo+' NotaSeccion');
+					//$('.NotaSeccion').attr('class', 'back_'+datos[i].seccion_pseudo+' NotaSeccion');
+					$("#name_section").removeAttr("class");//removemos el  que tiene 
+					$("#name_section").addClass('back_'+datos[i].seccion_pseudo+' NotaSeccion');
 					
 					$('.NotaTitulo').html(
 					datos[i].titulo

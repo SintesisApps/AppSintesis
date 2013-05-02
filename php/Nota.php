@@ -139,7 +139,7 @@ $arr1[$i]=array(
 					'imagen' => $imagen_p,
 					'fecha' => $Fecha_Creacion_p,
 	'seccion' => $Seccion,
-	'seccion_pseudo' => $pseudo,
+	'seccion_pseudo' => $SeccionSeudonimo,
 	'nota_extra' => $ContenidoExtra,
 	
 	);
