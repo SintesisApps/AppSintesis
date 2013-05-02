@@ -51,7 +51,7 @@
 /*Panel De Secciones*/
 .panelSeccion{
 	min-width: 30%;
-	height: 85%;
+	height: 75%;
 	overflow-y: auto;
 	overflow-x: hidden;
 	left: -250%;

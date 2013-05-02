@@ -724,6 +724,32 @@ body{
 
  @media screen and (min-width: 0px) and (max-width: 1024px) {
 
+<!-- secciones-->
+.panelSeccion{
+	min-width: 30%;
+	height: 90%;
+	overflow-y: auto;
+	overflow-x: hidden;
+	left: -250%;
+	top:0;
+	position: absolute;
+	background-image: url(../imagenes/patrontrans.png);
+	background-color:transparent;
+	box-shadow: 0px 4px 7px rgba(0,0,0,0.6);
+	z-index: 2;
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+	margin:auto;
+	text-align:center;
+	font-size:15px;
+	padding-top:20px;
+	margin-top:44px;
+}
+
+<!-- fin secciones -->
+
 
 <!--Slide Miniaturas-->
 .ContenedorSlideMiniaturas {
