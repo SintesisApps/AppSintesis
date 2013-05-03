@@ -40,9 +40,7 @@ while($f_app=mysql_fetch_assoc($r_app)):
 		$Autor=utf8_encode($Autor);
 		$Nota=utf8_encode($Nota);
 		
-		$Titulo_nota=substr($Titulo_nota,0,100)."...";
-		$imagen=extraer_imagen($Nota);
-		$imagen=utf8_decode($imagen);
+		$Titulo_nota=substr($Titulo_nota,0,40)."...";;
 	endwhile;
 	/*
 	<a href="#nota" onclick="LeerNota('.$id_nota_app.')">

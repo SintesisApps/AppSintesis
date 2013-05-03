@@ -4,7 +4,15 @@ include("../../includes/conexion.php");
 include('../../funciones.php'); 
 //Slide Principal
 
-$html="";
+$html='<div style="float:left;margin-right:-600000px;">
+        
+        <div class="SubContenedorPrincipal">';
+//Consulta de datos
+	/*if(isset($_POST['accion'])){
+		if($_POST['accion'] == 'leer'){*/
+			//$arr = "mensaje";
+			$arr = array();
+			$i=0;//contador
 			
 			$select_app="SELECT * FROM app_articulos WHERE posicion='Slide-Principal' AND estatus='1' ORDER BY id DESC";
 	$r_app=mysql_query($select_app,$conexion);
@@ -54,13 +62,28 @@ $html="";
       </div>
       </a>
 	';
+
 	
+
 endwhile;
+		/*<div class="SubContenedorPrincipal">
+			 <a href="#nota">
+            <div style="display:inline-block; overflow:hidden">
+              <div class="SlidePrincipalImagen"> <img src="imagenes/imagenes-articulos/1.jpg"> </div>
+              <div class="SlidePrincipalContenido">
+                <div class="SlidePrincipalTitulo"> Signan convenio para obras en pueblos indígenas </div>
+                <div class="SlidePrincipalSeccion"> METRÓPOLI </div>
+                <div class="SlidePrincipalAutor"> Clauda Aguilar/Síntesis </div>
+                <div class="SlidePrincipalFecha"> 2013-03-28 14:27:29 </div>
+                <div class="SlidePrincipalSumario"> Sumario </div>
+              </div>
+            </div>
+            </a> 
+		</div>*/	
+			$html.='</div></div>';
 			
 			echo $html;
-
-
-
+	
 
 
 ?>

@@ -4,10 +4,13 @@ include("../../includes/conexion.php");
 include('../../funciones.php'); 
 
 $plaza=$_POST["plaza"];
+$arr1 = array();
+$i="0";
+$seccion_slidePrincipal='<div style="float:left;margin-right:-30000px;">
+        				<div class="SubContenedorPrincipalSeccion">';
 
 
-
-$select_app="SELECT * FROM app_articulos WHERE plaza='".$plaza."' AND estatus='1' ORDER BY id DESC LIMIT 1 ";
+$select_app="SELECT * FROM app_articulos WHERE plaza='".$plaza."' AND estatus='1' ORDER BY id DESC limit 5 ";
 
 	$r_app=mysql_query($select_app,$conexion);
 	while($f_app=mysql_fetch_assoc($r_app)):
@@ -33,9 +36,28 @@ $select_app="SELECT * FROM app_articulos WHERE plaza='".$plaza."' AND estatus='1
 		
 		$imagenPlaza=extraer_imagen($NotaPlaza);
 		$imagenPlaza=utf8_decode($imagenPlaza);
+		
+		$seccion_slidePrincipal.='
+		<a href="#nota" onclick="LeerNota('.$id_nota_app.')">
+              <div class="ContenidoPrincipalSeccion">
+                <div class="ImagenPrincipalSeccion"><img src="'.$url_dominio_.'/images/imagenes-articulos/'.$imagenPlaza.'" ></div>
+                <div class="TextoPrincipalSeccion">
+                  <div class="TituloPrincipalSeccion">'.$TituloPlaza.'</div>
+                  <div class="SeccionPrincipalSeccion"> METRÓPOLI </div>
+                  <div class="AutorPrincipalSeccion"> Clauda Aguilar/Síntesis </div>
+                  <div class="FechaPrincipalSeccion"> 2013-03-28 14:27:29 </div>
+                </div>
+              </div>
+              </a>
+			  
+			  <div class="ContenidoPrincipalSeccion">
+                <div class="PublicidadPrincipalSeccion"> <img src="imagenes/publicidad/5.jpg" > </div>
+              </div>
+		';
+		
 	endwhile;
 	
-	$select_pza="SELECT plaza FROM plazas WHERE seudonimo='".$plaza."'";
+	$select_pza="SELECT plaza FROM plazas WHERE seudonimo='".$plaza_app."'";
 	$r_pza=mysql_query($select_pza,$conexion);
 	while($f_pza=mysql_fetch_assoc($r_pza)):
 		$PlazaNota=$f_pza['plaza'];
@@ -48,172 +70,135 @@ $select_app="SELECT * FROM app_articulos WHERE plaza='".$plaza."' AND estatus='1
 		$SeccionPlaza=$f_se['seccion'];
 		$SeccionPlaza=utf8_encode($SeccionPlaza);
 	endwhile;
+	
+	
+	
 endwhile;
+
+$slide_vertical='<div  class="ContenedorSlideVertical" >';
+
+$select_app="SELECT * FROM app_articulos WHERE plaza='".$plaza."' AND estatus='1' ORDER BY id DESC LIMIT 1,3	 ";
+$r_app=mysql_query($select_app,$conexion);
+while($f_app=mysql_fetch_assoc($r_app)):
+	$id_nota_app=$f_app['id'];
+	$id_articulo_app=$f_app['id_articulo'];
+	$plaza_app=$f_app['plaza'];
+	
+
+	$select_ar="SELECT titulo,sumario,id_seccion,autor,fecha_creacion,nota FROM articulos_".$plaza_app." WHERE id=".$id_articulo_app."";
+
+	$r_ar=mysql_query($select_ar,$conexion);
+	while($f_ar=mysql_fetch_assoc($r_ar)):
+		$TituloSlideVertical=$f_ar['titulo'];
+		$SumarioSlideVertical=$f_ar['sumario'];
+		$Id_SeccionSlideVertical=$f_ar['id_seccion'];
+		$AutorSlideVertical=$f_ar['autor'];
+		$NotaSlideVertical=$f_ar['nota'];
+		$Fecha_CreacionSlideVertical=$f_ar['fecha_creacion'];
 		
-$html='
-<div class="HeaderAlternativo"> 
-        <div style=" display:inline-block; padding-top:0px; width:10%; padding-left:10px;">
-            <a href="#home"><img src="imagenes/iconos/iconosgrises/flecha.png" ></a>
-        </div>
-        
-        <div style=" display:inline-block; padding-top:10px; width:75%; text-align:center;">
-            <img src="imagenes/logo.png" height="25">
-        </div>
-        
-</div>
+		$TituloSlideVertical=utf8_encode($TituloSlideVertical);
+		$SumarioSlideVertical=utf8_encode($SumarioSlideVertical);
+		$AutorSlideVertical=utf8_encode($AutorSlideVertical);
+		$NotaSlideVertical=utf8_encode($NotaSlideVertical);
+		
+		$TituloSlideVertical=substr($TituloSlideVertical,0,30)."...";
+		$SumarioSlideVertical=substr($SumarioSlideVertical,0,100)."...";
+		$imagen=extraer_imagen($NotaSlideVertical);
+		$imagen=utf8_decode($imagen);
+	endwhile;
 	
-  <div data-role="content" > 
-   
-    
-  		<!--Nota Plaza-->
-    <div  class="ContenedorPlaza" >
+	$select_se="SELECT seudonimo FROM secciones WHERE id='".$Id_SeccionSlideVertical."'";
 	
+	$r_se=mysql_query($select_se,$conexion);
+	while($f_se=mysql_fetch_assoc($r_se)):
+		$SeccionSlideVertical=$f_se['seudonimo'];
+		$SeccionSlideVertical=strtolower(utf8_encode($SeccionSlideVertical));
+		
+	endwhile;
+	/*<img src="'.$url_dominio_.'/images/imagenes-articulos/'.$imagenPlaza.'" >*/
+	$slide_vertical.=' <div > <a href="#nota" onclick="LeerNota('.$id_nota_app.')">
+          <div class="SlideVerticalArticulo">
+           
+            <div class="SlideVerticalImagen"><img src="'.$url_dominio_.'/images/imagenes-articulos/'.$imagen.'" ></div>
+            <div class="SlideVerticalContenido">
+              <div class="SlideVerticalTitulo">'.$TituloSlideVertical.'</div>
+              <div class="SlideVerticalAutor">'.$AutorSlideVertical.'</div>
+              <div class="SlideVerticalFecha">'.$Fecha_CreacionSlideVertical.'</div>
+            </div>
+          </div>
+          </a> </div>
+		  
+		  <div > 
+            <div class="PublicidadSlideVertical">
+                <img src="imagenes/publicidad/2.jpg">
+            </div>
+        </div>
+		  ';
+endwhile;
+$slide_vertical.='</div>';
+
+/*ULTIMAS NOTICIAS*/
+function solo_hora($date_hora)
+{
+	$fecha = split("-",$date_hora); 
+	
+	$hora = split(":", $fecha[2]); 
+	
+	$fecha_hora = split(" ", $hora[0]);  
+	
+	$fecha_sola= $fecha[0]."-".$fecha[1].'-'.$fecha_hora[0];  
+	$hora_sola=$fecha_hora[1].':'.$hora[1];
+	return $hora_sola;
+}
+
+$ultimas_noticias="";
+$select_app2="SELECT * FROM app_articulos WHERE  estatus='1' and plaza='".$plaza."' ORDER BY fecha DESC limit 4";
+$r_app2=mysql_query($select_app2,$conexion);
+
+while($f_app2=mysql_fetch_assoc($r_app2)):
+	$id_nota_app2=$f_app2['id'];
+	$id_articulo_app2=$f_app2['id_articulo'];
+	$plaza_app2=$f_app2['plaza'];
+	$fecha_app2=$f_app2['fecha'];
+	
+	$select_ar2="SELECT titulo,sumario,id_seccion,autor,fecha_creacion,nota FROM articulos_".$plaza_app2." WHERE id=".$id_articulo_app2."";
+	
+	$r_ar2=mysql_query($select_ar2,$conexion);
+	while($f_ar2=mysql_fetch_assoc($r_ar2)):
+		$Titulo_nota2=$f_ar2['titulo'];;
+		
+		$Titulo_nota2=utf8_encode($Titulo_nota2);
+		
+		$Titulo_nota2=substr($Titulo_nota2,0,40)."...";
+	endwhile;
+	/*
 	<a href="#nota" onclick="LeerNota('.$id_nota_app.')">
-      <div class="ContenedorContenidoPlaza">
-        <div class="PlazaImagen" > <img src="'.$url_dominio_.'/images/imagenes-articulos/'.$imagenPlaza.'" > </div>
-        <div class="PlazaContenido">
-          <div class="PlazaTitulo">'.$TituloPlaza.'</div>
-          <div class="PlazaSeccion">'.$SeccionPlaza.'</div>
-          <div class="PlazaAutor">'.$AutorPlaza.'</div>
-          <div class="PlazaFecha">'.$Fecha_CreacionPlaza.'</div>
-          <div class="PlazaSumario">'.$SumarioPlaza.'</div>
+	*/
+	$ultimas_noticias.='
+		<div style="width:87%;margin-left:10px;"><a href="#nota" onclick="LeerNota('.$id_nota_app2.')">
+          <div style="display:inline-block; color: rgb(0,85,143);">'.solo_hora($fecha_app2).' </div>
+          <div style="display:inline-block; color: rgb(151,151,151);"> / '.$Titulo_nota2.'</div></a>
+          <hr>
         </div>
-      </div>
-      </a>
-    </div>
-    <!--Nota Plaza-->
-        
-        <!--Slide Vertical-->
-    <div class="ContenedorSlideVerticalPlaza simple-vertical-plaza">
-		<div >';
+	';
 	
-	$select_app="SELECT * FROM app_articulos WHERE plaza='".$plaza."' AND estatus='1' ORDER BY id DESC LIMIT 1,3	 ";
-$r_app=mysql_query($select_app,$conexion);
-while($f_app=mysql_fetch_assoc($r_app)):
-	$id_nota_app=$f_app['id'];
-	$id_articulo_app=$f_app['id_articulo'];
-	$plaza_app=$f_app['plaza'];
 	
 
-	$select_ar="SELECT titulo,sumario,id_seccion,autor,fecha_creacion,nota FROM articulos_".$plaza_app." WHERE id=".$id_articulo_app."";
-
-	$r_ar=mysql_query($select_ar,$conexion);
-	while($f_ar=mysql_fetch_assoc($r_ar)):
-		$TituloSlideVertical=$f_ar['titulo'];
-		$SumarioSlideVertical=$f_ar['sumario'];
-		$Id_SeccionSlideVertical=$f_ar['id_seccion'];
-		$AutorSlideVertical=$f_ar['autor'];
-		$NotaSlideVertical=$f_ar['nota'];
-		$Fecha_CreacionSlideVertical=$f_ar['fecha_creacion'];
-		
-		$TituloSlideVertical=utf8_encode($TituloSlideVertical);
-		$SumarioSlideVertical=utf8_encode($SumarioSlideVertical);
-		$AutorSlideVertical=utf8_encode($AutorSlideVertical);
-		$NotaSlideVertical=utf8_encode($NotaSlideVertical);
-		
-		$TituloSlideVertical=substr($TituloSlideVertical,0,30)."...";
-		$SumarioSlideVertical=substr($SumarioSlideVertical,0,100)."...";
-		$imagen=extraer_imagen($NotaSlideVertical);
-		$imagen=utf8_decode($imagen);
-	endwhile;
-	
-	$select_se="SELECT seudonimo FROM secciones WHERE id='".$Id_SeccionSlideVertical."'";
-	
-	$r_se=mysql_query($select_se,$conexion);
-	while($f_se=mysql_fetch_assoc($r_se)):
-		$SeccionSlideVertical=$f_se['seudonimo'];
-		$SeccionSlideVertical=strtolower(utf8_encode($SeccionSlideVertical));
-		
-	endwhile;
-	
-$html.='
-		<a href="#nota" onclick="LeerNota('.$id_nota_app.')">
-			<div class="SlideVerticalArticuloPlaza">
-				<div class="SlideVerticalSeccionPlaza"><img src="imagenes/iconos/secciones/'.$SeccionSlideVertical.'.png"></div>
-				<div class="SlideVerticalImagenPlaza"><img src="'.$url_dominio_.'/images/imagenes-articulos/'.$imagen.'" > </div>
-				<div class="SlideVerticalContenidoPlaza">
-				  <div class="SlideVerticalTituloPlaza">'.$TituloSlideVertical.'</div>
-				  <div class="SlideVerticalAutorPlaza">'.$AutorSlideVertical.'</div>
-				  <div class="SlideVerticalFechaPlaza">'.$Fecha_CreacionSlideVertical.'</div>
-				  <div class="SlideVerticalSumarioPlaza">'.$SumarioSlideVertical.'</div>
-				</div>
-			</div>
-		</a>
-        <div>
-          <hr>
-        </div>';
 endwhile;
 
-      
-$html.='</div>';
+/*echo $html;
+$ultimas_noticias='
+		<div style="width:90%;">
+            <div style="display:inline-block; color: rgb(0,85,143);"> 10:49 PM </div>
+            <div style="display:inline-block; color: rgb(151,151,151);"> / Mantendrá Seproci vigilancia vigilancia... </div>
+            <hr>
+          </div>
+';*/
 
-$select_appMin="SELECT * FROM app_articulos WHERE plaza='".$plaza."' AND estatus='1' ORDER BY id DESC LIMIT 4,3  ";
-	$r_appMin=mysql_query($select_appMin,$conexion);
-	$TotalMiniaturas=mysql_num_rows($r_appMin);
-	
-	
-if($TotalMiniaturas>0):
-$html.='<div >';
-	
-	$select_app="SELECT * FROM app_articulos WHERE plaza='".$plaza."' AND estatus='1' ORDER BY id  DESC LIMIT 4,3 ";
-$r_app=mysql_query($select_app,$conexion);
-while($f_app=mysql_fetch_assoc($r_app)):
-	$id_nota_app=$f_app['id'];
-	$id_articulo_app=$f_app['id_articulo'];
-	$plaza_app=$f_app['plaza'];
-	
+/*ULTIMAS NOTICIAS*/
 
-	$select_ar="SELECT titulo,sumario,id_seccion,autor,fecha_creacion,nota FROM articulos_".$plaza_app." WHERE id=".$id_articulo_app."";
+/*		
 
-	$r_ar=mysql_query($select_ar,$conexion);
-	while($f_ar=mysql_fetch_assoc($r_ar)):
-		$TituloSlideVertical=$f_ar['titulo'];
-		$SumarioSlideVertical=$f_ar['sumario'];
-		$Id_SeccionSlideVertical=$f_ar['id_seccion'];
-		$AutorSlideVertical=$f_ar['autor'];
-		$NotaSlideVertical=$f_ar['nota'];
-		$Fecha_CreacionSlideVertical=$f_ar['fecha_creacion'];
-		
-		$TituloSlideVertical=utf8_encode($TituloSlideVertical);
-		$SumarioSlideVertical=utf8_encode($SumarioSlideVertical);
-		$AutorSlideVertical=utf8_encode($AutorSlideVertical);
-		$NotaSlideVertical=utf8_encode($NotaSlideVertical);
-		
-		$TituloSlideVertical=substr($TituloSlideVertical,0,30)."...";
-		$SumarioSlideVertical=substr($SumarioSlideVertical,0,100)."...";
-		$imagen=extraer_imagen($NotaSlideVertical);
-		$imagen=utf8_decode($imagen);
-	endwhile;
-	
-	$select_se="SELECT seudonimo FROM secciones WHERE id='".$Id_SeccionSlideVertical."'";
-	
-	$r_se=mysql_query($select_se,$conexion);
-	while($f_se=mysql_fetch_assoc($r_se)):
-		$SeccionSlideVertical=$f_se['seudonimo'];
-		$SeccionSlideVertical=strtolower(utf8_encode($SeccionSlideVertical));
-		
-	endwhile;
-	
-$html.='
-		<a href="#nota" onclick="LeerNota('.$id_nota_app.')">
-			<div class="SlideVerticalArticuloPlaza">
-				<div class="SlideVerticalSeccionPlaza"><img src="imagenes/iconos/secciones/'.$SeccionSlideVertical.'.png"></div>
-				<div class="SlideVerticalImagenPlaza"><img src="'.$url_dominio_.'/images/imagenes-articulos/'.$imagen.'" > </div>
-				<div class="SlideVerticalContenidoPlaza">
-				  <div class="SlideVerticalTituloPlaza">'.$TituloSlideVertical.'</div>
-				  <div class="SlideVerticalAutorPlaza">'.$AutorSlideVertical.'</div>
-				  <div class="SlideVerticalFechaPlaza">'.$Fecha_CreacionSlideVertical.'</div>
-				  <div class="SlideVerticalSumarioPlaza">'.$SumarioSlideVertical.'</div>
-				</div>
-			</div>
-		</a>
-        <div>
-          <hr>
-        </div>';
-endwhile;
-
-$html.='</div>';
-endif;
 $html.='</div>
     <!--Slide Vertical--> 
 	
@@ -247,7 +232,16 @@ $html.='</div>
   
   
 
-    </script>';
+    </script>';*/
 	
-echo $html;
+//echo $html;
+$seccion_slidePrincipal.= "</div></div>";
+
+$arr1[$i]=array(
+	'titulo_seccion' => $plaza_app,
+	'slide_principal' => $seccion_slidePrincipal,
+	'slide_vertical' => $slide_vertical,
+	'ultimas_noticias' => $ultimas_noticias,
+	);
+echo  json_encode($arr1);
 ?>

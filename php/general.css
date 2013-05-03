@@ -111,32 +111,7 @@ body{
 	-webkit-overflow-scrolling: touch;
 	background: rgba(204,204,204,.4);
 	height: 243px;
-	vertical-align:top;
 }
-.SubContenedorPrincipal{
-	 width: 100%;
-	 margin:auto;
-    overflow: auto;
-	height: 243px;
-	vertical-align:top;
-	}
-	
-	/*.ContenedorPrincipalSeccion{
-	vertical-align:top;
-	height:345px;
-	width: 100%;
-	overflow: auto;
-	-webkit-overflow-scrolling: touch;
-	 padding:5px;
-	 
-	 }
-.SubContenedorPrincipalSeccion{
-	vertical-align:top;  
-	height:345px;  
-	margin:auto;
-	overflow: auto;
-	}*/
-
 
 .ContenedorContenidoPrincipal {
 	margin-left: 0;
@@ -386,7 +361,7 @@ body{
 /*Video*/
 .Video img {
 	width: 100%;
-	height:80px;
+	height:125px;
 	margin:5px;
 	max-width:345px;
 	
@@ -836,7 +811,7 @@ body{
 
 	 /*Slide Vertical*/
 .DivVertical{
-	height:500px;
+	height:564px;
 	width:50%;
 	}
 .ContenedorSlideVertical {
@@ -860,20 +835,26 @@ body{
 
 /*Div Medio*/
 .ContenedorDivMedio {
-	height:547px;
+/*	height:547px;*/
+height:564px;
 	width:47%;
 }
 /*Div Medio*/
 
 .ContenedorMinutovideo{
 	width:100%;
+	margin:5px;
 	display: block;}
 
 /*Minuto a Minuto*/
 .Minuto_A_Minuto {
-	padding-top:40px;
+	/*padding-top:40px;
 	padding-left:20px;
-	width:100%;
+	width:100%;*/
+	padding-top:15px;
+	padding-left:15px;
+	width:336px;
+	height:138px;
 	
 }
 /*Minuto a Minuto*/	
@@ -886,9 +867,10 @@ body{
 	/*width: 95%;
 	height:250px;*/
 	height:257px;
-	width:345px;
+	width:355px;
 	overflow:hidden;
 	vertical-align:top;
+	margin-top:10px;
 	
 }
 

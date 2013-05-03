@@ -5,8 +5,8 @@
 <title>Síntesis</title>
 <meta content="width=device-width, initial-scale=1.0, minimum-scale=.5, maximum-scale=1.0, user-scalable=yes" name="viewport" />
 
-<!--<link href="general.css" rel="stylesheet">-->
-<link href="http://166.78.193.53/APPSintesis/php/general.css" rel="stylesheet">
+<link href="general.css" rel="stylesheet">
+<!--<link href="http://166.78.193.53/APPSintesis/php/general.css" rel="stylesheet">-->
 <link href="css/transiciones.css" rel="stylesheet">
 <link href="css/alerta.css" rel="stylesheet" type="text/css" />
 <script src="phonegap.js" type="text/javascript"></script>
@@ -190,10 +190,6 @@
 					galeria_video();	
 					minuto_minuto();
 				
-               
-				
-				
-				
 				
             });
 			
@@ -280,7 +276,7 @@
 				cache: false,
 				success: function(message)
 				{	
-				$('.Minuto_A_Minuto').html(message);
+				$('#minuto_home').html(message);
 				}
 				});
 			}
@@ -306,23 +302,14 @@
 		
 		
 	
-	/*function CargarNoticiasHome()
+	function CargarNoticiasHome()
 	{
-		setTimeout(CargarNoticiasHome,60000);
-			$.ajax(
-			{
-
-				type: "POST",
-				url: "http://166.78.193.53/APPSintesis/php/CargarNoticiasHome.php",
-				data: "",
-				cache: false,
-				success: function(message)
-				{	
-				$('#ContenedorSlides').html(message);
-				
-				}
-			});
-
+		slidePrincipal();
+		slideMiniatura();
+		slideVertical();
+		galeriaImagenes();
+		galeria_video();	
+		minuto_minuto();
 	} 
 	
 	function CargarNoticiasPlaza(plaza)
@@ -336,16 +323,42 @@
 				cache: false,
 				success: function(message)
 				{
-				$("#plaza").html(message);
+					datos = JSON.parse(message);
+					for(i=0;i<datos.length;i++)
+					{
+						document.getElementById("name_SeccionSeccion").innerHTML="";
+						$(".SeccionSeccion").html(
+							datos[i].titulo_seccion
+						);
+						$(".ContenedorPrincipalSeccion").html(
+							datos[i].slide_principal
+						);
+						
+						$(".DivVertical").html(
+						datos[i].slide_vertical
+						);
+						
+						$("#minuto_plaza").html(
+						datos[i].ultimas_noticias
+						);
+					}
+					
+					/*$('.NotaSeccion').html(
+					datos[i].seccion
+					);ContenedorPrincipalSeccion
+					
+					$("#name_SeccionSeccion").removeAttr("class");
+					$("#name_SeccionSeccion").addClass('back_'+datos[i].seccion_pseudo);
+					$("#name_SeccionSeccion").addClass('NotaSeccion');*/
+				
 				
 				}
 			});
 
 	} 
 
-
-	
-//CargarNoticiasHome();*/
+/*
+//CargarNoticiasHome();
 
 /*$(window).load(function() {
       $('#cargando').hide();
@@ -436,63 +449,63 @@ function mensaje(seccion)
   <div style=" display:inline-block; width:75%; vertical-align: top; padding-top:10px; text-align:center;"> <img src="imagenes/logo.png" height="25"> </div>
   <div style=" display:inline-block; padding-top:0px; width:10%; text-align:right;"> <a href="#Info"> <img src="imagenes/iconos/azules/informacion@2x.png" width="50" > </a> </div>
 </div>
+<div id="ContenedorSlides2"> 
 <div id="ContenedorSlides"> 
   <!--Slide Principal-->
-   <div  class="SlidePrincipal ContenedorSlidePrincipal" id="cont_slideprincipal">
-  <!--
-   		<a href="#nota">
-        <div style="display:inline-block; overflow:hidden">
-          <div class="SlidePrincipalImagen"> <img src="imagenes/imagenes-articulos/1.jpg"> </div>
-          <div class="SlidePrincipalContenido">
-            <div class="SlidePrincipalTitulo"> Signan convenio para obras en pueblos indígenas </div>
-            <div class="SlidePrincipalSeccion"> METRÓPOLI </div>
-            <div class="SlidePrincipalAutor"> Clauda Aguilar/Síntesis </div>
-            <div class="SlidePrincipalFecha"> 2013-03-28 14:27:29 </div>
-            <div class="SlidePrincipalSumario"> Sumario </div>
-          </div>
-        </div>
-        </a> 
-        
-        <div style="display:inline-block; overflow:hidden">
-          <div class="PublicidadSlidePrincipal">
-          <img src="imagenes/publicidad/1.jpg">
-          </div>
-        </div>
-        
-        <a href="#nota">
-        <div style="display:inline-block; overflow:hidden">
-          <div class="SlidePrincipalImagen"> <img src="imagenes/imagenes-articulos/3.jpg"> </div>
-          <div class="SlidePrincipalContenido">
-            <div class="SlidePrincipalTitulo"> Signan convenio para obras en pueblos indígenas </div>
-            <div class="SlidePrincipalSeccion"> METRÓPOLI </div>
-            <div class="SlidePrincipalAutor"> Clauda Aguilar/Síntesis </div>
-            <div class="SlidePrincipalFecha"> 2013-03-28 14:27:29 </div>
-            <div class="SlidePrincipalSumario"> Sumario </div>
-          </div>
-        </div>
-        </a> 
-        
-        <a href="#nota">
-        <div style="display:inline-block; overflow:hidden">
-          <div class="SlidePrincipalImagen"> <img src="imagenes/imagenes-articulos/4.jpg"> </div>
-          <div class="SlidePrincipalContenido">
-            <div class="SlidePrincipalTitulo"> Signan convenio para obras en pueblos indígenas </div>
-            <div class="SlidePrincipalSeccion"> METRÓPOLI </div>
-            <div class="SlidePrincipalAutor"> Clauda Aguilar/Síntesis </div>
-            <div class="SlidePrincipalFecha"> 2013-03-28 14:27:29 </div>
-            <div class="SlidePrincipalSumario"> Sumario </div>
-          </div>
-        </div>
-        </a> 
-        
-        <div style="display:inline-block; overflow:hidden">
-          <div class="PublicidadSlidePrincipal">
-          <img src="imagenes/publicidad/9.jpg">
-          </div>
-        </div>
-    -->
+      <div  class="SlidePrincipal ContenedorSlidePrincipal" id="cont_slideprincipal" >
       
-    </div>
+          <!--  <a href="#nota">
+            <div style="display:inline-block; overflow:hidden">
+              <div class="SlidePrincipalImagen"> <img src="imagenes/imagenes-articulos/1.jpg"> </div>
+              <div class="SlidePrincipalContenido">
+                <div class="SlidePrincipalTitulo"> Signan convenio para obras en pueblos indígenas </div>
+                <div class="SlidePrincipalSeccion"> METRÓPOLI </div>
+                <div class="SlidePrincipalAutor"> Clauda Aguilar/Síntesis </div>
+                <div class="SlidePrincipalFecha"> 2013-03-28 14:27:29 </div>
+                <div class="SlidePrincipalSumario"> Sumario </div>
+              </div>
+            </div>
+            </a> 
+            
+            <div style="display:inline-block; overflow:hidden">
+              <div class="PublicidadSlidePrincipal">
+              <img src="imagenes/publicidad/1.jpg">
+              </div>
+            </div>
+            
+            <a href="#nota">
+            <div style="display:inline-block; overflow:hidden">
+              <div class="SlidePrincipalImagen"> <img src="imagenes/imagenes-articulos/3.jpg"> </div>
+              <div class="SlidePrincipalContenido">
+                <div class="SlidePrincipalTitulo"> Signan convenio para obras en pueblos indígenas </div>
+                <div class="SlidePrincipalSeccion"> METRÓPOLI </div>
+                <div class="SlidePrincipalAutor"> Clauda Aguilar/Síntesis </div>
+                <div class="SlidePrincipalFecha"> 2013-03-28 14:27:29 </div>
+                <div class="SlidePrincipalSumario"> Sumario </div>
+              </div>
+            </div>
+            </a> 
+            
+            <a href="#nota">
+            <div style="display:inline-block; overflow:hidden">
+              <div class="SlidePrincipalImagen"> <img src="imagenes/imagenes-articulos/4.jpg"> </div>
+              <div class="SlidePrincipalContenido">
+                <div class="SlidePrincipalTitulo"> Signan convenio para obras en pueblos indígenas </div>
+                <div class="SlidePrincipalSeccion"> METRÓPOLI </div>
+                <div class="SlidePrincipalAutor"> Clauda Aguilar/Síntesis </div>
+                <div class="SlidePrincipalFecha"> 2013-03-28 14:27:29 </div>
+                <div class="SlidePrincipalSumario"> Sumario </div>
+              </div>
+            </div>
+            </a> 
+            
+            <div style="display:inline-block; overflow:hidden">
+              <div class="PublicidadSlidePrincipal">
+              <img src="imagenes/publicidad/9.jpg">
+              </div>
+            </div>
+        -->
+        </div>
   <!--Slide Principal--> 
   
   <!--Slide Miniaturas-->
@@ -507,14 +520,7 @@ function mensaje(seccion)
   <!--Slide Vertical-->
   <div class="DivVertical">
     <div  class="ContenedorSlideVertical" id="content_slideVertical" >
-     <!--
-        se carga de php
-        <div > 
-            <div class="PublicidadSlideVertical">
-                <img src="imagenes/publicidad/3.jpg">
-            </div>
-        </div>-->
-        
+
     </div>
   </div>
   <!--Slide Vertical--> 
@@ -522,7 +528,7 @@ function mensaje(seccion)
   <!--Contenedor Minuti a Minuto Video y Suplementos-->
   <div class="ContenedorDivMedio">
     <div class="ContenedorMinutovideo">
-      <div class="Minuto_A_Minuto">
+      <div class="Minuto_A_Minuto" id="minuto_home">
        <!-- minuto a minuto -->
       </div>
       <a href="#video"><div class="Video"> <img src="imagenes/video.png"> </div></a>
@@ -617,83 +623,12 @@ function mensaje(seccion)
   </div>
   <div> 
   
-  <div class="back_nacion SeccionSeccion">
-  	PUEBLA
+  <div class="back_nacion SeccionSeccion" id="name_SeccionSeccion">
+  	PUEBLA  plaza
   </div>
     <!--Slide Principal Plaza-->
     <div class="ContenedorPrincipalSeccion">
-      <div style="float:left;margin-right:-30000px;">
-        
-        <div class="SubContenedorPrincipalSeccion"> 
-            <a href="#nota">
-              <div class="ContenidoPrincipalSeccion">
-                <div class="ImagenPrincipalSeccion"> <img src="imagenes/imagenes-articulos/10.jpg" > </div>
-                <div class="TextoPrincipalSeccion">
-                  <div class="TituloPrincipalSeccion"> Signan convenio para obras en pueblos indígenas </div>
-                  <div class="SeccionPrincipalSeccion"> METRÓPOLI </div>
-                  <div class="AutorPrincipalSeccion"> Clauda Aguilar/Síntesis </div>
-                  <div class="FechaPrincipalSeccion"> 2013-03-28 14:27:29 </div>
-                </div>
-              </div>
-              </a> 
-              
-              <a href="#nota">
-              <div class="ContenidoPrincipalSeccion">
-                <div class="ImagenPrincipalSeccion"> <img src="imagenes/imagenes-articulos/2.jpg" > </div>
-                <div class="TextoPrincipalSeccion">
-                  <div class="TituloPrincipalSeccion"> Signan convenio para obras en pueblos indígenas </div>
-                  <div class="SeccionPrincipalSeccion"> METRÓPOLI </div>
-                  <div class="AutorPrincipalSeccion"> Clauda Aguilar/Síntesis </div>
-                  <div class="FechaPrincipalSeccion"> 2013-03-28 14:27:29 </div>
-                </div>
-              </div>
-              </a> 
-              
-              <div class="ContenidoPrincipalSeccion">
-                <div class="PublicidadPrincipalSeccion"> <img src="imagenes/publicidad/5.jpg" > </div>
-              </div>
-              
-              <a href="#nota">
-              <div class="ContenidoPrincipalSeccion">
-                <div class="ImagenPrincipalSeccion"> <img src="imagenes/imagenes-articulos/3.jpg" > </div>
-                <div class="TextoPrincipalSeccion">
-                  <div class="TituloPrincipalSeccion"> Signan convenio para obras en pueblos indígenas </div>
-                  <div class="SeccionPrincipalSeccion"> METRÓPOLI </div>
-                  <div class="AutorPrincipalSeccion"> Clauda Aguilar/Síntesis </div>
-                  <div class="FechaPrincipalSeccion"> 2013-03-28 14:27:29 </div>
-                </div>
-              </div>
-              </a> 
-              
-              <a href="#nota">
-              <div class="ContenidoPrincipalSeccion">
-                <div class="ImagenPrincipalSeccion"> <img src="imagenes/imagenes-articulos/4.jpg" > </div>
-                <div class="TextoPrincipalSeccion">
-                  <div class="TituloPrincipalSeccion"> Signan convenio para obras en pueblos indígenas </div>
-                  <div class="SeccionPrincipalSeccion"> METRÓPOLI </div>
-                  <div class="AutorPrincipalSeccion"> Clauda Aguilar/Síntesis </div>
-                  <div class="FechaPrincipalSeccion"> 2013-03-28 14:27:29 </div>
-                </div>
-              </div>
-              </a> 
-              
-              <div class="ContenidoPrincipalSeccion">
-                <div class="PublicidadPrincipalSeccion"> <img src="imagenes/publicidad/8.jpg" > </div>
-              </div>
-              
-              <a href="#nota">
-              <div class="ContenidoPrincipalSeccion">
-                <div class="ImagenPrincipalSeccion"> <img src="imagenes/imagenes-articulos/4.jpg" > </div>
-                <div class="TextoPrincipalSeccion">
-                  <div class="TituloPrincipalSeccion"> Signan convenio para obras en pueblos indígenas </div>
-                  <div class="SeccionPrincipalSeccion"> METRÓPOLI </div>
-                  <div class="AutorPrincipalSeccion"> Clauda Aguilar/Síntesis </div>
-                  <div class="FechaPrincipalSeccion"> 2013-03-28 14:27:29 </div>
-                </div>
-              </div>
-              </a> 
-              
-          </div>
+  
           
           
       </div>
@@ -702,67 +637,15 @@ function mensaje(seccion)
     
     <!--Slide Vertical Seccion-->
     <div class="DivVertical">
-      <div  class="ContenedorSlideVertical" >
-        <div > <a href="#nota" onclick="LeerNota('.$id_nota_app.')">
-          <div class="SlideVerticalArticulo">
-           
-            <div class="SlideVerticalImagen"><img src="imagenes/imagenes-articulos/6.jpg" > </div>
-            <div class="SlideVerticalContenido">
-              <div class="SlideVerticalTitulo">Recibirá Puebla el Grand Slam...</div>
-              <div class="SlideVerticalAutor">Alma Liliana Velazquez /Síntesis</div>
-              <div class="SlideVerticalFecha">2013-03-28 17:40:48</div>
-            </div>
-          </div>
-          </a> </div>
-        <div > <a href="#nota" onclick="LeerNota('.$id_nota_app.')">
-          <div class="SlideVerticalArticulo">
-           
-            <div class="SlideVerticalImagen"><img src="imagenes/imagenes-articulos/3.jpg" > </div>
-            <div class="SlideVerticalContenido">
-              <div class="SlideVerticalTitulo">Recibirá Puebla el Grand Slam...</div>
-              <div class="SlideVerticalAutor">Alma Liliana Velazquez /Síntesis</div>
-              <div class="SlideVerticalFecha">2013-03-28 17:40:48</div>
-            </div>
-          </div>
-          </a> </div>
-          
-          <div > 
-            <div class="PublicidadSlideVertical">
-                <img src="imagenes/publicidad/2.jpg">
-            </div>
-        </div>
-        
-        <div > <a href="#nota" onclick="LeerNota('.$id_nota_app.')">
-          <div class="SlideVerticalArticulo">
-           
-            <div class="SlideVerticalImagen"><img src="imagenes/imagenes-articulos/2.jpg" > </div>
-            <div class="SlideVerticalContenido">
-              <div class="SlideVerticalTitulo">Recibirá Puebla el Grand Slam...</div>
-              <div class="SlideVerticalAutor">Alma Liliana Velazquez /Síntesis</div>
-              <div class="SlideVerticalFecha">2013-03-28 17:40:48</div>
-            </div>
-          </div>
-          </a> </div>
-        <div > <a href="#nota" onclick="LeerNota('.$id_nota_app.')">
-          <div class="SlideVerticalArticulo">
-            
-            <div class="SlideVerticalImagen"><img src="imagenes/imagenes-articulos/7.jpg" > </div>
-            <div class="SlideVerticalContenido">
-              <div class="SlideVerticalTitulo">Recibirá Puebla el Grand Slam...</div>
-              <div class="SlideVerticalAutor">Alma Liliana Velazquez /Síntesis</div>
-              <div class="SlideVerticalFecha">2013-03-28 17:40:48</div>
-            </div>
-          </div>
-          </a> </div>
-      </div>
+    
     </div>
     <!--Slide Vertical Seccion--> 
     
     <!--Contenedor Minuto a Minuto Video y Suplementos-->
     <div class="ContenedorDivMedio">
       <div class="ContenedorMinutovideo">
-        <div class="Minuto_A_Minuto">
-          <div style="width:90%;">
+        <div class="Minuto_A_Minuto" id="minuto_plaza">
+         <!-- <div style="width:90%;">
             <div style="display:inline-block; color: rgb(0,85,143);"> 10:49 PM </div>
             <div style="display:inline-block; color: rgb(151,151,151);"> / Mantendrá Seproci vigilancia vigilancia... </div>
             <hr>
@@ -781,11 +664,8 @@ function mensaje(seccion)
             <div style="display:inline-block; color: rgb(0,85,143);"> 10:49 PM </div>
             <div style="display:inline-block; color: rgb(151,151,151);"> / Mantendrá Seproci vigilancia vigilancia... </div>
             <hr>
-          </div>
-          <div style="width:90%;">
-            <div style="display:inline-block; color: rgb(0,85,143);"> 10:49 PM </div>
-            <div style="display:inline-block; color: rgb(151,151,151);"> / Mantendrá Seproci vigilancia vigilancia... </div>
-          </div>
+          </div>-->
+          
         </div>
         <div class="Video"> <img src="imagenes/video.png"> </div>
       </div>
@@ -1053,22 +933,7 @@ return false;
 </div>
 <!--Impreso Portadas--> 
 
-<!--Dialogo Plazas--> 
-<a href="#home" class="overlay" id="DialogoPlazas"></a>
-<div class="popup"> <a href="#plaza" onClick="CargarNoticiasPlaza('puebla')">
-  <div class="DialogoPlaza"> Puebla </div>
-  </a> <a href="#plaza" onClick="CargarNoticiasPlaza('yucatan')">
-  <div class="DialogoPlaza"> Yucatán </div>
-  </a> <a href="#plaza" onClick="CargarNoticiasPlaza('tlaxcala')">
-  <div class="DialogoPlaza"> Tlaxcala </div>
-  </a> <a href="#plaza" onClick="CargarNoticiasPlaza('hidalgo')">
-  <div class="DialogoPlaza"> Hidalgo </div>
-  </a> <a href="#plaza" onClick="CargarNoticiasPlaza('oaxaca')">
-  <div class="DialogoPlaza"> Oaxaca </div>
-  </a> <a href="#plaza" onClick="CargarNoticiasPlaza('chiapas')">
-  <div class="DialogoPlaza"> Chiapas </div>
-  </a> <a class="close" href="#home"></a> </div>
-<!--Dialogo Plazas--> 
+
 
 <!--Dialogo de Info--> 
 
@@ -1097,12 +962,12 @@ return false;
 <!--Panel de Secciones-->
 
 <div id="panelSecciones"  class="panelSeccion"> 
-  <a href="#home" onClick="$('#panelSecciones').css('left','-250%');)">
+  <a href="#home" onClick="$('#panelSecciones').css('left','-250%');), CargarNoticiasHome();">
   <div class="panelSeccionTitulo" style="background-image:url(imagenes/iconos/azules/home@2x.png);"> Home </div>
   
   <div class="paneSeccionEdicion"> Secciones </div>
   </a>
-  <a href="#secciones" onClick="$('#panelSecciones').css('left','-250%'), mensaje('nacion');">
+  <a href="#secciones" onClick="$('#panelSecciones').css('left','-250%'), CargarNoticiasPlaza('nacionales');">
   <div class="panelSeccionTitulo" style="background-image:url(imagenes/iconos/azules/nacion@2x.png);"> Nación </div>
   </a>
   <div class="panelSeccionSpacer"> </div>

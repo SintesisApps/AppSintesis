@@ -48,7 +48,7 @@ $html.='<div class="contvideogaleriaimg">
 			$html.='
 			 <div class="VideoImagen">
                 <a href="http://youtube.com/v/'.$id_video.'" onclick="return cambiarvideo(this.href,this.title)" title="Toma protesta de diputados"> <img src="http://img.youtube.com/vi/'.$id_video.'/0.jpg" />
-                  <div class="titulo_video"> <strong>'.utf8_encode($video2['titulo']).'</strong> </div>
+                  <div class="titulo_video"> <strong>Toma protesta de diputados</strong> </div>
                 </a> 
             </div> 
 			';
