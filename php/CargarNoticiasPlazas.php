@@ -239,12 +239,23 @@ $html.='</div>
 	
 //echo $html;
 $seccion_slidePrincipal.= "</div></div>";
-
+/*
 $arr1[$i]=array(
+	'titulo_seccion' => "k.klñklñkñkñ",
+	'slide_principal' => ",kñkñkñkñlñ",
+	'slide_vertical' => "ll{l{l{l{lñ{",
+	'ultimas_noticias' => "jjljljlj",
+	);*/
+	
+	$arr1[$i]=array(
 	'titulo_seccion' => $plaza_app,
 	'slide_principal' => $seccion_slidePrincipal,
 	'slide_vertical' => $slide_vertical,
 	'ultimas_noticias' => $ultimas_noticias,
 	);
+	
 echo  json_encode($arr1);
+
+
+
 ?>

@@ -58,7 +58,7 @@ while($f_app=mysql_fetch_assoc($r_app)):
 				</a></div>
 				<div > 
             <div class="PublicidadSlideVertical">
-                <img src="imagenes/publicidad/3.jpg">
+                <img src="imagenes/publicidad/3.jpg">Publicidad
             </div>
         </div>';
 				// <div class="SlideVerticalSumario">'.$SumarioSlideVertical.'</div>

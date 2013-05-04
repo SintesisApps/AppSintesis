@@ -198,7 +198,7 @@
 			{
 				 $.ajax({
 					type: "POST",
-				url: "http://166.78.193.53/APPSintesis/php/slideprincipal.php",
+				url: "http://166.78.193.53/AppSintesis/php/slideprincipal.php",
 				data: "",
 				cache: false,
 				success: function(message)
@@ -214,7 +214,7 @@
 				/*SLIDE MINIATURAS*/
 				$.ajax({
 					type: "POST",
-				url: "http://166.78.193.53/APPSintesis/php/slide_miniatura.php",
+				url: "http://166.78.193.53/AppSintesis/php/slide_miniatura.php",
 				data: "",
 				cache: false,
 				success: function(message)
@@ -228,7 +228,7 @@
 				alert("slide vertical");
 				$.ajax({
 					type: "POST",
-				url: "http://166.78.193.53/APPSintesis/php/slide_vertical.php",
+				url: "http://166.78.193.53/AppSintesis/php/slide_vertical.php",
 				data: "",
 				cache: false,
 				success: function(message)
@@ -242,7 +242,7 @@
 			{
 				$.ajax({
 					type: "POST",
-				url: "http://166.78.193.53/APPSintesis/php/galeria_imagenes.php",
+				url: "http://166.78.193.53/AppSintesis/php/galeria_imagenes.php",
 				data: "",
 				cache: false,
 				success: function(message)
@@ -256,7 +256,7 @@
 			{
 				$.ajax({
 					type: "POST",
-				url: "http://166.78.193.53/APPSintesis/php/galeria_video.php",
+				url: "http://166.78.193.53/AppSintesis/php/galeria_video.php",
 				data: "",
 				cache: false,
 				success: function(message)
@@ -270,7 +270,7 @@
 			{
 				$.ajax({
 					type: "POST",
-				url: "http://166.78.193.53/APPSintesis/php/minutoaminuto.php",
+				url: "http://166.78.193.53/AppSintesis/php/minutoaminuto.php",
 				data: "",
 				cache: false,
 				success: function(message)
@@ -313,12 +313,12 @@
 	} 
 	
 	function CargarNoticiasPlaza(plaza)
-	{
+	{alert("plaza");
 			$.ajax(
 			{
 
 				type: "POST",
-				url: "http://166.78.193.53/APPSintesis/php/CargarNoticiasPlazas.php",
+				url: "http://166.78.193.53/AppSintesis/php/CargarNoticiasPlazas.php",
 				data: "plaza="+plaza,
 				cache: false,
 				success: function(message)
@@ -362,11 +362,12 @@
 			{
 
 				type: "POST",
-				url: "http://166.78.193.53/APPSintesis/php/cargar_seccion.php",
+				url: "http://166.78.193.53/AppSintesis/php/cargar_seccion.php",
 				data: "seccion="+seccion,
 				cache: false,
 				success: function(message)
 				{
+					
 				}
 			});
 
@@ -386,7 +387,7 @@ function LeerNota(id)
 			{
 
 				type: "POST",
-				url: "http://166.78.193.53/APPSintesis/php/Nota.php",
+				url: "http://166.78.193.53/AppSintesis/php/Nota.php",
 				data: "id="+id,
 				cache: false,
 				success: function(message)
