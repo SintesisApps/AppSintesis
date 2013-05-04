@@ -189,69 +189,33 @@ while($f_app2=mysql_fetch_assoc($r_app2)):
 
 endwhile;
 
-/*echo $html;
-$ultimas_noticias='
-		<div style="width:90%;">
-            <div style="display:inline-block; color: rgb(0,85,143);"> 10:49 PM </div>
-            <div style="display:inline-block; color: rgb(151,151,151);"> / Mantendrá Seproci vigilancia vigilancia... </div>
-            <hr>
-          </div>
-';*/
+
 
 /*ULTIMAS NOTICIAS*/
 
-/*		
-
-$html.='</div>
-    <!--Slide Vertical--> 
-	
-<script>
-
-      jQuery(document).ready(function($) {
-
-  $(".simple-vertical-plaza").royalSlider({
-    arrowsNav: false,
-    arrowsNavAutoHide: false,
-    fadeinLoadedSlide: true,
-    controlNavigation: "none",
-    imageScaleMode: "fill",
-    imageAlignCenter:true,
-    loop: false,
-    loopRewind: false,
-    numImagesToPreload: 4,
-    slidesOrientation: "vertical",
-    keyboardNavEnabled: true,
-    video: {
-      autoHideArrows:true,
-      autoHideControlNav:true
-    },  
-
-    autoScaleSlider: false, 
-    autoScaleSliderWidth: 960,     
-    autoScaleSliderHeight: 450
-  });
- 
-  });
-  
-  
-
-    </script>';*/
-	
-//echo $html;
 $seccion_slidePrincipal.= "</div></div>";
-/*
-$arr1[$i]=array(
-	'titulo_seccion' => "k.klñklñkñkñ",
-	'slide_principal' => ",kñkñkñkñlñ",
-	'slide_vertical' => "ll{l{l{l{lñ{",
-	'ultimas_noticias' => "jjljljlj",
-	);*/
+
+if($plaza_app=="nacionales")
+{$url_video="nacionales";}
+else
+{
+$info_plaza=mysql_query("SELECT * FROM plazas WHERE seudonimo='".$plaza_app."'");
+$array_plaza=mysql_fetch_array($info_plaza);
+
+$url_video=$array_plaza['id_plaza'];	
+}
+
+
+	
+
+$video='<a href="#video" onClick="galeria_video(\''.$url_video.'\')"><div class="Video" id="video_Seccion"> <img src="imagenes/video.png"> </div></a>';
 	
 	$arr1[$i]=array(
 	'titulo_seccion' => $plaza_app,
 	'slide_principal' => $seccion_slidePrincipal,
 	'slide_vertical' => $slide_vertical,
 	'ultimas_noticias' => $ultimas_noticias,
+	'video' => $video ,
 	);
 	
 echo  json_encode($arr1);

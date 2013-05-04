@@ -20,128 +20,7 @@
 	<link href="js/galeria/photoswipe.css" type="text/css" rel="stylesheet" />
 	<script type="text/javascript" src="js/galeria/lib/klass.min.js"></script>
 	<script type="text/javascript" src="js/galeria/code.photoswipe-3.0.4.min.js"></script>
-	<script type="text/javascript">
 
-		(function(window, PhotoSwipe){
-		
-			document.addEventListener('DOMContentLoaded', function(){
-			
-				var
-					options = {},
-					instance = PhotoSwipe.attach( window.document.querySelectorAll('#Gallery a'), options );
-					
-					
-					// onBeforeShow
-					instance.addEventHandler(PhotoSwipe.EventTypes.onBeforeShow, function(e){
-						console.log('onBeforeShow');
-					});
-					
-					// onShow
-					instance.addEventHandler(PhotoSwipe.EventTypes.onShow, function(e){
-						console.log('onShow');
-					});
-					
-					// onBeforeHide
-					instance.addEventHandler(PhotoSwipe.EventTypes.onBeforeHide, function(e){
-						console.log('onBeforeHide');
-					});
-					
-					// onHide
-					instance.addEventHandler(PhotoSwipe.EventTypes.onHide, function(e){
-						console.log('onHide');
-					});
-					
-					// onDisplayImage
-					instance.addEventHandler(PhotoSwipe.EventTypes.onDisplayImage, function(e){
-						console.log('onDisplayImage{');
-						console.log('onDisplayImage - e.action = ' + e.action);
-						console.log('onDisplayImage - e.index = ' + e.index);
-						console.log(instance.getCurrentImage());
-						console.log('onDisplayImage}');
-					});
-					
-					// onResetPosition
-					instance.addEventHandler(PhotoSwipe.EventTypes.onResetPosition, function(e){
-						console.log('onResetPosition');
-					});
-					
-					// onSlideshowStart
-					instance.addEventHandler(PhotoSwipe.EventTypes.onSlideshowStart, function(e){
-						console.log('onSlideshowStart');
-					});
-					
-					// onSlideshowStop
-					instance.addEventHandler(PhotoSwipe.EventTypes.onSlideshowStop, function(e){
-						console.log('onSlideshowStop');
-					});
-					
-					// onTouch
-					instance.addEventHandler(PhotoSwipe.EventTypes.onTouch, function(e){
-						console.log('onTouch{');
-						console.log('onTouch - e.action = ' + e.action);
-						console.log('onTouch - e.point = ');
-						console.log(e.point);
-						console.log('onTouch}');
-					});
-					
-					// onBeforeCaptionAndToolbarShow
-					instance.addEventHandler(PhotoSwipe.EventTypes.onBeforeCaptionAndToolbarShow, function(e){
-						console.log('onBeforeCaptionAndToolbarShow');
-					});
-					
-					// onCaptionAndToolbarShow
-					instance.addEventHandler(PhotoSwipe.EventTypes.onCaptionAndToolbarShow, function(e){
-						console.log('onCaptionAndToolbarShow');
-					});
-					
-					// onBeforeCaptionAndToolbarHide
-					instance.addEventHandler(PhotoSwipe.EventTypes.onBeforeCaptionAndToolbarHide, function(e){
-						console.log('onBeforeCaptionAndToolbarHide');
-					});
-					
-					// onCaptionAndToolbarHide
-					instance.addEventHandler(PhotoSwipe.EventTypes.onCaptionAndToolbarHide, function(e){
-						console.log('onCaptionAndToolbarHide');
-					});
-					
-					// onToolbarTap
-					instance.addEventHandler(PhotoSwipe.EventTypes.onToolbarTap, function(e){
-						console.log('onToolbarTap');
-						console.log(e);
-					});
-					
-					// onBeforeZoomPanRotateShow
-					instance.addEventHandler(PhotoSwipe.EventTypes.onBeforeZoomPanRotateShow, function(e){
-						console.log('onBeforeZoomPanRotateShow');
-					});
-					
-					// onZoomPanRotateShow
-					instance.addEventHandler(PhotoSwipe.EventTypes.onZoomPanRotateShow, function(e){
-						console.log('onZoomPanRotateShow');
-					});
-					
-					// onBeforeZoomPanRotateHide
-					instance.addEventHandler(PhotoSwipe.EventTypes.onBeforeZoomPanRotateHide, function(e){
-						console.log('onBeforeZoomPanRotateHide');
-					});
-					
-					// onZoomPanRotateHide
-					instance.addEventHandler(PhotoSwipe.EventTypes.onZoomPanRotateHide, function(e){
-						console.log('onZoomPanRotateHide');
-					});
-					
-					// onZoomPanRotateTransform
-					instance.addEventHandler(PhotoSwipe.EventTypes.onZoomPanRotateTransform, function(e){
-						console.log('onZoomPanRotateTransform');
-						console.log(e);
-					});
-					
-			}, false);
-			
-			
-		}(window, window.Code.PhotoSwipe));
-		
-	</script>
     
     
 <!-- geolocalizacion -->
@@ -179,21 +58,26 @@
     </script>
     <!-- carga de noticias -->
     <script>
+	
+		
 			$(document).ready(function() {
 				
 				//alert("conexion:"+navigator.connection.type);
 					slidePrincipal();
 					slideMiniatura();
 					slideVertical();
-					galeriaImagenes();
+					//galeriaImagenes();
 					galeria_video('nacionales');	
 					minuto_minuto();
+					
 				
 				
             });
 			
 			
 			
+	
+	
 			function slidePrincipal()
 			{
 				 $.ajax({
@@ -253,6 +137,7 @@
 			
 			function galeria_video(plaza)
 			{
+
 				$.ajax({
 					type: "POST",
 				url: "http://166.78.193.53/AppSintesis/php/galeria_video.php",
@@ -652,27 +537,164 @@ function LeerNota(id)
 <!--Secciones--> 
 
 <!--Galeria de Fotos-->
+
+    
 <div id="galeria" class="TransicionFadeOut" style="background-image:url(imagenes/black_linen_v2.png)"  >
   <div class="HeaderAlternativo">
     <div style=" display:inline-block; padding-top:0px; width:10%; padding-left:10px;"> <a href="javascript:;" onClick="history.back(-1);"> <img src="imagenes/iconos/azules/regresar@2x.png" width="50" > </a> </div>
     <div style=" display:inline-block; width:75%; vertical-align: top; padding-top:10px; text-align:center;"> <img src="imagenes/logo.png" height="25"> </div>
   </div>
   
-  <div style="height:93.5%; overflow:hidden;" id="content_gal">
-   <!--	<div id="MainContent">
-    <ul id="Gallery" class="gallery">
-    
-    <li><a href="http://166.78.193.53/images/imagenes-galeria/globo2.jpg"><img src="http://166.78.193.53/images/imagenes-galeria/globo2.jpg" width="150" height="150" alt="" /></a></li>
-    <li><a href="http://166.78.193.53/images/imagenes-galeria/globo2.jpg"><img src="http://166.78.193.53/images/imagenes-galeria/globo2.jpg" width="150" height="150" alt="" /></a></li>
-    <li><a href="http://166.78.193.53/images/imagenes-galeria/globo2.jpg"><img src="http://166.78.193.53/images/imagenes-galeria/globo2.jpg" width="150" height="150" alt="" /></a></li>
-    <li><a href="http://166.78.193.53/images/imagenes-galeria/globo2.jpg"><img src="http://166.78.193.53/images/imagenes-galeria/globo2.jpg" width="150" height="150" alt="" /></a></li>
-    <li><a href="http://166.78.193.53/images/imagenes-galeria/globo2.jpg"><img src="http://166.78.193.53/images/imagenes-galeria/globo2.jpg" width="150" height="150" alt="" /></a></li>
-  </ul>
-  
-    </div>-->
+   	<div id="MainContent">
+    	<!--<ul id="CarruselGaleriaImagenes" class="gallery">
+       
+		 <li><a href="http://166.78.193.53/images/imagenes-suplementos/suplemento_velocidad.jpg"><img src="http://166.78.193.53/images/imagenes-suplementos/suplemento_velocidad.jpg" alt="" /></a></li>
+			<script>
+(function(window, PhotoSwipe){
+			document.addEventListener('DOMContentLoaded', function(){
+			
+				var
+					options = {},
+					instance = PhotoSwipe.attach( window.document.querySelectorAll('#CarruselGaleriaImagenes a'), options );
+					
+					
+					// onBeforeShow
+					instance.addEventHandler(PhotoSwipe.EventTypes.onBeforeShow, function(e){
+						console.log('onBeforeShow');
+					});
+					
+					// onShow
+					instance.addEventHandler(PhotoSwipe.EventTypes.onShow, function(e){
+						console.log('onShow');
+					});
+					
+					// onBeforeHide
+					instance.addEventHandler(PhotoSwipe.EventTypes.onBeforeHide, function(e){
+						console.log('onBeforeHide');
+					});
+					
+					// onHide
+					instance.addEventHandler(PhotoSwipe.EventTypes.onHide, function(e){
+						console.log('onHide');
+					});
+					
+					// onDisplayImage
+					instance.addEventHandler(PhotoSwipe.EventTypes.onDisplayImage, function(e){
+						console.log('onDisplayImage{');
+						console.log('onDisplayImage - e.action = ' + e.action);
+						console.log('onDisplayImage - e.index = ' + e.index);
+						console.log(instance.getCurrentImage());
+						console.log('onDisplayImage}');
+					});
+					
+					// onResetPosition
+					instance.addEventHandler(PhotoSwipe.EventTypes.onResetPosition, function(e){
+						console.log('onResetPosition');
+					});
+					
+					// onSlideshowStart
+					instance.addEventHandler(PhotoSwipe.EventTypes.onSlideshowStart, function(e){
+						console.log('onSlideshowStart');
+					});
+					
+					// onSlideshowStop
+					instance.addEventHandler(PhotoSwipe.EventTypes.onSlideshowStop, function(e){
+						console.log('onSlideshowStop');
+					});
+					
+					// onTouch
+					instance.addEventHandler(PhotoSwipe.EventTypes.onTouch, function(e){
+						console.log('onTouch{');
+						console.log('onTouch - e.action = ' + e.action);
+						console.log('onTouch - e.point = ');
+						console.log(e.point);
+						console.log('onTouch}');
+					});
+					
+					// onBeforeCaptionAndToolbarShow
+					instance.addEventHandler(PhotoSwipe.EventTypes.onBeforeCaptionAndToolbarShow, function(e){
+						console.log('onBeforeCaptionAndToolbarShow');
+					});
+					
+					// onCaptionAndToolbarShow
+					instance.addEventHandler(PhotoSwipe.EventTypes.onCaptionAndToolbarShow, function(e){
+						console.log('onCaptionAndToolbarShow');
+					});
+					
+					// onBeforeCaptionAndToolbarHide
+					instance.addEventHandler(PhotoSwipe.EventTypes.onBeforeCaptionAndToolbarHide, function(e){
+						console.log('onBeforeCaptionAndToolbarHide');
+					});
+					
+					// onCaptionAndToolbarHide
+					instance.addEventHandler(PhotoSwipe.EventTypes.onCaptionAndToolbarHide, function(e){
+						console.log('onCaptionAndToolbarHide');
+					});
+					
+					// onToolbarTap
+					instance.addEventHandler(PhotoSwipe.EventTypes.onToolbarTap, function(e){
+						console.log('onToolbarTap');
+						console.log(e);
+					});
+					
+					// onBeforeZoomPanRotateShow
+					instance.addEventHandler(PhotoSwipe.EventTypes.onBeforeZoomPanRotateShow, function(e){
+						console.log('onBeforeZoomPanRotateShow');
+					});
+					
+					// onZoomPanRotateShow
+					instance.addEventHandler(PhotoSwipe.EventTypes.onZoomPanRotateShow, function(e){
+						console.log('onZoomPanRotateShow');
+					});
+					
+					// onBeforeZoomPanRotateHide
+					instance.addEventHandler(PhotoSwipe.EventTypes.onBeforeZoomPanRotateHide, function(e){
+						console.log('onBeforeZoomPanRotateHide');
+					});
+					
+					// onZoomPanRotateHide
+					instance.addEventHandler(PhotoSwipe.EventTypes.onZoomPanRotateHide, function(e){
+						console.log('onZoomPanRotateHide');
+					});
+					
+					// onZoomPanRotateTransform
+					instance.addEventHandler(PhotoSwipe.EventTypes.onZoomPanRotateTransform, function(e){
+						console.log('onZoomPanRotateTransform');
+						console.log(e);
+					});
+					
+			}, false);
+			
+			
+		}(window, window.Code.PhotoSwipe));
+	</script>
+			 </ul>-->
+    </div>
 
-  </div>
 </div>
+
+
+<script>
+CargarGaleriaImagenes();
+		function CargarGaleriaImagenes()
+	{
+			$.ajax(
+			{
+
+				type: "POST",
+				url: "http://166.78.193.53/APPSintesis/php/CargarGaleriaImagenes.php",
+				data: "",
+				cache: false,
+				success: function(message)
+				{
+				
+				$('#MainContent').append(message);
+				}
+			});
+
+	} 
+	
+</script>
 <!--Galeria de Fotos-->
 
 <!--Ubicacion-->

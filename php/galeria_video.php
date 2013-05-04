@@ -8,7 +8,7 @@ $plaza=$_POST["plaza"];
 if($plaza=="nacionales")
 {$select_app="SELECT * FROM galeria_videos  WHERE estatus='1' ORDER BY fecha DESC limit 1";}
 else //por id de la plaza
-{$select_app="SELECT * FROM galeria_videos  WHERE estatus='1' ORDER BY fecha DESC limit 1";}
+{$select_app="SELECT * FROM galeria_videos  WHERE estatus='1' and plaza='".$plaza."' ORDER BY fecha DESC limit 1";}
 
 $html='';
 
@@ -46,8 +46,12 @@ while($video=mysql_fetch_array($r_app))
 
 $html.='<div class="contvideogaleriaimg"> 
       	<div class="contvideogaleriaimg_secundario">';
-
-		$reg="SELECT * FROM galeria_videos WHERE id NOT IN (SELECT max(id) FROM galeria_videos) and estatus='1' ORDER BY fecha DESC";
+		if($plaza=="nacionales"){
+		$reg="SELECT * FROM galeria_videos WHERE id NOT IN (SELECT max(id) FROM galeria_videos) and estatus='1' ORDER BY fecha DESC";}
+		else
+		{//and plaza='".$plaza."'
+		$reg="SELECT * FROM galeria_videos WHERE id NOT IN (SELECT max(id) FROM galeria_videos where plaza='".$plaza."') and estatus='1' and plaza='".$plaza."' ORDER BY fecha DESC";
+		}
 		$registros=mysql_query($reg);
 		while($video2=mysql_fetch_array($registros))
 		{
@@ -69,7 +73,7 @@ $html.='</div></div>';
 
 
 
-echo $plaza;
+echo $html;
 
 
 
