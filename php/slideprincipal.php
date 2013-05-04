@@ -3,15 +3,8 @@
 include("../../includes/conexion.php");
 include('../../funciones.php'); 
 //Slide Principal
-/*
-$html='<div style="float:left;margin-right:-600000px;">
-        
-        <div class="SubContenedorPrincipal">';*/
-		$html="";
-//Consulta de datos
-	/*if(isset($_POST['accion'])){
-		if($_POST['accion'] == 'leer'){*/
-			//$arr = "mensaje";
+
+		$html='<div  class="SlidePrincipal ContenedorSlidePrincipal" >';
 			$arr = array();
 			$i=0;//contador
 			
@@ -67,35 +60,17 @@ $html='<div style="float:left;margin-right:-600000px;">
 	
 
 endwhile;	
-			//$html.='</div></div>';
-$html.='
-    
-	
-	
 
-<div class="wrapper page">
- 
+
+
+		
+		$html.='
+      
+    </div>
+  <!--Slide Principal--> 
+  
   <script>
       jQuery(document).ready(function($) {
-		  
- $(document).bind("dragstart", function() { return false; });
-
-	$("#mouseSwipeScroll").swipe({
-    TYPE:"mouseSwipe",
-    HORIZ: true
-  });
-  
-  $("#mouseSwipe1").swipe({
-    TYPE:"mouseSwipe",
-    HORIZ: false,
-    SNAPDISTANCE:20,
-    DURATION:250,
-    EASING:"swing",
-    ARROWS:false,
-    FADEARROWS:true,
-    PAGENUM:"#pagenum1"
-  });
-
 
   $(".SlidePrincipal").royalSlider({
     autoHeight: false,
@@ -111,71 +86,12 @@ $html.='
     keyboardNavEnabled: false,
     usePreloader: true
   });
+ 
   
-  $(".SlideMiniaturas").royalSlider({
-    autoHeight: true,
-    arrowsNav: false,
-    fadeinLoadedSlide: false,
-    controlNavigationSpacing: 0,
-    controlNavigation: "tabs",
-    imageScaleMode: "none",
-    imageAlignCenter:false,
-    loop: false,
-    loopRewind: true,
-    numImagesToPreload: 6,
-    keyboardNavEnabled: false,
-    usePreloader: true
+  
   });
-  
-  
-  
-  $(".SlideMedio").royalSlider({
-    autoHeight: true,
-    arrowsNav: false,
-    fadeinLoadedSlide: false,
-    controlNavigationSpacing: 0,
-    controlNavigation: "tabs",
-    imageScaleMode: "none",
-    imageAlignCenter:false,
-    loop: false,
-    loopRewind: true,
-    numImagesToPreload: 6,
-    keyboardNavEnabled: false,
-    usePreloader: true
-  });
-  
-  $(".simple-vertical").royalSlider({
-    arrowsNav: false,
-    arrowsNavAutoHide: false,
-    fadeinLoadedSlide: true,
-    controlNavigation: "none",
-    imageScaleMode: "fill",
-    imageAlignCenter:true,
-    loop: false,
-    loopRewind: false,
-    numImagesToPreload: 4,
-    slidesOrientation: "vertical",
-    keyboardNavEnabled: true,
-    video: {
-      autoHideArrows:true,
-      autoHideControlNav:true
-    },  
+  </script>';
 
-    autoScaleSlider: true, 
-    autoScaleSliderWidth: 960,     
-    autoScaleSliderHeight: 850
-  });
-  
-  
-  
-  });
-  
-  
-
-    </script> 
-</div>';
-
-			
 			echo $html;
 	
 

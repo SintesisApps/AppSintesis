@@ -113,6 +113,10 @@ body{
 	height: 243px;
 	vertical-align:top;
 }
+.ContenedorSlidePrincipal_php {
+	 width: 100%;
+	 margin:auto;
+}
 .SubContenedorPrincipal{
 	 width: 100%;
 	 margin:auto;

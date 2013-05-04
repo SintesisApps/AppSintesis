@@ -3,9 +3,16 @@
 include("../../includes/conexion.php");
 include('../../funciones.php');
 
+$plaza=$_POST["plaza"];
+
+if($plaza=="nacionales")
+{$select_app="SELECT * FROM galeria_videos  WHERE estatus='1' ORDER BY fecha DESC limit 1";}
+else //por id de la plaza
+{$select_app="SELECT * FROM galeria_videos  WHERE estatus='1' ORDER BY fecha DESC limit 1";}
+
 $html='';
 
-$select_app="SELECT * FROM galeria_videos  WHERE estatus='1' ORDER BY fecha DESC limit 1";
+
 $r_app=mysql_query($select_app,$conexion);
 
 function extraer_id($url)
@@ -62,7 +69,8 @@ $html.='</div></div>';
 
 
 
-echo $html;
+echo $plaza;
+
 
 
 ?>

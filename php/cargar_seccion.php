@@ -5,6 +5,15 @@ include('../../funciones.php');
 
 $seccion=$_POST["seccion"];
 
+/*ID de la seccion*/
+	$query_sec="select * from secciones WHERE seudonimo='".$seccion."' and estatus='1' ";
+	$res_sec=mysql_query($query_sec, $conexion);
+	while($reg=mysql_fetch_array($res_sec))
+	{
+		$id_seccion=$reg['id'];
+		$name_seccion=$reg['seccion'];
+	}
+	
 /*slide principal*/
 $slide_principal='<div style="float:left;margin-right:-30000px;">
         				<div class="SubContenedorPrincipalSeccion">';
@@ -19,17 +28,11 @@ $select_app="SELECT * FROM app_articulos WHERE plaza='nacionales' AND estatus='1
 		$id_articulo_app=$f_app['id_articulo'];
 		$plaza_app=$f_app['plaza'];
 	
-	/*ID de la seccion*/
-	$query_sec="select * from secciones WHERE seudonimo='".$seccion."' and estatus='1' ";
-	$res_sec=mysql_query($query_sec, $conexion);
-	while($reg=mysql_fetch_array($res_sec))
-	{
-		$id_seccion=$reg['id'];
-	}
+	
 
 	$select_ar="SELECT titulo,sumario,id_seccion,autor,fecha_creacion,nota FROM articulos_nacionales WHERE id='".$id_articulo_app."' and id_seccion='".$id_seccion."' ";
 	$r_ar=mysql_query($select_ar,$conexion);
-	$num_select=mysql_num_rows($select_ar);
+	$num_select=mysql_num_rows($r_ar);
 	
 	if($num_select ==1)//si el artuculo  correspnce a al seccion seleccionada
 	{//imprimimos datos
@@ -56,7 +59,7 @@ $select_app="SELECT * FROM app_articulos WHERE plaza='nacionales' AND estatus='1
 		$PlazaNota=utf8_encode($PlazaNota);
 	endwhile;
 	
-	$select_se="SELECT seccion FROM secciones WHERE id='".$Id_Seccion."'";
+	$select_se="SELECT seccion FROM secciones WHERE id='".$id_seccion."'";
 	$r_se=mysql_query($select_se,$conexion);
 	while($f_se=mysql_fetch_assoc($r_se)):
 		$SeccionPlaza=$f_se['seccion'];
@@ -64,7 +67,7 @@ $select_app="SELECT * FROM app_articulos WHERE plaza='nacionales' AND estatus='1
 	endwhile;
 	
 		
-		$seccion_slidePrincipal.='
+		$slide_principal.='
 		<a href="#nota" onclick="LeerNota('.$id_nota_app.')">
               <div class="ContenidoPrincipalSeccion">
                 <div class="ImagenPrincipalSeccion"><img src="'.$url_dominio_.'/images/imagenes-articulos/'.$imagenPlaza.'" ></div>
@@ -86,9 +89,9 @@ $select_app="SELECT * FROM app_articulos WHERE plaza='nacionales' AND estatus='1
 	}
 	
 endwhile;
-$seccion_slidePrincipal.= "</div></div>";
+$slide_principal.= "</div></div>";
 
-/*SLIDE VERTICAL*/
+/*slide verical*/
 $slide_vertical='<div  class="ContenedorSlideVertical" >';
 
 $select_app="SELECT * FROM app_articulos WHERE plaza='nacionales' AND estatus='1' and posicion='Slide-Vertical' ORDER BY id DESC	 ";
@@ -99,21 +102,15 @@ while($f_app=mysql_fetch_assoc($r_app)):
 	$plaza_app=$f_app['plaza'];
 	
 
-	$select_ar="SELECT titulo,sumario,id_seccion,autor,fecha_creacion,nota FROM articulos_nacionales WHERE id=".$id_articulo_app."";
+	$select_ar="SELECT titulo,sumario,id_seccion,autor,fecha_creacion,nota FROM articulos_".$plaza_app." WHERE id=".$id_articulo_app." and id_seccion='".$id_seccion."'";
+
 	$r_ar=mysql_query($select_ar,$conexion);
-	/*ID de la seccion*/
-			$query_sec="select * from secciones WHERE seudonimo='".$seccion."' and estatus='1' ";
-			$res_sec=mysql_query($query_sec, $conexion);
-			while($reg=mysql_fetch_array($res_sec))
-			{
-				$id_seccion=$reg['id'];
-			}
-			
-	while($f_ar=mysql_fetch_assoc($r_ar)):
-			
-			if($f_ar['id_seccion']==$id_seccion)//articulo coincide con la  busqueda
-			{
-				$TituloSlideVertical=$f_ar['titulo'];
+	$num_select=mysql_num_rows($r_ar);
+	
+	if($num_select ==1)//si el artuculo  correspnce a al seccion seleccionada
+	{
+		while($f_ar=mysql_fetch_assoc($r_ar)):
+		$TituloSlideVertical=$f_ar['titulo'];
 		$SumarioSlideVertical=$f_ar['sumario'];
 		$Id_SeccionSlideVertical=$f_ar['id_seccion'];
 		$AutorSlideVertical=$f_ar['autor'];
@@ -129,9 +126,6 @@ while($f_app=mysql_fetch_assoc($r_app)):
 		$SumarioSlideVertical=substr($SumarioSlideVertical,0,100)."...";
 		$imagen=extraer_imagen($NotaSlideVertical);
 		$imagen=utf8_decode($imagen);
-			}
-			
-		
 	endwhile;
 	
 	$select_se="SELECT seudonimo FROM secciones WHERE id='".$Id_SeccionSlideVertical."'";
@@ -155,14 +149,93 @@ while($f_app=mysql_fetch_assoc($r_app)):
           </div>
           </a> </div>
 		  
-		  <div > 
-            <div class="PublicidadSlideVertical">
-                <img src="imagenes/publicidad/2.jpg">
-            </div>
-        </div>
 		  ';
+	}
+	
+	
+
+
 endwhile;
 $slide_vertical.='</div>';
+/*slide vertical*/
 
+
+/*ULTIMAS NOTICIAS*/
+function solo_hora($date_hora)
+{
+	$fecha = split("-",$date_hora); 
+	
+	$hora = split(":", $fecha[2]); 
+	
+	$fecha_hora = split(" ", $hora[0]);  
+	
+	$fecha_sola= $fecha[0]."-".$fecha[1].'-'.$fecha_hora[0];  
+	$hora_sola=$fecha_hora[1].':'.$hora[1];
+	return $hora_sola;
+}
+
+$ultimas_noticias="";
+$cont=0;
+$select_app2="SELECT * FROM app_articulos WHERE  estatus='1' and plaza='nacionales' ORDER BY fecha DESC";
+$r_app2=mysql_query($select_app2,$conexion);
+
+while($f_app2=mysql_fetch_assoc($r_app2)):
+	$id_nota_app2=$f_app2['id'];
+	$id_articulo_app2=$f_app2['id_articulo'];
+	$plaza_app2=$f_app2['plaza'];
+	$fecha_app2=$f_app2['fecha'];
+	
+	$select_ar2="SELECT titulo,sumario,id_seccion,autor,fecha_creacion,nota FROM articulos_nacionales WHERE id=".$id_articulo_app2." and id_seccion='".$id_seccion."'";
+	
+	$r_ar2=mysql_query($select_ar2,$conexion);
+	$num_select=mysql_num_rows($r_ar2);
+	
+	if($num_select ==1)//si el artuculo  correspnce a al seccion seleccionada
+	{//mostramos las ultimas 4
+		if($cont <= 3)
+		{
+			while($f_ar2=mysql_fetch_assoc($r_ar2)):
+				$Titulo_nota2=$f_ar2['titulo'];
+				
+				$Titulo_nota2=utf8_encode($Titulo_nota2);
+				
+				$Titulo_nota2=substr($Titulo_nota2,0,40)."...";
+			endwhile;
+		/*
+		<a href="#nota" onclick="LeerNota('.$id_nota_app.')">
+		*/
+			$ultimas_noticias.='
+				<div style="width:87%;margin-left:10px;"><a href="#nota" onclick="LeerNota('.$id_nota_app2.')">
+				  <div style="display:inline-block; color: rgb(0,85,143);">'.solo_hora($fecha_app2).' </div>
+				  <div style="display:inline-block; color: rgb(151,151,151);"> / '.$Titulo_nota2.'</div></a>
+				  <hr>
+				</div>
+			';
+			
+			$cont++;
+		}
+	}
+	
+	
+	
+
+endwhile;
+/*ultimas noticias*/
+
+
+$video='<a href="#video" onClick="galeria_video(\'nacionales\')"><div class="Video" id="video_Seccion"> <img src="imagenes/video.png"> </div></a>';
+
+
+//$seccion_slidePrincipal
+$arr_seccion[$i]=array(
+	'titulo_seccion' => $name_seccion,
+	'slide_principal' => $slide_principal,
+	'slide_vertical' => $slide_vertical,
+	'ultimas_noticias' => $ultimas_noticias,
+	'video' => $video,
+	);
+	
+	
+	echo  json_encode($arr_seccion);
 
 ?>
