@@ -3,10 +3,11 @@
 include("../../includes/conexion.php");
 include('../../funciones.php'); 
 //Slide Principal
-
+/*
 $html='<div style="float:left;margin-right:-600000px;">
         
-        <div class="SubContenedorPrincipal">';
+        <div class="SubContenedorPrincipal">';*/
+		$html="";
 //Consulta de datos
 	/*if(isset($_POST['accion'])){
 		if($_POST['accion'] == 'leer'){*/
@@ -65,22 +66,115 @@ $html='<div style="float:left;margin-right:-600000px;">
 
 	
 
-endwhile;
-		/*<div class="SubContenedorPrincipal">
-			 <a href="#nota">
-            <div style="display:inline-block; overflow:hidden">
-              <div class="SlidePrincipalImagen"> <img src="imagenes/imagenes-articulos/1.jpg"> </div>
-              <div class="SlidePrincipalContenido">
-                <div class="SlidePrincipalTitulo"> Signan convenio para obras en pueblos indígenas </div>
-                <div class="SlidePrincipalSeccion"> METRÓPOLI </div>
-                <div class="SlidePrincipalAutor"> Clauda Aguilar/Síntesis </div>
-                <div class="SlidePrincipalFecha"> 2013-03-28 14:27:29 </div>
-                <div class="SlidePrincipalSumario"> Sumario </div>
-              </div>
-            </div>
-            </a> 
-		</div>*/	
-			$html.='</div></div>';
+endwhile;	
+			//$html.='</div></div>';
+$html.='
+    
+	
+	
+
+<div class="wrapper page">
+ 
+  <script>
+      jQuery(document).ready(function($) {
+		  
+ $(document).bind("dragstart", function() { return false; });
+
+	$("#mouseSwipeScroll").swipe({
+    TYPE:"mouseSwipe",
+    HORIZ: true
+  });
+  
+  $("#mouseSwipe1").swipe({
+    TYPE:"mouseSwipe",
+    HORIZ: false,
+    SNAPDISTANCE:20,
+    DURATION:250,
+    EASING:"swing",
+    ARROWS:false,
+    FADEARROWS:true,
+    PAGENUM:"#pagenum1"
+  });
+
+
+  $(".SlidePrincipal").royalSlider({
+    autoHeight: false,
+    arrowsNav: false,
+    fadeinLoadedSlide: false,
+    controlNavigationSpacing: 0,
+    controlNavigation: "tabs",
+    imageScaleMode: "none",
+    imageAlignCenter:false,
+    loop: false,
+    loopRewind: true,
+    numImagesToPreload: 6,
+    keyboardNavEnabled: false,
+    usePreloader: true
+  });
+  
+  $(".SlideMiniaturas").royalSlider({
+    autoHeight: true,
+    arrowsNav: false,
+    fadeinLoadedSlide: false,
+    controlNavigationSpacing: 0,
+    controlNavigation: "tabs",
+    imageScaleMode: "none",
+    imageAlignCenter:false,
+    loop: false,
+    loopRewind: true,
+    numImagesToPreload: 6,
+    keyboardNavEnabled: false,
+    usePreloader: true
+  });
+  
+  
+  
+  $(".SlideMedio").royalSlider({
+    autoHeight: true,
+    arrowsNav: false,
+    fadeinLoadedSlide: false,
+    controlNavigationSpacing: 0,
+    controlNavigation: "tabs",
+    imageScaleMode: "none",
+    imageAlignCenter:false,
+    loop: false,
+    loopRewind: true,
+    numImagesToPreload: 6,
+    keyboardNavEnabled: false,
+    usePreloader: true
+  });
+  
+  $(".simple-vertical").royalSlider({
+    arrowsNav: false,
+    arrowsNavAutoHide: false,
+    fadeinLoadedSlide: true,
+    controlNavigation: "none",
+    imageScaleMode: "fill",
+    imageAlignCenter:true,
+    loop: false,
+    loopRewind: false,
+    numImagesToPreload: 4,
+    slidesOrientation: "vertical",
+    keyboardNavEnabled: true,
+    video: {
+      autoHideArrows:true,
+      autoHideControlNav:true
+    },  
+
+    autoScaleSlider: true, 
+    autoScaleSliderWidth: 960,     
+    autoScaleSliderHeight: 850
+  });
+  
+  
+  
+  });
+  
+  
+
+    </script> 
+</div>';
+
 			
 			echo $html;
 	
