@@ -228,7 +228,7 @@ $video='<a href="#video" onClick="galeria_video(\'nacionales\')"><div class="Vid
 
 //$seccion_slidePrincipal
 $arr_seccion[$i]=array(
-	'titulo_seccion' => $name_seccion,
+	'titulo_seccion' => "jjjjljlj",
 	'slide_principal' => $slide_principal,
 	'slide_vertical' => $slide_vertical,
 	'ultimas_noticias' => $ultimas_noticias,
