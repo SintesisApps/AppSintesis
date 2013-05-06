@@ -266,6 +266,7 @@ body{
 .DivVertical{
 	width:35%;
 	display:inline-block;
+	height:564px;
 	}
 .ContenedorSlideVertical {
 	width: 100%;
@@ -276,7 +277,8 @@ body{
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
 	margin-bottom:50px;
-	height:300px;
+	/*height:300px;*/
+	height:564px;
 	
 	
 }
@@ -351,7 +353,7 @@ body{
 	width: 62.9%;
 	background: rgba(204,204,204,.4);
 	/*height: auto;*/
-	height:100%;
+	height:654px;
 	display:inline-block;
 	vertical-align:top;
 	margin:7px;
@@ -778,7 +780,7 @@ body{
 
 /*Slide Vertical*/
 .DivVertical{
-	height:auto;
+	height:564px;
 	}
 .ContenedorSlideVertical {
 	width: 100%;
@@ -789,7 +791,8 @@ body{
 	display:inline-block;
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
-	height:310px;
+	/*height:310px;*/
+	height:564px;
 	
 	
 }
@@ -809,7 +812,8 @@ body{
 
 /*Div Medio*/
 .ContenedorDivMedio {
-	height:310px;
+	/*height:310px;*/
+	height:564px;
 }
 /*Div Medio*/
 
@@ -843,7 +847,8 @@ body{
  @media screen and (min-width: 0px) and (max-width: 860px) {
 	 /*Div Medio*/
 .ContenedorDivMedio {
-	width:62%;
+	/*width:62%;*/
+	width:100%;
 }
 /*Div Medio*/
  }
