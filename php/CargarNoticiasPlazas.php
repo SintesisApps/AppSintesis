@@ -211,7 +211,7 @@ $url_video=$array_plaza['id_plaza'];
 
 	
 
-$video='<a href="#video" onClick="galeria_video(\''.$url_video.'\')"><div class="Video" id="video_Seccion"> <img src="imagenes/video.png"> </div></a>';
+$video='<a href="#video" onClick="galeria_video(\''.$url_video.'\')"><div class="Video" id="video_Seccion"> <img src="imagenes/video3.jpg"> </div></a>';
 	
 	$arr1[$i]=array(
 	'titulo_seccion' => $PlazaNota,

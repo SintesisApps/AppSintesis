@@ -223,7 +223,7 @@ endwhile;
 /*ultimas noticias*/
 
 
-$video='<a href="#video" onClick="galeria_video(\'nacionales\')"><div class="Video" id="video_Seccion"> <img src="imagenes/video.png"> </div></a>';
+$video='<a href="#video" onClick="galeria_video(\'nacionales\')"><div class="Video" id="video_Seccion"> <img src="imagenes/video3.jpg"> </div></a>';
 
 
 //$seccion_slidePrincipal
