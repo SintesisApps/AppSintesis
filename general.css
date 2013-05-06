@@ -410,6 +410,7 @@ body{
 }
 .DivSuplementos {
 	 width:233px;
+	 height:268px;
 	 overflow-x:auto;
 	 -webkit-overflow-scrolling: touch;
 }
@@ -421,6 +422,7 @@ body{
 	display:inline-block;
 	width: 100%;
 	vertical-align:top;
+	height:100%
 }
 /*Suplementos*/
 
