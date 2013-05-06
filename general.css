@@ -850,11 +850,11 @@ body{
 
 	 /*Slide Vertical*/
 .DivVertical{
-	height:564px;
+	height:500px;
 	width:50%;
 	}
 .ContenedorSlideVertical {
-	height:564px;
+	height:547px;
 }
 .SlideVerticalImagen {
 	width: 49%;
@@ -874,7 +874,7 @@ body{
 
 /*Div Medio*/
 .ContenedorDivMedio {
-	height:564pxpx;
+	height:547px;
 	width:47%;
 }
 /*Div Medio*/
@@ -899,8 +899,8 @@ body{
 	display:block;
 	/*width: 95%;
 	height:250px;*/
-	height:258px;
-	width:232px;
+	height:257px;
+	width:345px;
 	overflow:hidden;
 	vertical-align:top;
 	
