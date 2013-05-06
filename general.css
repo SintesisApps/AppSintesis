@@ -805,7 +805,7 @@ body{
 
 /*Div Medio*/
 .ContenedorDivMedio {
-	height:564px;
+	height:310px;
 }
 /*Div Medio*/
 
@@ -831,6 +831,7 @@ body{
 	display:inline-block;
 	width: 100%;
 	vertical-align:top;
+	height:80%;
 	
 }
 
