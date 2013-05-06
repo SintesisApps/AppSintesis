@@ -773,7 +773,8 @@ body{
 
 /*Slide Vertical*/
 .DivVertical{
-	height:auto;
+	/*height:auto;*/
+	height:564px;
 	}
 .ContenedorSlideVertical {
 	width: 100%;
@@ -804,7 +805,8 @@ body{
 
 /*Div Medio*/
 .ContenedorDivMedio {
-	height:310px;
+	/*height:310px;*/
+	height:564px;
 }
 /*Div Medio*/
 
