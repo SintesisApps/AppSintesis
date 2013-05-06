@@ -109,6 +109,7 @@
 			}
 			function slideVertical()
 			{
+				//alert("vertical");
 				$.ajax({
 					type: "POST",
 				url: "http://166.78.193.53/AppSintesis/php/slide_vertical.php",
@@ -188,10 +189,12 @@
 	
 	function CargarNoticiasHome()
 	{
+		alert("mmbn");
 		slidePrincipal();
 		slideMiniatura();
+		document.getElementById("content_slideVertical").innerHTML="";
 		document.getElementById("vertical_seccion").innerHTML="";
-		slideVertical();
+		//slideVertical();
 		galeriaImagenes();
 		galeria_video();	
 		minuto_minuto();
@@ -215,6 +218,13 @@
 						$(".SeccionSeccion").html(
 							datos[i].titulo_seccion
 						);
+						$("#name_SeccionSeccion").removeAttr("class");
+					$("#name_SeccionSeccion").addClass('back_nacion');
+					$("#name_SeccionSeccion").addClass('SeccionSeccion');
+					//color
+					//$("#name_SeccionSeccion").css({'background':'#5abfcf'});
+						
+						
 						$(".ContenedorPrincipalSeccion").html(
 							datos[i].slide_principal
 						);
@@ -252,10 +262,21 @@
 					datos = JSON.parse(message);
 					for(i=0;i<datos.length;i++)
 					{
+						
 						document.getElementById("name_SeccionSeccion").innerHTML="";
 						$(".SeccionSeccion").html(
 							datos[i].titulo_seccion
 						);
+						
+						
+						$("#name_SeccionSeccion").removeAttr("class");
+					$("#name_SeccionSeccion").addClass('back_'+datos[i].pseudo);
+					$("#name_SeccionSeccion").addClass('SeccionSeccion');
+						
+						
+						
+						
+						
 						$(".ContenedorPrincipalSeccion").html(
 							datos[i].slide_principal
 						);
@@ -491,7 +512,7 @@ function LeerNota(id)
   </div>
   <div> 
   
-  <div class="back_nacion SeccionSeccion" id="name_SeccionSeccion">
+  <div class="back_nacion SeccionSeccion" id="name_SeccionSeccion" style="color:#FFF;">
 
   </div>
     <!--Slide Principal Plaza-->
@@ -545,10 +566,11 @@ function LeerNota(id)
     <div style=" display:inline-block; width:75%; vertical-align: top; padding-top:10px; text-align:center;"> <img src="imagenes/logo.png" height="25"> </div>
   </div>
   
-   	<div id="MainContent">
-    	<!--<ul id="CarruselGaleriaImagenes" class="gallery">
+   	<div id="MainContent1">
+    	<ul id="CarruselGaleriaImagenes" class="gallery">
        
-		 <li><a href="http://166.78.193.53/images/imagenes-suplementos/suplemento_velocidad.jpg"><img src="http://166.78.193.53/images/imagenes-suplementos/suplemento_velocidad.jpg" alt="" /></a></li>
+		 <li><a href="http://166.78.193.53/images/imagenes-galeria/globo2.jpg"><img src="http://166.78.193.53/images/imagenes-galeria/globo2.jpg" width="150" height="150" alt="" /></a></li>
+    <li><a href="http://166.78.193.53/images/imagenes-suplementos/suplemento_velocidad.jpg"><img src="http://166.78.193.53/images/imagenes-suplementos/suplemento_velocidad.jpg" alt="" /></a></li>
 			<script>
 (function(window, PhotoSwipe){
 			document.addEventListener('DOMContentLoaded', function(){
@@ -668,7 +690,7 @@ function LeerNota(id)
 			
 		}(window, window.Code.PhotoSwipe));
 	</script>
-			 </ul>-->
+			 </ul>
     </div>
 
 </div>
@@ -682,13 +704,13 @@ CargarGaleriaImagenes();
 			{
 
 				type: "POST",
-				url: "http://166.78.193.53/APPSintesis/php/CargarGaleriaImagenes.php",
+				url: "http://166.78.193.53/AppSintesis/php/CargarGaleriaImagenes.php",
 				data: "",
 				cache: false,
 				success: function(message)
 				{
 				
-				$('#MainContent').append(message);
+				//$('#MainContent1').append(message);
 				}
 			});
 
@@ -804,7 +826,7 @@ function ImprimirImpresoPortada()
 <div id="impreso"  class="TransicionFadeOut" >
   <div class="HeaderAlternativo">
     
-    <div style=" display:inline-block; padding-top:0px; width:30px; vertical-align:top;padding-left:5px;"> <a href="#home"> <img src="imagenes/home@2x.png" width="50" > </a>
+    <div style=" display:inline-block; padding-top:0px; width:30px; vertical-align:top;padding-left:5px;"> <a href="#home"> <img src="http://166.78.193.53/APPSintesis/imagenes/home@2x.png" width="50" > </a>
      </div>
      
      <div style=" display:inline-block; padding-top:0px; width:50px;padding-left:10px; "> <a href="javascript:;" onClick="$('#panelSeccionesImpreso').css('left','0');"> <img src="imagenes/iconos/azules/seccion@2x.png" width="50" > </a>
@@ -1041,7 +1063,7 @@ function ImprimirImpresoTodas(plaza)
 <!--Panel de Secciones-->
 
 <div id="panelSecciones"  class="panelSeccion"> 
-  <a href="#home" onClick="$('#panelSecciones').css('left','-250%');), CargarNoticiasHome();">
+  <a href="#home" onClick="$('#panelSecciones').css('left','-250%'),CargarNoticiasHome();">
   <div class="panelSeccionTitulo" style="background-image:url(imagenes/iconos/azules/home@2x.png);"> Home </div>
   
   <div class="paneSeccionEdicion"> Secciones </div>

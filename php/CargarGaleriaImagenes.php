@@ -4,7 +4,7 @@ $html.='
        
 		 <li><a href="http://166.78.193.53/images/imagenes-suplementos/suplemento_velocidad.jpg"><img src="http://166.78.193.53/images/imagenes-suplementos/suplemento_velocidad.jpg" alt="" /></a></li>
 			
-			 </ul>';
+			 ';
 $html.="
 <script>
 (function(window, PhotoSwipe){
@@ -124,6 +124,6 @@ $html.="
 			
 			
 		}(window, window.Code.PhotoSwipe));
-	</script>";
+	</script> </ul>";
 echo $html;
 ?>

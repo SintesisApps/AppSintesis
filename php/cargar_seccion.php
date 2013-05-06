@@ -233,6 +233,7 @@ $arr_seccion[$i]=array(
 	'slide_vertical' => $slide_vertical,
 	'ultimas_noticias' => $ultimas_noticias,
 	'video' => $video,
+	'pseudo' => $seccion,
 	);
 	
 	

@@ -196,7 +196,10 @@ endwhile;
 $seccion_slidePrincipal.= "</div></div>";
 
 if($plaza_app=="nacionales")
-{$url_video="nacionales";}
+{$url_video="nacionales";
+$PlazaNota="NACI&Oacute;N";
+$plaza_app="nacion";
+}
 else
 {
 $info_plaza=mysql_query("SELECT * FROM plazas WHERE seudonimo='".$plaza_app."'");
@@ -211,11 +214,12 @@ $url_video=$array_plaza['id_plaza'];
 $video='<a href="#video" onClick="galeria_video(\''.$url_video.'\')"><div class="Video" id="video_Seccion"> <img src="imagenes/video.png"> </div></a>';
 	
 	$arr1[$i]=array(
-	'titulo_seccion' => $plaza_app,
+	'titulo_seccion' => $PlazaNota,
 	'slide_principal' => $seccion_slidePrincipal,
 	'slide_vertical' => $slide_vertical,
 	'ultimas_noticias' => $ultimas_noticias,
 	'video' => $video ,
+	'pseudo' => $plaza_app ,
 	);
 	
 echo  json_encode($arr1);
