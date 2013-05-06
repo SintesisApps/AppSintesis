@@ -350,7 +350,7 @@ body{
 .ContenedorDivMedio {
 	width: 62.9%;
 	background: rgba(204,204,204,.4);
-	height: auto;
+	height:564px;
 	display:inline-block;
 	vertical-align:top;
 	margin:7px;
@@ -362,6 +362,7 @@ body{
 .ContenedorMinutovideo {
 	width: 56%;
 	display:inline-block;
+	height:auto;
 	
 }
 /*Minuto a Minuto y Video*/
@@ -374,11 +375,11 @@ body{
 	background-position: top;
 	background-size:contain;
 	background-repeat:no-repeat;
-	height:130px;
+	height:138px;
 	font-size:12px;
 	padding-top:45px;
 	padding-left:15px;
-	max-width:345px;
+	max-width:336px;
 	/*width:363px;
 	height:185px;*/
 	
