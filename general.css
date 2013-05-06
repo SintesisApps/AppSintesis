@@ -350,7 +350,8 @@ body{
 .ContenedorDivMedio {
 	width: 62.9%;
 	background: rgba(204,204,204,.4);
-	height: auto;
+	/*height: auto;*/
+	height:100%;
 	display:inline-block;
 	vertical-align:top;
 	margin:7px;
@@ -374,11 +375,12 @@ body{
 	background-position: top;
 	background-size:contain;
 	background-repeat:no-repeat;
-	height:130px;
+	/*height:130px;*/
+	height:138px;
 	font-size:12px;
 	padding-top:45px;
 	padding-left:15px;
-	max-width:345px;
+	max-width:336px;
 	/*width:363px;
 	height:185px;*/
 	
