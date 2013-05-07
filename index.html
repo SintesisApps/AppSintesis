@@ -30,6 +30,7 @@
     <script type="text/javascript">
       function initialize() 
 	  {
+
 		  document.addEventListener("deviceready",function()
 		  {
 			  //coneccion a  geolocalizacion
@@ -557,19 +558,39 @@ function LeerNota(id)
 <!--Secciones--> 
 
 <!--Galeria de Fotos-->
-
-    
 <div id="galeria" class="TransicionFadeOut" style="background-image:url(imagenes/black_linen_v2.png)"  >
+ 
   <div class="HeaderAlternativo">
     <div style=" display:inline-block; padding-top:0px; width:10%; padding-left:10px;"> <a href="javascript:;" onClick="history.back(-1);"> <img src="imagenes/iconos/azules/regresar@2x.png" width="50" > </a> </div>
     <div style=" display:inline-block; width:75%; vertical-align: top; padding-top:10px; text-align:center;"> <img src="imagenes/logo.png" height="25"> </div>
   </div>
   
-   	<div id="MainContent">
-    	<ul id="CarruselGaleriaImagenes" class="gallery">
+   	<div id="MainContent1">
+     <script>
+CargarGaleriaImagenes();
+		function CargarGaleriaImagenes()
+	{
+			$.ajax(
+			{
+
+				type: "POST",
+				url: "http://166.78.193.53/APPSintesis/php_min/CargarGaleriaImagenes.php",
+				data: "",
+				cache: false,
+				success: function(message)
+				{
+				
+				$('#MainContent1').append(message);
+				}
+			});
+
+	} 
+	
+</script>
+    	<!--<ul id="CarruselGaleriaImagenes" class="gallery">
        
 		 <li><a href="http://166.78.193.53/images/imagenes-galeria/globo2.jpg"><img src="http://166.78.193.53/images/imagenes-galeria/globo2.jpg" width="150" height="150" alt="" /></a></li>
-    <li><a href="http://166.78.193.53/images/imagenes-suplementos/suplemento_velocidad.jpg"><img src="http://166.78.193.53/images/imagenes-suplementos/suplemento_velocidad.jpg" alt="" /></a></li>
+    <li><a href="http://166.78.193.53/images/imagenes-suplementos/suplemento_velocidad.jpg"><img src="http://166.78.193.53/images/imagenes-suplementos/suplemento_velocidad.jpg" alt="" /></a></li>-->
 			<script>
 (function(window, PhotoSwipe){
 			document.addEventListener('DOMContentLoaded', function(){
@@ -689,33 +710,15 @@ function LeerNota(id)
 			
 		}(window, window.Code.PhotoSwipe));
 	</script>
+    
+   
 			 </ul>
     </div>
 
 </div>
 
 
-<script>
-CargarGaleriaImagenes();
-		function CargarGaleriaImagenes()
-	{
-			$.ajax(
-			{
 
-				type: "POST",
-				url: "http://166.78.193.53/AppSintesis/php/CargarGaleriaImagenes.php",
-				data: "",
-				cache: false,
-				success: function(message)
-				{
-				
-				//$('#MainContent').append(message);
-				}
-			});
-
-	} 
-	
-</script>
 <!--Galeria de Fotos-->
 
 <!--Ubicacion-->
