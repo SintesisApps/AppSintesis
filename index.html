@@ -31,35 +31,7 @@
     
     
     <script type="text/javascript">
-	CargarNoticiasHomeGal();
-	function CargarNoticiasHomeGal()
-	{
-		$.ajax({
-				type: "POST",
-				url: "http://166.78.193.53/AppSintesis/php/minutoaminuto.php",
-				data: "",
-				cache: false,
-				success: function(message)
-				{	
-				$('.GaleriaImagenesContenedor').html(message);
-				}
-				});
-		/*
-			$.ajax(
-			{
-
-				type: "POST",
-				url: "http://166.78.193.53/APPSintesis/php/CargarGaleriaImagenes2.php",
-				data: "",
-				cache: false,
-				success: function(message)
-				{alert("entras");
-				$('.GaleriaImagenesContenedor').html(message);
-				}
-			});*/
-
-	} 
-
+	
 
 	</script>
 
@@ -113,12 +85,32 @@
 					//galeriaImagenes();
 					galeria_video('nacionales');	
 					minuto_minuto();
+					CargarNoticiasHomeGal();
 					
 				
 				
             });
 			
 			
+	function CargarNoticiasHomeGal()
+	{
+		
+		
+			$.ajax(
+			{
+
+				type: "POST",
+				url: "http://166.78.193.53/APPSintesis/php/CargarGaleriaImagenes2.php",
+				data: "",
+				cache: false,
+				success: function(message)
+				{alert("entras");
+				$('.GaleriaImagenesContenedor').html(message);
+				}
+			});
+
+	} 
+
 			
 	
 	
