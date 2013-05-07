@@ -92,24 +92,20 @@
             });
 			
 			
-	function CargarNoticiasHomeGal()
-	{
-		
-		
-			$.ajax(
+			function CargarNoticiasHomeGal()
 			{
-
-				type: "POST",
-				url: "http://166.78.193.53/APPSintesis/php/CargarGaleriaImagenes2.php",
-				data: "",
-				cache: false,
-				success: function(message)
-				{alert("entras");
-				$('.GaleriaImagenesContenedor').html(message);
-				}
-			});
-
-	} 
+				$.ajax({
+						type: "POST",
+						url: "http://166.78.193.53/APPSintesis/php/CargarGaleriaImagenes2.php",
+						data: "",
+						cache: false,
+						success: function(message)
+						{alert("entras");
+						$('.GaleriaImagenesContenedor').html(message);
+						}
+					});
+		
+			} 
 
 			
 	
