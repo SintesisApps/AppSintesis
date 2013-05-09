@@ -8,14 +8,33 @@ include('../../funciones.php');
 			$arr = array();
 			$i=0;//contador
 			
-			$select_app="SELECT * FROM app_articulos WHERE posicion='Slide-Principal' AND estatus='1' ORDER BY id DESC";
+			//$select_app="SELECT * FROM app_articulos WHERE posicion='Slide-Principal' AND estatus='1' ORDER BY id DESC";
+			$select_app="SELECT * FROM app_articulos WHERE posicion='Slide-Principal' and estatus='1' 
+							UNION
+						SELECT * FROM app_publicidad where posicion='Slide-Principal' and estatus='1'
+						ORDER BY id DESC";
+			
 	$r_app=mysql_query($select_app,$conexion);
+	
+	
 	while($f_app=mysql_fetch_assoc($r_app)):
 		$id_nota_app=$f_app['id'];
 		$id_articulo_app=$f_app['id_articulo'];
 		$plaza_app=$f_app['plaza'];
 		
-		$select_ar="SELECT titulo,sumario,id_seccion,autor,fecha_creacion,nota FROM articulos_".$plaza_app." WHERE id=".$id_articulo_app."";
+		if($id_articulo_app==0)//publicidad
+		{
+				$html.='
+				<div style="display:inline-block; overflow:hidden">
+					  <div class="PublicidadSlidePrincipal">
+					  <img src="'.$url_dominio_.'/images/imagenes-publicidad/'.$f_app['ruta'].'" >
+					  </div>
+					</div>
+				';
+		}
+		else
+		{
+			$select_ar="SELECT titulo,sumario,id_seccion,autor,fecha_creacion,nota FROM articulos_".$plaza_app." WHERE id=".$id_articulo_app."";
 		
 		$r_ar=mysql_query($select_ar,$conexion);
 		while($f_ar=mysql_fetch_assoc($r_ar)):
@@ -56,6 +75,9 @@ include('../../funciones.php');
       </div>
       </a>
 	';
+		}
+		
+		
 
 	
 
@@ -91,6 +113,7 @@ endwhile;
   
   });
   </script>';
+
 
 			echo $html;
 	

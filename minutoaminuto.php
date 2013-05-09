@@ -26,7 +26,7 @@ while($f_app=mysql_fetch_assoc($r_app)):
 	$plaza_app=$f_app['plaza'];
 	$fecha_app=$f_app['fecha'];
 	
-	$select_ar="SELECT titulo,sumario,id_seccion,autor,fecha_creacion,nota, fecha_publicacion FROM articulos_".$plaza_app." WHERE id=".$id_articulo_app."";
+	$select_ar="SELECT titulo,sumario,id_seccion,autor,fecha_creacion,nota FROM articulos_".$plaza_app." WHERE id=".$id_articulo_app."";
 	
 	$r_ar=mysql_query($select_ar,$conexion);
 	while($f_ar=mysql_fetch_assoc($r_ar)):
@@ -35,21 +35,19 @@ while($f_app=mysql_fetch_assoc($r_app)):
 		$Autor=$f_ar['autor'];
 		$Nota=$f_ar['nota'];
 		$Fecha_Creacion=$f_ar['fecha_creacion'];
-		$fecha_publicacion=$f_ar['fecha_publicacion'];
-		$fecha_publicacion=substr($fecha_publicacion, 11, 5);
 		
 		$Titulo_nota=utf8_encode($Titulo_nota);
 		$Autor=utf8_encode($Autor);
 		$Nota=utf8_encode($Nota);
 		
-		$Titulo_nota=substr($Titulo_nota,0,36)."...";;
+		$Titulo_nota=substr($Titulo_nota,0,40)."...";;
 	endwhile;
 	/*
 	<a href="#nota" onclick="LeerNota('.$id_nota_app.')">
 	*/
 	$html.='
 		<div style="width:87%;margin-left:10px;"><a href="#nota" onclick="LeerNota('.$id_nota_app.')">
-          <div style="display:inline-block; color: rgb(0,85,143);">'.$fecha_publicacion.' </div>
+          <div style="display:inline-block; color: rgb(0,85,143);">'.solo_hora($fecha_app).' </div>
           <div style="display:inline-block; color: rgb(151,151,151);"> / '.$Titulo_nota.'</div></a>
           <hr>
         </div>
@@ -58,19 +56,17 @@ while($f_app=mysql_fetch_assoc($r_app)):
 	
 
 endwhile;
-
-$pub="SELECT * FROM app_publicidad WHERE posicion='footer' ORDER BY id DESC LIMIT 1";
-$puclicidad=mysql_query($pub,$conexion);
-$array_pub=mysql_fetch_array($puclicidad);
-
-$ruta_publi="http://166.78.193.53/images/imagenes-publicidad/".$array_pub['ruta'];
-$script='<script>
-$("div.Suplementos img").attr("src","");
-$("div.Suplementos img").css({"height":"89.5%"});
-$("div.ContSuplemento img").attr("src","'.$ruta_publi.'");</script>';
+/*
+1. Limpiamos el div de l apublicidad
+2.ponemos  nueva publicidad
+<script>$(".ContSuplemento").empty();
+$(".ContSuplemento").html();
+</script>
+*/
+$ruta_publi="http://166.78.193.53/images/imagenes-galeria/globo4.jpg";
+$script='<script>$("div.ContSuplemento img").attr("src","'.$ruta_publi.'");</script>';
 
 echo $script.$html;
-
 
 
 ?>
