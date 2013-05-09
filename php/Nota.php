@@ -25,6 +25,7 @@ $select_app="SELECT * FROM app_articulos WHERE id='".$id."'";
 		$Titulo=$f_ar['titulo'];
 		$Sumario=$f_ar['sumario'];
 		$Id_Seccion=$f_ar['id_seccion'];
+		$id_secc=$f_ar['id_seccion'];
 		$Autor=$f_ar['autor'];
 		$Nota=$f_ar['nota'];
 		$Fecha_Creacion_p=$f_ar['fecha_creacion'];
@@ -43,6 +44,27 @@ $select_app="SELECT * FROM app_articulos WHERE id='".$id."'";
 		
 		
 	endwhile;
+	
+	if($id_secc==7)
+	{
+		$c_co="SELECT * FROM columnistas WHERE nombre_completo LIKE '%".$Autor_p."%'";
+						$r_co=mysql_query($c_co,$conexion);
+						while($f_co=mysql_fetch_assoc($r_co)):
+							$id_columnista=$f_co['id'];
+							$nombre_columnista=$f_co['nombre_completo'];
+							$foto=$f_co['foto'];
+						
+							$nombre_columnista=utf8_encode($nombre_columnista);
+							$foto=utf8_encode($foto);
+						endwhile;
+						$imagen_p="imagenes-columnistas/".$foto;		
+	}
+	else
+	{
+		$imagen_p="imagenes-articulos/".$imagen_p;
+	}
+	
+	
 	
 	$imagen2=$url_dominio_.'/images/imagenes-articulos/'.$imagen;
 	$Nota=str_replace($imagen,'',$Nota);
@@ -95,7 +117,13 @@ $select_ar="SELECT titulo,sumario,id_seccion,autor,fecha_creacion,nota FROM arti
 		
 		$imagen=extraer_imagen($Nota);
 		$imagen=utf8_decode($imagen);
+		
 	endwhile;
+	
+	
+	
+	
+	
 	
 	$imagen=$url_dominio_.'/images/imagenes-articulos/'.$imagen;
 	$Nota=str_replace($imagen,'',$Nota);
@@ -125,7 +153,7 @@ $ContenidoExtra.='
             </div>
 			';
 			
-			$ContenidoExtra2.="hola<br>";
+
 endwhile;
 
 $html.="&".$ContenidoExtra;
