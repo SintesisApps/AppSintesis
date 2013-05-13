@@ -179,7 +179,8 @@
         processData:true,
         success: function(datos){
             alert("success");
-			$('#cont_slideprincipal').html('<img src="imagenes/loading.gif" />');
+			//$('#cont_slideprincipal').html('<img src="imagenes/loading.gif" />');
+			$('#cont_slideprincipal').html(datos);
 			
         },
         timeout: 10000,
