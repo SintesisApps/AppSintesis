@@ -164,7 +164,7 @@
 			{
 				$('#cont_slideprincipal').html('<img src="imagenes/loading.gif" />');
 				 $.ajax({
-					 
+					 /*
 					 url: "http://166.78.193.53/APPSintesis/php/slideprincipal.php",
 					async:true,
 					beforeSend: function(objeto){
@@ -186,19 +186,19 @@
 						
 					},
 					timeout: 10000,
-					type: "POST"
+					type: "POST"*/
 					 
 					 
-				/*type: "POST",
+				type: "POST",
 				url: "http://166.78.193.53/APPSintesis/php/slideprincipal.php",
 				data: "",
 				cache: false,
 				success: function(message)
 				{	
-				//$('#cont_slideprincipal').html(message);
-				$('#cont_slideprincipal').fadeIn(1000).html(message);
+				$('#cont_slideprincipal').html(message);
+				//$('#cont_slideprincipal').fadeIn(1000).html(message);
 				}
-				*/
+				
 				});
 				
 				
@@ -213,8 +213,8 @@
 				cache: false,
 				success: function(message)
 				{	
-				//$('#cont_slidemini').html(message);
-				$('#cont_slidemini').fadeIn(1000).html(message);
+				$('#cont_slidemini').html(message);
+				//$('#cont_slidemini').fadeIn(1000).html(message);
 				}
 				});
 			}
@@ -229,7 +229,8 @@
 				success: function(message)
 				{	
 				//$('#content_slideVertical').html(message);
-				$('#content_slideVertical').fadeIn(1000).html(message);
+				//$('#content_slideVertical').fadeIn(1000).html(message);
+				setInterval($('#content_slideVertical').html(message),5000);
 				}
 				});
 			}
@@ -274,8 +275,8 @@
 				cache: false,
 				success: function(message)
 				{	
-				//$('#minuto_home').html(message);
-				$('#minuto_home').fadeIn(1000).html(message);
+				$('#minuto_home').html(message);
+				//$('#minuto_home').fadeIn(1000).html(message);
 				
 				}
 				});
