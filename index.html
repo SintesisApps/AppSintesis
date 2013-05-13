@@ -27,7 +27,7 @@
 	document.addEventListener("deviceready", function(){
 		 
 		 var conexion = checkConnection();
-		 if ( conexion =="No network connection")
+		 if ( conexion == "No network connection")
 		 {
 			 alert("No conectado");
 		}
@@ -163,6 +163,32 @@
 			function slidePrincipal()
 			{
 				 $.ajax({
+					 url: "http://166.78.193.53/APPSintesis/php/slideprincipal.php",
+        async:true,
+        beforeSend: function(objeto){
+            alert("Adiós, me voy a ejecutar");
+        },
+        complete: function(objeto, exito){
+            alert("Me acabo de completar")
+            if(exito=="success"){
+                alert("Y con éxito");
+            }
+        },
+        error: function(objeto, quepaso, otroobj){
+            alert("Estas viendo esto por que fallé");
+            alert("Pasó lo siguiente: "+quepaso);
+        },
+        global: true,
+        ifModified: false,
+        processData:true,
+        success: function(datos){
+            alert(datos);
+			$('#cont_slideprincipal').html(datos);
+        },
+        timeout: 3000,
+        type: "POST"
+					 
+					 /*
 				type: "POST",
 				url: "http://166.78.193.53/APPSintesis/php/slideprincipal.php",
 				data: "",
@@ -171,6 +197,7 @@
 				{	
 				$('#cont_slideprincipal').html(message);
 				}
+				*/
 				});
 				
 				
