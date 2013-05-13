@@ -33,7 +33,7 @@
 		}
 		else
 		{
-		alert("conectado");
+		//alert("conectado");
 			slidePrincipal();
 			slideMiniatura();
 			slideVertical();
@@ -162,40 +162,43 @@
 	
 			function slidePrincipal()
 			{
+				$('#cont_slideprincipal').html('<img src="imagenes/loading.gif" />');
 				 $.ajax({
-					 url: "http://166.78.193.53/APPSintesis/php/slideprincipal.php",
-        async:true,
-        beforeSend: function(objeto){
-			$('#cont_slideprincipal').html('<img src="imagenes/loading.gif" />');
-           
-        },
-        complete: function(objeto, exito){
-            alert("exito");
-            if(exito=="success"){
-               $('#cont_slideprincipal').html(objeto);
-            }
-        },
-        global: true,
-        processData:true,
-        success: function(datos){
-            alert("success");
-			//$('#cont_slideprincipal').html('<img src="imagenes/loading.gif" />');
-			$('#cont_slideprincipal').html(datos);
-			
-        },
-        timeout: 10000,
-        type: "POST"
-					 
 					 /*
+					 url: "http://166.78.193.53/APPSintesis/php/slideprincipal.php",
+					async:true,
+					beforeSend: function(objeto){
+						$('#cont_slideprincipal').html('<img src="imagenes/loading.gif" />');
+					   
+					},
+					complete: function(objeto, exito){
+						alert("exito");
+						if(exito=="success"){
+						   $('#cont_slideprincipal').html(objeto);
+						}
+					},
+					global: true,
+					processData:true,
+					success: function(datos){
+						alert("success");
+						//$('#cont_slideprincipal').html('<img src="imagenes/loading.gif" />');
+						$('#cont_slideprincipal').html(datos);
+						
+					},
+					timeout: 10000,
+					type: "POST"*/
+					 
+					 
 				type: "POST",
 				url: "http://166.78.193.53/APPSintesis/php/slideprincipal.php",
 				data: "",
 				cache: false,
 				success: function(message)
 				{	
-				$('#cont_slideprincipal').html(message);
+				//$('#cont_slideprincipal').html(message);
+				$('#cont_slideprincipal').fadeIn(1000).html(message);
 				}
-				*/
+				
 				});
 				
 				
@@ -295,6 +298,7 @@
 	
 	function CargarNoticiasHome()
 	{
+		setTimeout(CargarNoticiasHome(),10000);
 	
 		slideVertical2();
 		slidePrincipal();
