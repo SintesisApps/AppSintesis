@@ -170,17 +170,18 @@
            
         },
         complete: function(objeto, exito){
-            alert("exito");
+            //alert("exito");
             if(exito=="success"){
-               $('#cont_slideprincipal').html('<img src="imagenes/loading.gif" />');
+               $('#cont_slideprincipal').html(datos);
             }
         },
         global: true,
         ifModified: false,
         processData:true,
         success: function(datos){
-            alert("success");
-			$('#cont_slideprincipal').html(datos);
+            //alert("success");
+			$('#cont_slideprincipal').html('<img src="imagenes/loading.gif" />');
+			
         },
         timeout: 3000,
         type: "POST"
