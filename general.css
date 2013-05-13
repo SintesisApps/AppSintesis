@@ -203,7 +203,7 @@ body{
 	font-family:  Helvetica, sans-serif;
 	font-size: 18px;
 	font-weight: bold;
-	color:#000;
+	color:#666666;
 	text-shadow: 0.2em 0.2em #B8B8B8;
 }
 /*Slide Principal*/
@@ -326,6 +326,7 @@ body{
 	width:100%;
 	text-shadow: 0.3em 0.2em #B2B2B2 ;
 	font-weight: bold;
+	color:#4D4D4D;
 
 }
 
