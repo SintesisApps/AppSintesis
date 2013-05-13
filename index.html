@@ -166,26 +166,23 @@
 					 url: "http://166.78.193.53/APPSintesis/php/slideprincipal.php",
         async:true,
         beforeSend: function(objeto){
-            alert("Adiós, me voy a ejecutar");
+			$('#cont_slideprincipal').html('<img src="imagenes/loading.gif" />');
+           
         },
         complete: function(objeto, exito){
-            alert("Me acabo de completar")
+            
             if(exito=="success"){
-                alert("Y con éxito");
+               $('#cont_slideprincipal').html('<img src="imagenes/loading.gif" />');
             }
-        },
-        error: function(objeto, quepaso, otroobj){
-            alert("Estas viendo esto por que fallé");
-            alert("Pasó lo siguiente: "+quepaso);
         },
         global: true,
         ifModified: false,
         processData:true,
         success: function(datos){
-            alert(datos);
+            //alert(datos);
 			$('#cont_slideprincipal').html(datos);
         },
-        timeout: 3000,
+        timeout: 5000,
         type: "POST"
 					 
 					 /*
