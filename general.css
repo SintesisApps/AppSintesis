@@ -175,7 +175,7 @@ body{
 .SlidePrincipalTitulo {
 	font-family:  Helvetica, sans-serif;
 	font-size: 30px;
-	color: #666;
+	color: #4D4D4D;
 	text-shadow: 0.1em 0.1em #B8B8B8;
 }
 .SlidePrincipalSeccion {
@@ -565,14 +565,15 @@ body{
 
 .NotaCompleta{
 	padding-top:0px;
-	width:90%;
+	width:95%;
 	text-align:justify;
-	margin:auto;
+	margin-left:15px;
 	padding-bottom:10px;
 	padding-top:30px;
-	padding-left:15px;
-	padding-right:15px;
+	padding-left:0px;
+	padding-right:0px;
 	display:inline-block;
+	color:#808080;
 }
 
 
