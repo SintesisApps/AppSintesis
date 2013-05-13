@@ -25,8 +25,24 @@
 <script type="text/javascript">
 	$(document).ready(function(e){
 	document.addEventListener("deviceready", function(){
+		 
+		 var conexion = checkConnection();
+		 if ( conexion =="No network connection")
+		 {
+			 alert("No conectado");
+		}
+		else
+		{
+		alert("conectado");
+			slidePrincipal();
+			slideMiniatura();
+			slideVertical();
+			galeria_video('nacionales');	
+			minuto_minuto();
+			CargarNoticiasHomeGal();	
+		}
 		
-		if(navigator.connection.type != Connection.NONE)
+		/*if(navigator.connection.type != Connection.NONE)
 		{
 			alert("conectado");
 			slidePrincipal();
@@ -41,7 +57,7 @@
 		{
 			alert("No conectado");
 		}
-		
+		*/
 		
 		/*
 		$(document).ready(function() {
@@ -66,7 +82,21 @@
 	
 	});	
 });
-	
+	function checkConnection() {
+        var networkState = navigator.network.connection.type;
+
+        var states = {};
+        states[Connection.UNKNOWN]  = 'Unknown connection';
+        states[Connection.ETHERNET] = 'Ethernet connection';
+        states[Connection.WIFI]     = 'WiFi connection';
+        states[Connection.CELL_2G]  = 'Cell 2G connection';
+        states[Connection.CELL_3G]  = 'Cell 3G connection';
+        states[Connection.CELL_4G]  = 'Cell 4G connection';
+        states[Connection.NONE]     = 'No network connection';
+
+		var conex=states[networkState];
+		return conex;
+    }
 	
     </script>
 
