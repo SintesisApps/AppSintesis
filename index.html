@@ -164,39 +164,14 @@
 			{
 				$('#cont_slideprincipal').html('<img src="imagenes/loading.gif" />');
 				 $.ajax({
-					 /*
-					 url: "http://166.78.193.53/APPSintesis/php/slideprincipal.php",
-					async:true,
-					beforeSend: function(objeto){
-						$('#cont_slideprincipal').html('<img src="imagenes/loading.gif" />');
-					   
-					},
-					complete: function(objeto, exito){
-						//alert("exito");
-						if(exito=="success"){
-						  // $('#cont_slideprincipal').html(objeto);
-						}
-					},
-					global: true,
-					processData:true,
-					success: function(datos){
-						
-						//$('#cont_slideprincipal').html('<img src="imagenes/loading.gif" />');
-						$('#cont_slideprincipal').fadeIn(5000).html(datos);
-						
-					},
-					timeout: 10000,
-					type: "POST"*/
-					 
-					 
+				
 				type: "POST",
 				url: "http://166.78.193.53/APPSintesis/php/slideprincipal.php",
 				data: "",
 				cache: false,
 				success: function(message)
-				{	
-				$('#cont_slideprincipal').html(message);
-				//$('#cont_slideprincipal').fadeIn(1000).html(message);
+				{
+				setInterval($('#cont_slideprincipal').html(message),5000);
 				}
 				
 				});
@@ -213,8 +188,8 @@
 				cache: false,
 				success: function(message)
 				{	
-				$('#cont_slidemini').html(message);
-				//$('#cont_slidemini').fadeIn(1000).html(message);
+				setInterval($('#cont_slidemini').html(message),5000);
+				
 				}
 				});
 			}
@@ -228,8 +203,6 @@
 				cache: false,
 				success: function(message)
 				{	
-				//$('#content_slideVertical').html(message);
-				//$('#content_slideVertical').fadeIn(1000).html(message);
 				setInterval($('#content_slideVertical').html(message),5000);
 				}
 				});
@@ -275,8 +248,7 @@
 				cache: false,
 				success: function(message)
 				{	
-				$('#minuto_home').html(message);
-				//$('#minuto_home').fadeIn(1000).html(message);
+				setInterval($('#minuto_home').html(message),5000);
 				
 				}
 				});
@@ -315,7 +287,7 @@
 		minuto_minuto();
 		function slideVertical2()
 			{//ContenedorDivMedio
-				
+				$('#DivVertical').html('<img src="imagenes/loading.gif" />');
 				$.ajax({
 				type: "POST",
 				url: "http://166.78.193.53/APPSintesis/php/slide_vertical.php",
@@ -323,6 +295,7 @@
 				cache: false,
 				success: function(message)
 				{
+					
 					$('.DivVertical').html(
 					' <div  class="ContenedorSlideVertical" id="content_slideVertical" >'+message+'</div>'
 					
@@ -336,6 +309,10 @@
 	
 	function CargarNoticiasPlaza(plaza)
 	{
+		$('.ContenedorPrincipalSeccion').html('<img src="imagenes/loading.gif" />');
+		$('.DivVertical').html('<img src="imagenes/loading.gif" />');
+		$('#minuto_plaza').html('<img src="imagenes/loading.gif" />');
+		$('.Video_seccion').html('<img src="imagenes/loading.gif" />');
 			$.ajax(
 			{
 
@@ -358,22 +335,14 @@
 					//color
 					//$("#name_SeccionSeccion").css({'background':'#5abfcf'});
 						
+						setInterval($(".ContenedorPrincipalSeccion").html(datos[i].slide_principal),5000);
 						
-						$(".ContenedorPrincipalSeccion").html(
-							datos[i].slide_principal
-						);
+						setInterval($(".DivVertical").html(datos[i].slide_vertical),5000);
 						
-						$(".DivVertical").html(
-						datos[i].slide_vertical
-						);
+						setInterval($("#minuto_plaza").html(datos[i].ultimas_noticias),5000);
 						
-						$("#minuto_plaza").html(
-						datos[i].ultimas_noticias
-						);
+						setInterval($(".Video_seccion").html(datos[i].video),5000);
 						
-						$(".Video_seccion").html(
-						datos[i].video
-						);
 					}
 					
 				
@@ -384,6 +353,10 @@
 	} 
 	function cargar_seccion(seccion)
 	{
+		$('.ContenedorPrincipalSeccion').html('<img src="imagenes/loading.gif" />');
+		$('.DivVertical').html('<img src="imagenes/loading.gif" />');
+		$('#minuto_plaza').html('<img src="imagenes/loading.gif" />');
+		$('.Video_seccion').html('<img src="imagenes/loading.gif" />');
 		 $.ajax(
 			{
 
@@ -409,23 +382,11 @@
 						
 						
 						
+						setInterval($(".ContenedorPrincipalSeccion").html(datos[i].slide_principal),5000);
+						setInterval($(".DivVertical").html(datos[i].slide_vertical),5000);
+						setInterval($("#minuto_plaza").html(datos[i].ultimas_noticias),5000);
+						setInterval($(".Video_seccion").html(datos[i].video),5000);
 						
-						
-						$(".ContenedorPrincipalSeccion").html(
-							datos[i].slide_principal
-						);
-						
-						$(".DivVertical").html(
-						datos[i].slide_vertical
-						);	
-						
-						$("#minuto_plaza").html(
-						datos[i].ultimas_noticias
-						);
-						
-						$(".Video_seccion").html(
-						datos[i].video
-						);
 					}
 					
 					
@@ -439,6 +400,7 @@
 
 function LeerNota(id)
 	{
+		$('.ExtrasPlaza').html('<img src="imagenes/loading.gif" />');
 			$.ajax(
 			{
 
@@ -495,9 +457,8 @@ function LeerNota(id)
 					datos[i].nota
 					);
 					
-					$('.ExtrasPlaza').html(
-					datos[i].nota_extra
-					);
+					//$('.ExtrasPlaza').html(datos[i].nota_extra);
+					setInterval($('.ExtrasPlaza').html(datos[i].nota_extra),5000);
 					
 					
 					}
@@ -525,8 +486,6 @@ function mensaje()
 
 </head>
 <body onload="initialize()">
-<!--<div class="lb-overlay" id="cargando" style="display:'none'"> <img src="imagenes/loading.gif"> </div>-->
-
 <!-- Home -->
 <div id="home" class="content" >
 <div class="HeaderAlternativo">
