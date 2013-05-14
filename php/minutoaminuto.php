@@ -59,6 +59,9 @@ while($f_app=mysql_fetch_assoc($r_app)):
 
 endwhile;
 
+            		
+                
+
 $pub="SELECT * FROM app_publicidad WHERE posicion='footer' ORDER BY id DESC ";
 $puclicidad=mysql_query($pub,$conexion);
 $array_pub=mysql_fetch_array($puclicidad);
@@ -66,10 +69,10 @@ $array_pub=mysql_fetch_array($puclicidad);
 $ruta_publi="http://166.78.193.53/images/imagenes-publicidad/".$array_pub['ruta'];
 $imagen="<img src='".$ruta_publi."' />";
 $script='<script>
- document.getElementById("img_sup").innerHTML="
- <img src=\'../imagenes/publicidad/8.jpg\' />
-  <img src=\'../imagenes/publicidad/9.jpg\' />
-   <img src=\'../imagenes/publicidad/10.jpg\' />
+ document.getElementById("sup_img_prin").innerHTML="
+<div class=\'ContSuplemento\' id=\'img_sup\'> <img src=\'../imagenes/publicidad/8.jpg\' /></div>
+<div class=\'ContSuplemento\' id=\'img_sup\'>  <img src=\'../imagenes/publicidad/9.jpg\' /></div>
+ <div class=\'ContSuplemento\' id=\'img_sup\'> <img src=\'../imagenes/publicidad/10.jpg\' /></div>
  ";
 </script>';
 

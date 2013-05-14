@@ -99,7 +99,7 @@ $select_app="SELECT * FROM app_articulos WHERE posicion='Slide-Principal-Interio
               <div class="ContenidoPrincipalSeccion">
                 <div class="ImagenPrincipalSeccion"><img src="'.$url_dominio_.'/images/'.$imagen_p.'" ></div>
                 <div class="TextoPrincipalSeccion">
-                  <div class="TituloPrincipalSeccion">'.$id_seccion.'</div>
+                  <div class="TituloPrincipalSeccion">'.$TituloPlaza.'</div>
                   <div class="SeccionPrincipalSeccion">'.$SeccionPlaza.'</div>
                   <div class="AutorPrincipalSeccion"> '.$AutorPlaza.' </div>
                   <div class="FechaPrincipalSeccion">'.$Fecha_CreacionPlaza.'</div>
