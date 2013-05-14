@@ -59,37 +59,19 @@ while($f_app=mysql_fetch_assoc($r_app)):
 
 endwhile;
 
-$pub="SELECT * FROM app_publicidad WHERE posicion='footer' and status='1' ORDER BY id DESC";
+$pub="SELECT * FROM app_publicidad WHERE posicion='footer' ORDER BY id DESC ";
 $puclicidad=mysql_query($pub,$conexion);
-$slide_pub="";
-while($array_pub=mysql_fetch_array($puclicidad))
-{
-	$ruta_publi="http://166.78.193.53/images/imagenes-publicidad/".$array_pub['ruta'];
-$slide_pub.='
-<a href=" http://www.sintesis.mx " target="_blank"  location="yes">
-<img src="'.$ruta_publi.'" />
-</a>
-';	
-$slide_pub.='
-<a href=" http://www.sintesis.mx " target="_blank"  location="yes">
-<img src="'.$ruta_publi.'" />
-</a>
-';
-}
+$array_pub=mysql_fetch_array($puclicidad);
 
-
-
-
+$ruta_publi="http://166.78.193.53/images/imagenes-publicidad/".$array_pub['ruta'];
+$imagen="<img src='".$ruta_publi."' />";
 $script='<script>
-$("div.ContSuplemento").html('.$slide_pub.');
-
-</script>
-';
-
-/*$script='<script>
-$("div.Suplementos img").attr("src","");
-$("div.Suplementos img").css({"height":"89.5%"});
-$("div.ContSuplemento img").attr("src","'.$ruta_publi.'");</script>';*/
+ document.getElementById("img_sup").innerHTML="
+ <img src=\'../imagenes/publicidad/8.jpg\' />
+  <img src=\'../imagenes/publicidad/9.jpg\' />
+   <img src=\'../imagenes/publicidad/10.jpg\' />
+ ";
+</script>';
 
 echo $script.$html;
 
