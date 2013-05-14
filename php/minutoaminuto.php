@@ -42,7 +42,7 @@ while($f_app=mysql_fetch_assoc($r_app)):
 		$Autor=utf8_encode($Autor);
 		$Nota=utf8_encode($Nota);
 		
-		$Titulo_nota=substr($Titulo_nota,0,36)."...";;
+		$Titulo_nota=substr($Titulo_nota,0,35)."...";;
 	endwhile;
 	/*
 	<a href="#nota" onclick="LeerNota('.$id_nota_app.')">

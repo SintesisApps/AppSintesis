@@ -561,7 +561,7 @@ else
 $info_plaza=mysql_query("SELECT * FROM plazas WHERE seudonimo='".$plaza_app."'");
 $array_plaza=mysql_fetch_array($info_plaza);
 
-$url_video=$array_plaza['id_plaza'];	
+$url_video=$array_plaza['seudonimo'];	
 }
 
 

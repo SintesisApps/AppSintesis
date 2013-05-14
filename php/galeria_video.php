@@ -56,10 +56,11 @@ $html.='<div class="contvideogaleriaimg">
 		while($video2=mysql_fetch_array($registros))
 		{
 			$id_video=extraer_id($video2['url_video']);
+			$titulo=$video2['titulo'];
 			$html.='
 			 <div class="VideoImagen">
                 <a href="http://youtube.com/v/'.$id_video.'" onclick="return cambiarvideo(this.href,this.title)" title="Toma protesta de diputados"> <img src="http://img.youtube.com/vi/'.$id_video.'/0.jpg" />
-                  <div class="titulo_video"> <strong>Toma protesta de diputados</strong> </div>
+                  <div class="titulo_video"> <strong>'.utf8_encode($titulo).'</strong> </div>
                 </a> 
             </div> 
 			';
