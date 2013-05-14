@@ -574,12 +574,10 @@ $pub="SELECT * FROM app_publicidad WHERE posicion='footer' and  plaza='".$plaza.
 $puclicidad=mysql_query($pub,$conexion);
 $array_pub=mysql_fetch_array($puclicidad);
 
-
-$ruta_publi="http://166.78.193.53/images/imagenes-publicidad/".$array_pub['ruta'];
+$ruta_publi="<img src='http://166.78.193.53/images/imagenes-publicidad/app_footer/ardentza.jpg' />";
+$ruta_publi2="<img src='http://166.78.193.53/images/imagenes-publicidad/app_footer/nissan.jpg' />";
 $script='<script>
-$("div.Suplementos img").attr("src","");
-$("div.Suplementos img").css({"height":"89.5%"});
-$("div.ContSuplemento img").attr("src","'.$ruta_publi.'");</script>';
+$("#sup_img_prin_sec").html(" <div class=\'ContSuplemento\' id=\'img_sup\'>'.$ruta_publi.'</div><div class=\'ContSuplemento\' id=\'img_sup\'>'.$ruta_publi2.'</div>");</script>';
 	
 	$arr1[$i]=array(
 	'titulo_seccion' => $PlazaNota,
