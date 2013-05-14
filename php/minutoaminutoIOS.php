@@ -80,15 +80,17 @@ $puclicidad=mysql_query($pub,$conexion);
 $array_pub=mysql_fetch_array($puclicidad);
 
 //$ruta_publi="<img src='http://166.78.193.53/images/imagenes-publicidad/".$array_pub['ruta']." />";
-$ruta_publi="<img src='http://166.78.193.53/images/imagenes-publicidad/app_footer/ardentza.jpg' />";
+$ruta_publi="<div class=\'ContSuplemento\' id=\'img_sup\'><img src='http://166.78.193.53/images/imagenes-publicidad/app_footer/ardentza.jpg' /></div>";
 $ruta_publi2="<img src='http://166.78.193.53/images/imagenes-publicidad/app_footer/nissan.jpg' />";
+$ruta_publi3="<div class=\'ContSuplemento\' id=\'img_sup\'><img src='http://166.78.193.53/images/imagenes-publicidad/app_footer/nissan.jpg' /></div>";
+$p4="<div class=\'ContSuplemento\' id=\'img_sup\'>'.$ruta_publi.'</div><div class=\'ContSuplemento\' id=\'img_sup\'>'.$ruta_publi2.'</div>";
 $script='<script>
 $("#sup_img_prin").html(" <div class=\'ContSuplemento\' id=\'img_sup\'>'.$ruta_publi.'</div><div class=\'ContSuplemento\' id=\'img_sup\'>'.$ruta_publi2.'</div>");</script>';
 
 
 $arr1[0]=array(
-	'minuto_minuto' => "kñkñkñl",
-	'p_footer' => "kñlkñkñk",
+	'minuto_minuto' => $html,
+	'p_footer' => $p4
 	);
 	
 echo  json_encode($arr1);

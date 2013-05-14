@@ -202,21 +202,13 @@
 			$('#minuto_home').html('<img src="imagenes/loading.gif" />');
 				$.ajax({
 					type: "POST",
-				url: "http://166.78.193.53/APPSintesis/php/minutoaminutoIOS.php",
+				url: "http://166.78.193.53/APPSintesis/php/minutoaminuto.php",
 				data: "",
 				cache: false,
 				success: function(message)
 				{	
-				//setInterval($('#minuto_home').html(message),5000);
-					datos = JSON.parse(message);
-					for(i=0;i<datos.length;i++)
-					{
-						
-						setInterval($("#minuto_home").html(datos[i].minuto_minuto),5000);
-						
-						setInterval($("#sup_img_prin").html(datos[i].p_footer),5000);
-						
-					}
+				setInterval($('#minuto_home').html(message),5000);
+					
 				
 				}
 				});
