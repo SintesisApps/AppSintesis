@@ -25,59 +25,16 @@
 <script type="text/javascript">
 	$(document).ready(function(e){
 	document.addEventListener("deviceready", function(){
-		 
-		 var conexion = checkConnection();
-		 if ( conexion == "No network connection")
-		 {
-			 alert("No conectado");
-		}
-		else
-		{
-		//alert("conectado");
+		
 			slidePrincipal();
 			slideMiniatura();
 			slideVertical();
 			galeria_video('nacionales');	
 			minuto_minuto();
 			CargarNoticiasHomeGal();	
-		}
+	
 		
-		/*if(navigator.connection.type != Connection.NONE)
-		{
-			alert("conectado");
-			slidePrincipal();
-			slideMiniatura();
-			slideVertical();
-			galeria_video('nacionales');	
-			minuto_minuto();
-			CargarNoticiasHomeGal();
-			
-		}
-		else
-		{
-			alert("No conectado");
-		}
-		*/
 		
-		/*
-		$(document).ready(function() {
-				
-				//alert("conexion:"+navigator.connection.type);
-					slidePrincipal();
-					slideMiniatura();
-					slideVertical();
-					//galeriaImagenes();
-					galeria_video('nacionales');	
-					minuto_minuto();
-					CargarNoticiasHomeGal();
-					
-					
-					
-				
-				
-            });
-			
-		*/
 		
 	
 	});	
@@ -248,7 +205,16 @@
 				cache: false,
 				success: function(message)
 				{	
-				setInterval($('#minuto_home').html(message),5000);
+				//setInterval($('#minuto_home').html(message),5000);
+						datos = JSON.parse(message);
+					for(i=0;i<datos.length;i++)
+					{
+						
+						setInterval($("#minuto_home").html(datos[i].minuto_minuto),5000);
+						
+						setInterval($("#img_sup").html(datos[i].publi_footer),5000);
+						
+					}
 				
 				}
 				});
