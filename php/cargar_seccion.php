@@ -75,13 +75,31 @@ $select_app="SELECT * FROM app_articulos WHERE posicion='Slide-Principal-Interio
 		$SeccionPlaza=utf8_encode($SeccionPlaza);
 	endwhile;
 	
+	
+	if($id_seccion==7)
+	{
+		$c_co="SELECT * FROM columnistas WHERE nombre_completo LIKE '%".$AutorPlaza."%'";
+						$r_co=mysql_query($c_co,$conexion);
+						while($f_co=mysql_fetch_assoc($r_co)):
+							$id_columnista=$f_co['id'];
+							$nombre_columnista=$f_co['nombre_completo'];
+							$foto=$f_co['foto'];
+						
+							$nombre_columnista=utf8_encode($nombre_columnista);
+							$foto=utf8_encode($foto);
+						endwhile;
+						$imagen_p="imagenes-columnistas/".$foto;
+	}
+	else
+	{$imagen_p="imagenes-articulos/".$imagenPlaza;}
+	
 		
 		$slide_principal.='
 		<a href="#nota" onclick="LeerNota('.$id_nota_app.')">
               <div class="ContenidoPrincipalSeccion">
-                <div class="ImagenPrincipalSeccion"><img src="'.$url_dominio_.'/images/imagenes-articulos/'.$imagenPlaza.'" ></div>
+                <div class="ImagenPrincipalSeccion"><img src="'.$url_dominio_.'/images/'.$imagen_p.'" ></div>
                 <div class="TextoPrincipalSeccion">
-                  <div class="TituloPrincipalSeccion">'.$TituloPlaza.'</div>
+                  <div class="TituloPrincipalSeccion">'.$id_seccion.'</div>
                   <div class="SeccionPrincipalSeccion">'.$SeccionPlaza.'</div>
                   <div class="AutorPrincipalSeccion"> '.$AutorPlaza.' </div>
                   <div class="FechaPrincipalSeccion">'.$Fecha_CreacionPlaza.'</div>
