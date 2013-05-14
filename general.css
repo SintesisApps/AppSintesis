@@ -776,13 +776,7 @@ body{
 
 
 <!--Slide Miniaturas-->
-#map_canvas
-{
-	background:url(imagenes/guia.png) no-repeat;
-	background-size:100% 100%;
-	width:100%;
-	height:100%;
-}
+
 .ContenedorSlideMiniaturas {
 	width: 1010px;
 	margin:auto;
@@ -860,11 +854,24 @@ body{
 .ContenedorDivMedio {
 	width:62%;
 }
+#map_canvas
+{
+	background:url(imagenes/guia.png) no-repeat;
+	background-size:100% 100%;
+	width:100%;
+	height:100%;
+}
 /*Div Medio*/
  }
  
  @media screen and (min-width: 0px) and (max-width: 958px) {
-
+#map_canvas
+{
+	background:url(imagenes/guia.png) no-repeat;
+	background-size:100% 100%;
+	width:100%;
+	height:100%;
+}
 
 	 /*Slide Vertical*/
 .DivVertical{
