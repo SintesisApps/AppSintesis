@@ -81,21 +81,10 @@ $array_pub=mysql_fetch_array($puclicidad);
 
 $ruta_publi="<img src='http://166.78.193.53/images/imagenes-publicidad/".$array_pub['ruta']." />";
 $script='<script>
-alert("entras");</script>';
+$("#img_sup").html("xsdfsggdgd");</script>';
 
 
-
-$arr_minuto[0]=array(
-	'minuto_minuto' => $html,
-	'publi_footer' => "publi footer",
-	);
-	
-	
-	echo  json_encode($arr_minuto);
-
-
-
-//echo $script.$html;
+echo $script.$html;
 
 
 
