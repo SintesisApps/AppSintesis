@@ -87,8 +87,8 @@ $("#sup_img_prin").html(" <div class=\'ContSuplemento\' id=\'img_sup\'>'.$ruta_p
 
 
 $arr1[0]=array(
-	'minuto_minuto' => $html,
-	'p_footer' => $script,
+	'minuto_minuto' => "kñkñkñl",
+	'p_footer' => "kñlkñkñk",
 	);
 	
 echo  json_encode($arr1);
