@@ -26,13 +26,7 @@
 	$(document).ready(function(e){
 	document.addEventListener("deviceready", function(){
 		 
-		 var conexion = checkConnection();
-		 if ( conexion == "No network connection")
-		 {
-			 alert("No conectado");
-		}
-		else
-		{
+		
 		//alert("conectado");
 			slidePrincipal();
 			slideMiniatura();
@@ -40,7 +34,7 @@
 			galeria_video('nacionales');	
 			minuto_minuto();
 			CargarNoticiasHomeGal();	
-		}
+	
 		
 	
 		
