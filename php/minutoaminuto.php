@@ -79,9 +79,11 @@ $("#img_sup").html("hfksdhfkshfkshkfhskj");
 $puclicidad=mysql_query($pub,$conexion);
 $array_pub=mysql_fetch_array($puclicidad);
 
-$ruta_publi="<img src='http://166.78.193.53/images/imagenes-publicidad/".$array_pub['ruta']." />";
+//$ruta_publi="<img src='http://166.78.193.53/images/imagenes-publicidad/".$array_pub['ruta']." />";
+$ruta_publi="<img src='http://166.78.193.53/images/imagenes-publicidad/app_footer/ardentza.jpg' />";
+$ruta_publi2="<img src='http://166.78.193.53/images/imagenes-publicidad/app_footer/nissan.jpg' />";
 $script='<script>
-$("#img_sup").html("xsdfsggdgd");</script>';
+$("#sup_img_prin").html(" <div class=\'ContSuplemento\' id=\'img_sup\'>'.$ruta_publi.'</div><div class=\'ContSuplemento\' id=\'img_sup\'>'.$ruta_publi2.'</div>");</script>';
 
 
 echo $script.$html;
