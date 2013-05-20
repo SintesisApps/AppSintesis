@@ -27,8 +27,12 @@
 	document.addEventListener("deviceready", function(){
 
 		navigator.splashscreen.show();
-alert("conexion:"+checkConnection());
-		//alert("conectado");
+		if(checkConnection()!="WiFi connection")
+		{alert("conectado");}
+		else
+		{alert("No conectado");
+		}
+		
 			slidePrincipal();
 			slideMiniatura();
 			slideVertical();
