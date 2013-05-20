@@ -27,12 +27,15 @@
 	document.addEventListener("deviceready", function(){
 
 		navigator.splashscreen.show();
-		if(checkConnection()!= "WiFi connection")
+		if(checkConnection()== "WiFi connection")
 		{alert("conectado");}
 		else
 		{alert("No conectado");
 		}
 		alert("conexion:"+checkConnection());
+		$(window).load(function() {
+      $('#cargando').hide();
+});
 			slidePrincipal();
 			slideMiniatura();
 			slideVertical();
@@ -409,9 +412,7 @@ function LeerNota(id)
 
 
  <script>
- $(window).load(function() {
-      $('#cargando').hide();
-});
+ 
 
   
   </script>
