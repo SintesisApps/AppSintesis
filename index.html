@@ -362,7 +362,7 @@ function LeerNota(id)
 						//modificamos las imagenes
 					
 					$('#Gallery').html(
-					datos[i].imagen
+					'<div id="Gallery"  class="SlidePrincipal ImagenesNota" >'+datos[i].imagen+'</div>'
 					);
 					/*$('.ImagenesNotaImagen').html(
 					
@@ -497,7 +497,7 @@ function LeerNota(id)
   <div id="contenedor_Nota" id="ref_contenedor_Nota">
   	<div class="NotaContenedor" >
             
-   		<div id="Gallery"  class="SlidePrincipal ImagenesNota" >
+   		<!--<div id="Gallery"  class="SlidePrincipal ImagenesNota" >
    		<!--
         <div style="display:inline-block; overflow:hidden">
           <div class="ImagenesNotaImagen">
@@ -524,9 +524,9 @@ function LeerNota(id)
           
           </div>
         </div>
-      -->
       
-   		 </div>
+      
+   		 </div>-->
   
   
         <div class="NotaTitulo" id="div_nt"></div>
