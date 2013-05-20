@@ -66,6 +66,8 @@
     <gap:splash src="imagenes/splashscreen/ldpi.png" gap:platform="winphone" />
 	
 	<plugin name="NetworkStatus" value="CDVConnection" />
+	<plugin name="SplashScreen" value="CDVSplashScreen" />
+
 
 	
 	<access origin="*" />
