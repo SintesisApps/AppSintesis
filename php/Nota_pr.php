@@ -272,16 +272,30 @@ while($contador1!=$numero_veces )
 	$contador1=$contador1+1;
 }
 
-$imagen_p='<div style="display:inline-block; overflow:hidden">
+$imagen_p='<div  style="float:left; overflow:hidden;">
           <div class="ImagenesNotaImagen">
           	<img src="http://166.78.193.53/images/imagenes-articulos/sintesis_penal.jpg">
           	<div class="ZoomImagenNota">
                 <a href="http://166.78.193.53/images/imagenes-articulos/sintesis_penal.jpg" id="">
-                <img src="imagenes/iconos/azules/ampliar@2x.png">
+               
                 </a>
             </div>
             <div class="MasImagenNota">
-              	<img src="imagenes/iconos/azules/otras@2x.png">
+              	
+          	</div>
+         </div>
+        </div>
+		
+		<div  style="float:left;overflow:hidden;">
+          <div class="ImagenesNotaImagen">
+          	<img src="http://166.78.193.53/images/imagenes-articulos/sintesis_penal.jpg">
+          	<div class="ZoomImagenNota">
+                <a href="http://166.78.193.53/images/imagenes-articulos/sintesis_penal.jpg" id="">
+                
+                </a>
+            </div>
+            <div class="MasImagenNota">
+              	
           	</div>
          </div>
         </div>';

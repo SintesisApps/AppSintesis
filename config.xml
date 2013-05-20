@@ -53,14 +53,18 @@
     <gap:splash src="imagenes/splashscreen/xhdpi.png" gap:platform="android" gap:density="xhdpi" />
     <gap:splash src="imagenes/splashscreen/ldpi.png"         gap:platform="blackberry" />
     
-    <gap:splash src="imagenes/splashscreen/hdpi.png"      gap:platform="ios"     width="1536" height="1152" />
+	<gap:splash src="imagenes/splashscreen/hdpi_v.png"     gap:platform="ios"     width="1536" height="2008" />
+	<gap:splash src="imagenes/splashscreen/ldip.png"      gap:platform="ios"     width="1024" height="748" />
+    <gap:splash src="imagenes/splashscreen/ldip_v.png"     gap:platform="ios"     width="2048" height="1496" />
+	<gap:splash src="imagenes/splashscreen/mdpi_v.png"      gap:platform="ios"     width="768" height="1004" />
+    <!--<gap:splash src="imagenes/splashscreen/hdpi.png"      gap:platform="ios"     width="1536" height="1152" />
     <gap:splash src="imagenes/splashscreen/hdpi_v.png"     gap:platform="ios"     width="1152" height="1536" />
 	<gap:splash src="imagenes/splashscreen/ldip.png"      gap:platform="ios"     width="1024" height="600" />
     <gap:splash src="imagenes/splashscreen/ldip_v.png"     gap:platform="ios"     width="600" height="1024" />
 	<gap:splash src="imagenes/splashscreen/mdpi_v.png"      gap:platform="ios"     width="768" height="1024" />
     <gap:splash src="imagenes/splashscreen/mdpi.png"     gap:platform="ios"     width="1024" height="768" />
 	<gap:splash src="imagenes/splashscreen/xhdpi.png"      gap:platform="ios"     width="2048" height="1536" />
-    <gap:splash src="imagenes/splashscreen/xhdpi_v.png"     gap:platform="ios"     width="1536" height="2048" />
+    <gap:splash src="imagenes/splashscreen/xhdpi_v.png"     gap:platform="ios"     width="1536" height="2048" />-->
 	
 	
     <gap:splash src="imagenes/splashscreen/ldpi.png" gap:platform="winphone" />

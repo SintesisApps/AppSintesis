@@ -26,7 +26,8 @@
 	$(document).ready(function(e){
 	document.addEventListener("deviceready", function(){
 
-		
+		navigator.splashscreen.show();
+
 		//alert("conectado");
 			slidePrincipal();
 			slideMiniatura();
@@ -361,7 +362,8 @@ function LeerNota(id)
 						
 						//modificamos las imagenes
 					
-					$('#Gallery').html(
+					//$('#Gallery').html(
+					$('.ImagenesNota').html(
 					datos[i].imagen
 					);
 					/*$('.ImagenesNotaImagen').html(
@@ -499,8 +501,8 @@ function LeerNota(id)
             
    		<div id="Gallery"  class="SlidePrincipal ImagenesNota" >
    		
-        <div style="display:inline-block; overflow:hidden">
-        <!--  <div class="ImagenesNotaImagen">
+        <!--<div style="display:inline-block; overflow:hidden">
+          <div class="ImagenesNotaImagen">
           	<img src="http://166.78.193.53/images/imagenes-articulos/sintesis_penal.jpg">
           	<div class="ZoomImagenNota">
                 <a href="http://166.78.193.53/images/imagenes-articulos/sintesis_penal.jpg" id="">
@@ -510,8 +512,8 @@ function LeerNota(id)
             <div class="MasImagenNota">
               	<img src="imagenes/iconos/azules/otras@2x.png">
           	</div>
-         </div>-->
-        </div>
+         </div>
+        </div>-->
        
        <!-- <div style="display:inline-block; overflow:hidden">
           <div class="ImagenesNotaImagen">
