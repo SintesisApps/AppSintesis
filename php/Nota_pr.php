@@ -235,8 +235,6 @@ $(".NotaAutor").html("");
 $(".NotaTitulo").html("");
 $(".NotaFechaCreacion").html("");
 $(".NotaCompleta").html("");
-
-
 </script
 ';
 
