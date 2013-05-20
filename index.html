@@ -27,7 +27,7 @@
 	document.addEventListener("deviceready", function(){
 
 		navigator.splashscreen.show();
-
+alert("conexion:"+checkConnection());
 		//alert("conectado");
 			slidePrincipal();
 			slideMiniatura();
@@ -351,14 +351,7 @@ function LeerNota(id)
 					datos = JSON.parse(message);
 					for(i=0;i<datos.length;i++)
 					{
-						//limpiamos contenidos
 						
-						/*$('#div_nt').empty();
-						$('#div_ns').empty();
-						$('#div_na').empty();
-						$('#div_nfc').empty();
-						$('#div_nc').empty();
-						$('#div_nep').empty();*/
 						
 						//modificamos las imagenes
 					
@@ -366,16 +359,7 @@ function LeerNota(id)
 					$('#img_cont').html(
 					datos[i].imagen
 					);
-					/*$('.ImagenesNotaImagen').html(
 					
-					'<img src="http://166.78.193.53/images/'+datos[i].imagen+'">'+
-					'<div class="ZoomImagenNota">'+
-						'<a href="http://166.78.193.53/images/'+datos[i].imagen+'" >'+
-						'</a>'+
-					'</div>'+
-					'<div class="MasImagenNota">'+
-					'</div>'
-					);*/
 					
 					document.getElementById("name_section").innerHTML="";
 					$('.NotaSeccion').html(

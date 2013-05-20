@@ -223,7 +223,7 @@ $css='
 $imagen_p="<div style=\'display:inline-block; overflow:hidden\'><div class=\'ImagenesNotaImagen\'><img src=\'http://166.78.193.53/APPSintesis/imagenes/imagenes-articulos/1.jpg\'><div class=\'ZoomImagenNota\'><a href=\'http://166.78.193.53/APPSintesis/imagenes/imagenes-articulos/1.jpg\' ><img src=\'http://166.78.193.53/APPSintesis/imagenes/iconos/azules/ampliar@2x.png\'></a></div><div class=\'MasImagenNota\'><img src=\'http://166.78.193.53/APPSintesis/imagenes/iconos/azules/otras@2x.png\'></div></div></div><div style=\'display:inline-block; overflow:hidden\'><div class=\'ImagenesNotaImagen\'><img src=\'http://166.78.193.53/APPSintesis/imagenes/imagenes-articulos/2.jpg\'><div class=\'ZoomImagenNota\'><a href=\'http://166.78.193.53/APPSintesis/imagenes/imagenes-articulos/2.jpg\'><img src=\'http://166.78.193.53/APPSintesis/imagenes/iconos/azules/ampliar@2x.png\'></a></div></div></div>";*/
 
 
-$imagen_p="";
+$imagen_p='<div id="Gallery"  class="SlidePrincipal ImagenesNota" >';
 
 function primera_imagen($texto) {
     $foto = '';
@@ -245,20 +245,23 @@ while($contador1!=$numero_veces )
 {
 	$primera= primera_imagen($cadena); 
 	$tamaño_imagen=strlen($primera);
+	
 	 $imagen_p.='<div style="display:inline-block; overflow:hidden">
           <div class="ImagenesNotaImagen">
           	<img src="'.$primera.'">
           	<div class="ZoomImagenNota">
                 <a href="'.$primera.'" id="">
-                <img src="imagenes/iconos/azules/ampliar@2x.png">
+              
                 </a>
             </div>
-            <div class="MasImagenNota">
-              	<img src="imagenes/iconos/azules/otras@2x.png">
-          	</div>
+            ';
+			if($numero_veces > 1 && $contador1==0)
+			{$imagen_p.='<div id="img_mas"><img src="imagenes/iconos/azules/otras@2x.png"></div>';
+				}
+              	
+          	$imagen_p.='
          </div>
-        </div>
-	 ';
+        </div>';
 	 
 	 
 	 
@@ -272,35 +275,7 @@ while($contador1!=$numero_veces )
 	$contador1=$contador1+1;
 }
 
-$imagen_p='<div id="Gallery"  class="SlidePrincipal ImagenesNota" >
-   		
-        <div style="display:inline-block; overflow:hidden">
-          <div class="ImagenesNotaImagen">
-          	<img src="http://166.78.193.53/images/imagenes-articulos/sintesis_penal.jpg">
-          	<div class="ZoomImagenNota">
-                <a href="http://166.78.193.53/images/imagenes-articulos/sintesis_penal.jpg" id="">
-                <img src="imagenes/iconos/azules/ampliar@2x.png">
-                </a>
-            </div>
-            <div class="MasImagenNota">
-              	<img src="imagenes/iconos/azules/otras@2x.png">
-          	</div>
-         </div>
-        </div>
-       
-       <div style="display:inline-block; overflow:hidden">
-          <div class="ImagenesNotaImagen">
-              <img src="http://166.78.193.53/images/imagenes-articulos/sintesis_penal.jpg">
-              <div class="ZoomImagenNota">
-                  <a href="http://166.78.193.53/images/imagenes-articulos/sintesis_penal.jpg">
-                    <img src="imagenes/iconos/azules/ampliar@2x.png">
-                  </a>
-              </div>
-          
-          </div>
-        </div>
-      
-      
+$imagen_p.='
    		 </div>
 		
 		<script>
