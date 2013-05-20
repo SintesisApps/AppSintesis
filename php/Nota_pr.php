@@ -226,17 +226,7 @@ $css='
 
 </script>
 ';
-/*$(".ImagenesNotaImagen").empty();*/
-$limpiar_nota='<script>
-$(".ImagenesNotaImagen").html("");
-$(".NotaTitulo").html("");
-$(".NotaSumario").html("");
-$(".NotaAutor").html("");
-$(".NotaTitulo").html("");
-$(".NotaFechaCreacion").html("");
-$(".NotaCompleta").html("");
-</script
-';
+
 
 $arr1[$i]=array(
 	'titulo' => $Titulo_p,
