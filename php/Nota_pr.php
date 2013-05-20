@@ -43,6 +43,7 @@ $select_app="SELECT * FROM app_articulos WHERE id='".$id."'";
 		$Autor=$f_ar['autor'];
 		$Nota=$f_ar['nota'];
 		$Fecha_Creacion_p=$f_ar['fecha_creacion'];
+		$Nota_extraer=$f_ar['nota'];
 		
 		$Titulo_p=utf8_encode($Titulo);
 		$Sumario_p=utf8_encode($Sumario);
@@ -51,16 +52,7 @@ $select_app="SELECT * FROM app_articulos WHERE id='".$id."'";
 		
 		$imagen=extraer_imagen_nota($Nota);
 		$imagen_p=$imagen;
-		/*
-		$imagen=extraer_imagen($Nota);
-		$imagen_p=utf8_decode($imagen);
-		$Nota=extraer_nota($Nota);
-		$Nota=utf8_decode($Nota);
 		
-		$imagen=extraer_imagen($Nota);
-		$imagen=utf8_decode($imagen);
-		
-		*/
 		$Nota=strip_tags($Nota);
 		$Nota_p=utf8_encode($Nota);
 		
@@ -227,7 +219,62 @@ $css='
 </script>
 ';
 
-$imagen_p="<div style=\'display:inline-block; overflow:hidden\'><div class=\'ImagenesNotaImagen\'><img src=\'http://166.78.193.53/APPSintesis/imagenes/imagenes-articulos/1.jpg\'><div class=\'ZoomImagenNota\'><a href=\'http://166.78.193.53/APPSintesis/imagenes/imagenes-articulos/1.jpg\' ><img src=\'http://166.78.193.53/APPSintesis/imagenes/iconos/azules/ampliar@2x.png\'></a></div><div class=\'MasImagenNota\'><img src=\'http://166.78.193.53/APPSintesis/imagenes/iconos/azules/otras@2x.png\'></div></div></div><div style=\'display:inline-block; overflow:hidden\'><div class=\'ImagenesNotaImagen\'><img src=\'http://166.78.193.53/APPSintesis/imagenes/imagenes-articulos/2.jpg\'><div class=\'ZoomImagenNota\'><a href=\'http://166.78.193.53/APPSintesis/imagenes/imagenes-articulos/2.jpg\'><img src=\'http://166.78.193.53/APPSintesis/imagenes/iconos/azules/ampliar@2x.png\'></a></div></div></div>";
+/*
+$imagen_p="<div style=\'display:inline-block; overflow:hidden\'><div class=\'ImagenesNotaImagen\'><img src=\'http://166.78.193.53/APPSintesis/imagenes/imagenes-articulos/1.jpg\'><div class=\'ZoomImagenNota\'><a href=\'http://166.78.193.53/APPSintesis/imagenes/imagenes-articulos/1.jpg\' ><img src=\'http://166.78.193.53/APPSintesis/imagenes/iconos/azules/ampliar@2x.png\'></a></div><div class=\'MasImagenNota\'><img src=\'http://166.78.193.53/APPSintesis/imagenes/iconos/azules/otras@2x.png\'></div></div></div><div style=\'display:inline-block; overflow:hidden\'><div class=\'ImagenesNotaImagen\'><img src=\'http://166.78.193.53/APPSintesis/imagenes/imagenes-articulos/2.jpg\'><div class=\'ZoomImagenNota\'><a href=\'http://166.78.193.53/APPSintesis/imagenes/imagenes-articulos/2.jpg\'><img src=\'http://166.78.193.53/APPSintesis/imagenes/iconos/azules/ampliar@2x.png\'></a></div></div></div>";*/
+
+
+$imagen_p="";
+
+function primera_imagen($texto) {
+    $foto = '';
+    ob_start();
+    ob_end_clean();
+    preg_match_all("/<img[\s]+[^>]*?src[\s]?=[\s\"\']+(.*\.([gif|jpg|png|jpeg]{3,4}))[\"\']+.*?>/", $texto, $array);
+    $foto = $array [1][0];
+    if(empty($foto)){
+        $foto = '';
+    }
+    return $foto;
+}
+$cadena=$Nota_extraer;
+$tamaño_total_cadena=strlen($cadena);
+$numero_veces= substr_count($cadena, '<img'); 
+$contador1==0;
+
+while($contador1!=$numero_veces )
+{
+	$primera= primera_imagen($cadena); 
+	$tamaño_imagen=strlen($primera);
+	 $imagen_p.='<div style="display:inline-block; overflow:hidden">
+          <div class="ImagenesNotaImagen">
+          	<img src="'.$primera.'">
+          	<div class="ZoomImagenNota">
+                <a href="'.$primera.'" id="">
+                <img src="imagenes/iconos/azules/ampliar@2x.png">
+                </a>
+            </div>
+            <div class="MasImagenNota">
+              	<img src="imagenes/iconos/azules/otras@2x.png">
+          	</div>
+         </div>
+        </div>
+	 ';
+	 
+	 
+	 
+	$pos1 = strpos($cadena,'<img');
+	
+	$tamaño_aparicion_imagen=$pos1+$tamaño_imagen;
+	
+	$cadena= substr($cadena, $tamaño_aparicion_imagen);   
+	
+	
+	$contador1=$contador1+1;
+}
+
+
+
+
 $arr1[$i]=array(
 	'titulo' => $Titulo_p,
 					'sumario' => $css.$Sumario_p,
