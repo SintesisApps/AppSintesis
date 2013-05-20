@@ -1,6 +1,6 @@
 <?php
-include("../../includes/conexion.php");
-include('../../funciones.php'); 
+include("../../../includes/conexion.php");
+include('../../../funciones.php'); 
 //Slide Principal
 
 $html.='<!--Slide Principal-->

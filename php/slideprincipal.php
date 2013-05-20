@@ -1,7 +1,7 @@
 <?php
 /*CRAGAR EL  SLIDE PRINCIPAL*/
-include("../../includes/conexion.php");
-include('../../funciones.php'); 
+include("../../../includes/conexion.php");
+include('../../../funciones.php'); 
 //Slide Principal
 
 		$html='<div  class="SlidePrincipal ContenedorSlidePrincipal" >';

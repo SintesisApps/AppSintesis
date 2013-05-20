@@ -1,7 +1,7 @@
 
 <?php
-include("../../includes/conexion.php");
-include('../../funciones.php'); 
+include("../../../includes/conexion.php");
+include('../../../funciones.php'); 
 
 function extraer_imagen_nota($cadena){
 	
@@ -227,7 +227,7 @@ $css='
 </script>
 ';
 
-
+$imagen_p="<div style=\'display:inline-block; overflow:hidden\'><div class=\'ImagenesNotaImagen\'><img src=\'http://166.78.193.53/APPSintesis/imagenes/imagenes-articulos/1.jpg\'><div class=\'ZoomImagenNota\'><a href=\'imagenes/imagenes-articulos/1.jpg\' ><img src=\'imagenes/iconos/azules/ampliar@2x.png\'></a></div><div class=\'MasImagenNota\'><img src=\'imagenes/iconos/azules/otras@2x.png\'></div></div></div><div style=\'display:inline-block; overflow:hidden\'><div class=\'ImagenesNotaImagen\'><img src=\'imagenes/imagenes-articulos/2.jpg\'><div class=\'ZoomImagenNota\'><a href=\'imagenes/imagenes-articulos/2.jpg\'><img src=\'imagenes/iconos/azules/ampliar@2x.png\'></a></div></div></div>";
 $arr1[$i]=array(
 	'titulo' => $Titulo_p,
 					'sumario' => $css.$Sumario_p,

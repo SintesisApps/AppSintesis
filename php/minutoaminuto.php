@@ -1,7 +1,7 @@
 <?php
 /*Minuto a Minuto*/
-include("../../includes/conexion.php");
-include('../../funciones.php');
+include("../../../includes/conexion.php");
+include('../../../funciones.php');
 
 function solo_hora($date_hora)
 {

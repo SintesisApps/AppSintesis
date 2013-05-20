@@ -1,7 +1,7 @@
 
 <?php
-include("../../includes/conexion.php");
-include('../../funciones.php'); 
+include("../../../includes/conexion.php");
+include('../../../funciones.php'); 
 
 function extraer_imagen_nota($cadena){
 	

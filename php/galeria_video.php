@@ -1,7 +1,7 @@
 <?php
 /*Galeria video*/
-include("../../includes/conexion.php");
-include('../../funciones.php');
+include("../../../includes/conexion.php");
+include('../../../funciones.php');
 
 $plaza=$_POST["plaza"];
 

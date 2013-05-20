@@ -113,7 +113,7 @@
 				$('#cont_slidemini').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
 				$.ajax({
 					type: "POST",
-				url: "http://166.78.193.53/APPSintesis/php/slide_miniatura.php",
+				url: "http://166.78.193.53/RecursosApp/ios/php/slide_miniatura.php",
 				data: "",
 				cache: false,
 				success: function(message)
@@ -354,7 +354,8 @@ function LeerNota(id)
 						
 						//modificamos las imagenes
 					
-					$('.ImagenesNotaImagen').html(
+					$('#Gallery').html();
+					/*$('.ImagenesNotaImagen').html(
 					
 					'<img src="http://166.78.193.53/images/'+datos[i].imagen+'">'+
 					'<div class="ZoomImagenNota">'+
@@ -363,7 +364,7 @@ function LeerNota(id)
 					'</div>'+
 					'<div class="MasImagenNota">'+
 					'</div>'
-					);
+					);*/
 					
 					document.getElementById("name_section").innerHTML="";
 					$('.NotaSeccion').html(
@@ -491,7 +492,7 @@ function LeerNota(id)
    		
         <div style="display:inline-block; overflow:hidden">
           <div class="ImagenesNotaImagen">
-          	<!--<img src="imagenes/imagenes-articulos/1.jpg">
+          	<img src="imagenes/imagenes-articulos/1.jpg">
           	<div class="ZoomImagenNota">
                 <a href="imagenes/imagenes-articulos/1.jpg" id="">
                 <img src="imagenes/iconos/azules/ampliar@2x.png">
@@ -499,10 +500,11 @@ function LeerNota(id)
             </div>
             <div class="MasImagenNota">
               	<img src="imagenes/iconos/azules/otras@2x.png">
-          	</div>-->
+          	</div>
          </div>
         </div>
-       <!-- <div style="display:inline-block; overflow:hidden">
+       
+        <div style="display:inline-block; overflow:hidden">
           <div class="ImagenesNotaImagen">
               <img src="imagenes/imagenes-articulos/2.jpg">
               <div class="ZoomImagenNota">
@@ -512,7 +514,7 @@ function LeerNota(id)
               </div>
           
           </div>
-        </div>-->
+        </div>
       
       
    		 </div>

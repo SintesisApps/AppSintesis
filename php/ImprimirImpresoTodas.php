@@ -4,37 +4,37 @@ $plaza=$_POST['plaza'];
 
 if($plaza=="Nacional"):
 	$titulo="Nacional";
-	$path="../../portadas/SECCION B/";
+	$path="../../../portadas/SECCION B/";
 	$RutaImagen="../ImpresoPortadas/Nacional/";
 	$ImagenesPortadas= CrearImagendeImpresoAPP($path,$RutaImagen);
 elseif($plaza=="Puebla"):
 	$titulo="Puebla";
-	$path="../../portadas/SECCIÓN A/PUEBLA/";
+	$path="../../../portadas/SECCIÓN A/PUEBLA/";
 	$RutaImagen="../ImpresoPortadas/Puebla/";
 	$ImagenesPortadas= CrearImagendeImpresoAPP($path,$RutaImagen);
 elseif($plaza=="Tlaxcala"):
 	$titulo="Tlaxcala";
-	$path="../../portadas/SECCIÓN A/TLAXCALA/";
+	$path="../../../portadas/SECCIÓN A/TLAXCALA/";
 	$RutaImagen="../ImpresoPortadas/Tlaxcala/";
 	$ImagenesPortadas= CrearImagendeImpresoAPP($path,$RutaImagen);
 elseif($plaza=="Hidalgo"):
 	$titulo="Hidalgo";
-	$path="../../portadas/SECCIÓN A/HIDALGO/";
+	$path="../../../portadas/SECCIÓN A/HIDALGO/";
 	$RutaImagen="../ImpresoPortadas/Hidalgo/";
 	$ImagenesPortadas= CrearImagendeImpresoAPP($path,$RutaImagen);
 elseif($plaza=="Oaxaca"):
 	$titulo="Oaxaca";
-	$path="../../portadas/SEMANARIOS/OAXACA/";
+	$path="../../../portadas/SEMANARIOS/OAXACA/";
 	$RutaImagen="../ImpresoPortadas/Oaxaca/";
 	$ImagenesPortadas= CrearImagendeImpresoAPP($path,$RutaImagen);
 elseif($plaza=="Chiapas"):
 	$titulo="Chiapas";
-	$path="../../portadas/SEMANARIOS/Tuxtla/";
+	$path="../../../portadas/SEMANARIOS/Tuxtla/";
 	$RutaImagen="../ImpresoPortadas/Chiapas/";
 	$ImagenesPortadas= CrearImagendeImpresoAPP($path,$RutaImagen);
 elseif($plaza=="Yucatan"):
 	$titulo="Yucatán";
-	$path="../../portadas/SEMANARIOS/Yucatan/";
+	$path="../../../portadas/SEMANARIOS/Yucatan/";
 	$RutaImagen="../ImpresoPortadas/Yucatan/";
 	$ImagenesPortadas= CrearImagendeImpresoAPP($path,$RutaImagen);
 	

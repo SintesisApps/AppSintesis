@@ -1,7 +1,7 @@
 <?php
 /*Notas de las secciones, tabla Nacionales*/
-include("../../includes/conexion.php");
-include('../../funciones.php'); 
+include("../../../includes/conexion.php");
+include('../../../funciones.php'); 
 
 $seccion=$_POST["seccion"];
 

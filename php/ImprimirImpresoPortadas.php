@@ -1,14 +1,14 @@
 <?php
 
-/*echo CrearImagendeImpresoAPP("../../portadas/SECCIÓN A/PUEBLA/","../ImpresoPortadas/Puebla/Thumbs/");
-echo CrearImagendeImpresoAPP("../../portadas/SECCIÓN A/TLAXCALA/","../ImpresoPortadas/Tlaxcala/Thumbs/");
-echo CrearImagendeImpresoAPP("../../portadas/SECCIÓN A/HIDALGO/","../ImpresoPortadas/Hidalgo/Thumbs/");
+/*echo CrearImagendeImpresoAPP("../../../portadas/SECCIÓN A/PUEBLA/","../ImpresoPortadas/Puebla/Thumbs/");
+echo CrearImagendeImpresoAPP("../../../portadas/SECCIÓN A/TLAXCALA/","../ImpresoPortadas/Tlaxcala/Thumbs/");
+echo CrearImagendeImpresoAPP("../../../portadas/SECCIÓN A/HIDALGO/","../ImpresoPortadas/Hidalgo/Thumbs/");
 
-echo CrearImagendeImpresoAPP("../../portadas/SEMANARIOS/OAXACA/","../ImpresoPortadas/Oaxaca/Thumbs/");
-echo CrearImagendeImpresoAPP("../../portadas/SEMANARIOS/Tuxtla/","../ImpresoPortadas/Chiapas/Thumbs/");
-echo CrearImagendeImpresoAPP("../../portadas/SEMANARIOS/Yucatan/","../ImpresoPortadas/Yucatan/Thumbs/");
+echo CrearImagendeImpresoAPP("../../../portadas/SEMANARIOS/OAXACA/","../ImpresoPortadas/Oaxaca/Thumbs/");
+echo CrearImagendeImpresoAPP("../../../portadas/SEMANARIOS/Tuxtla/","../ImpresoPortadas/Chiapas/Thumbs/");
+echo CrearImagendeImpresoAPP("../../../portadas/SEMANARIOS/Yucatan/","../ImpresoPortadas/Yucatan/Thumbs/");
 
-echo CrearImagendeImpresoAPP("../../portadas/SECCION B/","../ImpresoPortadas/Nacional/Thumbs/");
+echo CrearImagendeImpresoAPP("../../../portadas/SECCION B/","../ImpresoPortadas/Nacional/Thumbs/");
 
 
 
@@ -100,15 +100,15 @@ return $html;
 
 <?php
 
-echo CrearImagendeImpresoAPP("../../portadas/SECCIÓN A/PUEBLA/","../ImpresoPortadas/Puebla/Thumbs/");
-echo CrearImagendeImpresoAPP("../../portadas/SECCIÓN A/TLAXCALA/","../ImpresoPortadas/Tlaxcala/Thumbs/");
-echo CrearImagendeImpresoAPP("../../portadas/SECCIÓN A/HIDALGO/","../ImpresoPortadas/Hidalgo/Thumbs/");
+echo CrearImagendeImpresoAPP("../../../portadas/SECCIÓN A/PUEBLA/","../ImpresoPortadas/Puebla/Thumbs/");
+echo CrearImagendeImpresoAPP("../../../portadas/SECCIÓN A/TLAXCALA/","../ImpresoPortadas/Tlaxcala/Thumbs/");
+echo CrearImagendeImpresoAPP("../../../portadas/SECCIÓN A/HIDALGO/","../ImpresoPortadas/Hidalgo/Thumbs/");
 
-echo CrearImagendeSemanariosAPP("../../portadas/SEMANARIOS/OAXACA/","../ImpresoPortadas/Oaxaca/Thumbs/");
-echo CrearImagendeSemanariosAPP("../../portadas/SEMANARIOS/Tuxtla/","../ImpresoPortadas/Chiapas/Thumbs/");
-echo CrearImagendeSemanariosAPP("../../portadas/SEMANARIOS/Yucatan/","../ImpresoPortadas/Yucatan/Thumbs/");
+echo CrearImagendeSemanariosAPP("../../../portadas/SEMANARIOS/OAXACA/","../ImpresoPortadas/Oaxaca/Thumbs/");
+echo CrearImagendeSemanariosAPP("../../../portadas/SEMANARIOS/Tuxtla/","../ImpresoPortadas/Chiapas/Thumbs/");
+echo CrearImagendeSemanariosAPP("../../../portadas/SEMANARIOS/Yucatan/","../ImpresoPortadas/Yucatan/Thumbs/");
 
-echo CrearImagendeImpresoAPP("../../portadas/SECCION B/","../ImpresoPortadas/Nacional/Thumbs/");
+echo CrearImagendeImpresoAPP("../../../portadas/SECCION B/","../ImpresoPortadas/Nacional/Thumbs/");
 
 
 
