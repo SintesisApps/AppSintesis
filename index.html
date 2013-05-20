@@ -332,6 +332,12 @@
 function LeerNota(id)
 	{ CargarNoticiasHome();
 		$('.ExtrasPlaza').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
+		document.getElementById("div_nt").innerHTML="";
+						document.getElementById("div_ns").innerHTML="";
+						document.getElementById("div_na").innerHTML="";
+						document.getElementById("div_nfc").innerHTML="";
+						document.getElementById("div_nc").innerHTML="";
+						document.getElementById("div_nep").innerHTML="";
 			$.ajax(
 			{
 
@@ -345,12 +351,7 @@ function LeerNota(id)
 					for(i=0;i<datos.length;i++)
 					{
 						//limpiamos contenidos
-						document.getElementById("div_nt").innerHTML="";
-						document.getElementById("div_ns").innerHTML="";
-						document.getElementById("div_na").innerHTML="";
-						document.getElementById("div_nfc").innerHTML="";
-						document.getElementById("div_nc").innerHTML="";
-						document.getElementById("div_nep").innerHTML="";
+						
 						/*$('#div_nt').empty();
 						$('#div_ns').empty();
 						$('#div_na').empty();
