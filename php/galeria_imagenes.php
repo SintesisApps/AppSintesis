@@ -132,7 +132,10 @@ $html="
 $html.='<div id="MainContent">
     <ul id="Gallery" class="gallery">';
 	
-$select_app="SELECT * FROM galeria_imagenes_contenido";
+/*$select_app="SELECT * FROM galeria_imagenes_contenido and estatus=1";*/
+$select_app="SELECT * FROM galeria_imagenes_contenido,  galerias_imagenes where galeria_imagenes_contenido.id_galeria= galerias_imagenes.id and galerias_imagenes.estatus=1";
+
+
 $r_app=mysql_query($select_app,$conexion);
 
 while($imagen=mysql_fetch_array($r_app))
