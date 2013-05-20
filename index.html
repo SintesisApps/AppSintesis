@@ -409,12 +409,16 @@ function LeerNota(id)
 
 
  <script>
- 
+ $(window).load(function() {
+      $('#cargando').hide();
+});
+
   
   </script>
 
 </head>
 <body>
+<div class="lb-overlay" id="cargando" style="display:'none'"> <img src="imagenes/loading.gif"> </div>
 <!-- Home -->
 <div id="home" class="content" >
 <div class="HeaderAlternativo">
