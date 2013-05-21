@@ -28,7 +28,25 @@ $(window).load(function() {
     navigator.splashscreen.hide();
 }, 20000);
 
-	 slidePrincipal();
+	 function slidePrincipal()
+			{
+				//$('#cont_slideprincipal').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
+				 $.ajax({
+				
+				type: "POST",
+				url: "http://166.78.193.53/RecursosApp/ios/php/slideprincipal.php",
+				data: "",
+				cache: false,
+				success: function(message)
+				{
+				//setInterval($('#cont_slideprincipal').html(message),5000);
+				$('#cont_slideprincipal').html(message)
+				}
+				
+				});
+				
+				
+			}
 			slideMiniatura();
 			slideVertical();
 			galeria_video('nacionales');	
@@ -116,7 +134,7 @@ $(window).load(function() {
 			
 	
 	
-			function slidePrincipal()
+			/*function slidePrincipal()
 			{
 				//$('#cont_slideprincipal').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
 				 $.ajax({
@@ -134,7 +152,7 @@ $(window).load(function() {
 				});
 				
 				
-			}
+			}*/
 			function slideMiniatura()
 			{
 				//$('#cont_slidemini').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
