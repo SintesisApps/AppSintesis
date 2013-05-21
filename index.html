@@ -295,10 +295,11 @@
 	} 
 	function cargar_seccion(seccion)
 	{
-		$('.ContenedorPrincipalSeccion').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
-		$('.DivVertical').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
-		$('#minuto_plaza').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
-		$('.Video_seccion').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
+		document.getElementById("cargando").style.display='';
+		//$('.ContenedorPrincipalSeccion').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
+		//$('.DivVertical').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
+		//$('#minuto_plaza').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
+		//$('.Video_seccion').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
 		 $.ajax(
 			{
 
@@ -324,10 +325,12 @@
 						
 						
 						
-						setInterval($(".ContenedorPrincipalSeccion").html(datos[i].slide_principal),5000);
-						setInterval($(".DivVertical").html(datos[i].slide_vertical),5000);
-						setInterval($("#minuto_plaza").html(datos[i].ultimas_noticias),5000);
-						setInterval($(".Video_seccion").html(datos[i].video),5000);
+						$(".ContenedorPrincipalSeccion").html(datos[i].slide_principal)
+						$(".DivVertical").html(datos[i].slide_vertical)
+						$("#minuto_plaza").html(datos[i].ultimas_noticias)
+						$(".Video_seccion").html(datos[i].video)
+						
+						setInterval(function(){document.getElementById("cargando").style.display='none'},12000);
 						
 					}
 					
@@ -350,6 +353,7 @@ function LeerNota(id)
 						document.getElementById("div_nfc").innerHTML="";
 						document.getElementById("div_nc").innerHTML="";
 						document.getElementById("div_nep").innerHTML="";
+						document.getElementById("img_cont").innerHTML="";
 			$.ajax(
 			{
 
@@ -901,13 +905,13 @@ function ImprimirImpresoTodas(plaza)
 <div id="impreso-portadas"  class="TransicionFadeOut" >
       <div class="HeaderAlternativo">
       
-        <div style=" display:inline-block; padding-top:0px; width:50px; padding-left:10px;"> <a href="javascript:;" onClick="history.back(-1);"> <img src="http://166.78.193.53/RecursosApp/ios/imagenes/iconos/azules/regresar@2x.png" width="50" > </a> </div>
+        <div style=" display:inline-block; padding-top:0px; width:50px; padding-left:10px;"> <a href="javascript:;" onClick="history.back(-1);"> <img src="imagenes/iconos/azules/regresar@2x.png" width="50" > </a> </div>
         
-     <div style=" display:inline-block; padding-top:0px; width:50px;padding-left:10px; "> <a href="javascript:;" onClick="$('#panelSeccionesImpreso').css('left','0');"> <img src="http://166.78.193.53/RecursosApp/ios/imagenes/iconos/azules/seccion@2x.png" width="50" > </a>
+     <div style=" display:inline-block; padding-top:0px; width:50px;padding-left:10px; "> <a href="javascript:;" onClick="$('#panelSeccionesImpreso').css('left','0');"> <img src="imagenes/iconos/azules/seccion@2x.png" width="50" > </a>
      </div>
      
      
-        <div style=" display:inline-block; width:75%; vertical-align: top; padding-top:10px; text-align:center;"> <img src="http://166.78.193.53/RecursosApp/ios/imagenes/logo.png" height="25"> </div>
+        <div style=" display:inline-block; width:75%; vertical-align: top; padding-top:10px; text-align:center;"> <img src="imagenes/logo.png" height="25"> </div>
         
       </div>
 
