@@ -47,7 +47,7 @@
 	<gap:splash src="imagenes/splashscreen/mdpi.png"      gap:platform="ios"     width="1024" height="768" />
 	<gap:splash src="imagenes/splashscreen/mdpi_v.png"      gap:platform="ios"     width="768" height="1024" />-->
 	<gap:splash src="imagenes/splashscreen/Default-Landscape.png"     gap:platform="ios"     width="2048" height="1536" />
-	<gap:splash src="imagenes/splashscreen/Default-Portrait.png"     gap:platform="ios"     width="1536" height="2048" />
+	<gap:splash src="imagenes/splashscreen/mdpi_v@2x.png"     gap:platform="ios"     width="1536" height="2048" />
 <!--	<gap:splash src="imagenes/splashscreen/Default.png"      gap:platform="ios"     width="2048" height="2048" />-->
 	<!--<gap:splash src="imagenes/splashscreen/mdpi.png"      gap:platform="ios"     width="1024" height="768" />
 	<gap:splash src="imagenes/splashscreen/mdpi_v.png"      gap:platform="ios"     width="768" height="1024" />-->
