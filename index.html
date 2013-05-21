@@ -30,9 +30,9 @@ $(window).load(function() {
 			galeria_video('nacionales');	
 			minuto_minuto();
 			CargarNoticiasHomeGal();
-$('#cargando').hide();
+			$('#cargando').hide();
 	 
-			alert("window is loaded");
+			
 });
 /*
 	$(document).ready(function(e){
@@ -114,7 +114,7 @@ $('#cargando').hide();
 	
 			function slidePrincipal()
 			{
-				$('#cont_slideprincipal').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
+				//$('#cont_slideprincipal').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
 				 $.ajax({
 				
 				type: "POST",
@@ -123,7 +123,8 @@ $('#cargando').hide();
 				cache: false,
 				success: function(message)
 				{
-				setInterval($('#cont_slideprincipal').html(message),5000);
+				//setInterval($('#cont_slideprincipal').html(message),5000);
+				$('#cont_slideprincipal').html(message)
 				}
 				
 				});
@@ -132,7 +133,7 @@ $('#cargando').hide();
 			}
 			function slideMiniatura()
 			{
-				$('#cont_slidemini').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
+				//$('#cont_slidemini').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
 				$.ajax({
 					type: "POST",
 				url: "http://166.78.193.53/RecursosApp/ios/php/slide_miniatura.php",
@@ -140,14 +141,15 @@ $('#cargando').hide();
 				cache: false,
 				success: function(message)
 				{	
-				setInterval($('#cont_slidemini').html(message),5000);
+				//setInterval($('#cont_slidemini').html(message),5000);
+				$('#cont_slidemini').html(message)
 				
 				}
 				});
 			}
 			function slideVertical()
 			{
-				$('#content_slideVertical').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
+				//$('#content_slideVertical').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
 				$.ajax({
 					type: "POST",
 				url: "http://166.78.193.53/RecursosApp/ios/php/slide_vertical.php",
@@ -155,7 +157,8 @@ $('#cargando').hide();
 				cache: false,
 				success: function(message)
 				{	
-				setInterval($('#content_slideVertical').html(message),5000);
+				//setInterval($('#content_slideVertical').html(message),5000);
+				$('#content_slideVertical').html(message)
 				}
 				});
 			}
@@ -192,7 +195,7 @@ $('#cargando').hide();
 			
 			function minuto_minuto()
 			{
-			$('#minuto_home').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
+			//$('#minuto_home').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
 				$.ajax({
 					type: "POST",
 				url: "http://166.78.193.53/RecursosApp/ios/php/minutoaminuto.php",
@@ -200,8 +203,8 @@ $('#cargando').hide();
 				cache: false,
 				success: function(message)
 				{	
-				setInterval($('#minuto_home').html(message),5000);
-					
+				//setInterval($('#minuto_home').html(message),5000);
+					$('#minuto_home').html(message)
 				
 				}
 				});
