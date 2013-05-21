@@ -251,10 +251,11 @@
 	
 	function CargarNoticiasPlaza(plaza)
 	{
-		$('.ContenedorPrincipalSeccion').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
+		document.getElementById("cargando").style.display='';
+		/*$('.ContenedorPrincipalSeccion').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
 		$('.DivVertical').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
 		$('#minuto_plaza').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
-		$('.Video_seccion').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
+		$('.Video_seccion').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');*/
 			$.ajax(
 			{
 
@@ -277,14 +278,15 @@
 					//color
 					//$("#name_SeccionSeccion").css({'background':'#5abfcf'});
 						
-						setInterval($(".ContenedorPrincipalSeccion").html(datos[i].slide_principal),5000);
+						$(".ContenedorPrincipalSeccion").html(datos[i].slide_principal)
 						
-						setInterval($(".DivVertical").html(datos[i].slide_vertical),5000);
+						$(".DivVertical").html(datos[i].slide_vertical)
 						
-						setInterval($("#minuto_plaza").html(datos[i].ultimas_noticias),5000);
+						$("#minuto_plaza").html(datos[i].ultimas_noticias)
 						
-						setInterval($(".Video_seccion").html(datos[i].video),5000);
+						$(".Video_seccion").html(datos[i].video)
 						
+						setInterval(function(){document.getElementById("cargando").style.display='none'},12000);
 					}
 					
 				
