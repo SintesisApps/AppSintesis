@@ -23,67 +23,33 @@
 
 
 <script type="text/javascript">
-$(window).load(function() {
 
-
-	 function slidePrincipal()
-			{
-				//$('#cont_slideprincipal').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
-				 $.ajax({
-				
-				type: "POST",
-				url: "http://166.78.193.53/RecursosApp/ios/php/slideprincipal.php",
-				data: "",
-				cache: false,
-				success: function(message)
-				{
-				//setInterval($('#cont_slideprincipal').html(message),5000);
-				$('#cont_slideprincipal').html(message)
-				}
-				
-				});
-				
-				
-			}
-			slidePrincipal();
-			slideMiniatura();
-			slideVertical();
-			galeria_video('nacionales');	
-			minuto_minuto();
-			CargarNoticiasHomeGal();
-			$('#cargando').hide();
-	 
-			
-});
-/*
 	$(document).ready(function(e){
 	document.addEventListener("deviceready", function(){
 
-		
+		/*
 		if(checkConnection()== "WiFi connection")
 		{alert("conectado");}
 		else
 		{alert("No conectado");
 		}
 		alert("conexion:"+checkConnection());
-		$(window).load(function() {
-     //$('#cargando').hide();
-	 
-			alert("window is loaded");
-});
+	*/
 				
-	 slidePrincipal();
-			slideMiniatura();
-			slideVertical();
-			galeria_video('nacionales');	
-			minuto_minuto();
-			CargarNoticiasHomeGal();
+		slidePrincipal();
+		slideMiniatura();
+		slideVertical();
+		galeria_video('nacionales');	
+		minuto_minuto();
+		CargarNoticiasHomeGal();
 		
-	
+		setInterval(function(){document.getElementById("cargando").style.display='none'},12000);
 		
 	
 	});	
-});*/
+});
+
+
 	function checkConnection() {
         var networkState = navigator.network.connection.type;
 
@@ -114,7 +80,6 @@ $(window).load(function() {
 	
 		
 			
-			
 			function CargarNoticiasHomeGal()
 			{
 				$.ajax({
@@ -133,7 +98,7 @@ $(window).load(function() {
 			
 	
 	
-			/*function slidePrincipal()
+			function slidePrincipal()
 			{
 				//$('#cont_slideprincipal').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
 				 $.ajax({
@@ -151,7 +116,7 @@ $(window).load(function() {
 				});
 				
 				
-			}*/
+			}
 			function slideMiniatura()
 			{
 				//$('#cont_slidemini').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
