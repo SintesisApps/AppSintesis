@@ -23,6 +23,18 @@
 
 
 <script type="text/javascript">
+$(window).load(function() {
+	 slidePrincipal();
+			slideMiniatura();
+			slideVertical();
+			galeria_video('nacionales');	
+			minuto_minuto();
+			CargarNoticiasHomeGal();
+$('#cargando').hide();
+	 
+			alert("window is loaded");
+});
+/*
 	$(document).ready(function(e){
 	document.addEventListener("deviceready", function(){
 
@@ -50,7 +62,7 @@
 		
 	
 	});	
-});
+});*/
 	function checkConnection() {
         var networkState = navigator.network.connection.type;
 
@@ -421,7 +433,7 @@ function LeerNota(id)
 
 </head>
 <body>
-<!--<div class="lb-overlay" id="cargando" style="display:'none'"> <img src="imagenes/loading.gif"> </div>-->
+<div class="lb-overlay" id="cargando" style="display:''"> <img src="imagenes/loading.gif"> </div>
 <!-- Home -->
 <div id="home" class="content" >
 <div class="HeaderAlternativo">
