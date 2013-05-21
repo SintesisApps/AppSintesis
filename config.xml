@@ -53,14 +53,14 @@
     <gap:splash src="imagenes/splashscreen/xhdpi.png" gap:platform="android" gap:density="xhdpi" />
     <gap:splash src="imagenes/splashscreen/ldpi.png"         gap:platform="blackberry" />
     
-	<!--<gap:splash src="imagenes/splashscreen/Default-Portrait@2x~ipad.png"     gap:platform="ios"     width="1536" height="2008" />
+	<gap:splash src="imagenes/splashscreen/Default-Portrait@2x~ipad.png"     gap:platform="ios"     width="1536" height="2008" />
 		<gap:splash src="imagenes/splashscreen/Default-Portrait@2x~ipad-h.png"     gap:platform="ios"     width="2008" height="1536" />
-	<gap:splash src="imagenes/splashscreen/Default-Landscape~ipad.png"      gap:platform="ios"     width="1024" height="748" />
+	<!--<gap:splash src="imagenes/splashscreen/Default-Landscape~ipad.png"      gap:platform="ios"     width="1024" height="748" />
 	<gap:splash src="imagenes/splashscreen/Default-Landscape~ipad-v.png"      gap:platform="ios"     width="748" height="1024" /-->
     <gap:splash src="imagenes/splashscreen/Default-Landscape@2x~ipad.png"     gap:platform="ios"     width="2048" height="1496" />
 	<gap:splash src="imagenes/splashscreen/Default-Landscape@2x~ipad-v.png"     gap:platform="ios"     width="1496" height="2048" />
-	<!--<gap:splash src="imagenes/splashscreen/Default-Portrait~ipad.png"      gap:platform="ios"     width="768" height="1004" />
-	<gap:splash src="imagenes/splashscreen/Default-Portrait~ipad_h.png"      gap:platform="ios"     width="1004" height="768" />-->
+	<gap:splash src="imagenes/splashscreen/Default-Portrait~ipad.png"      gap:platform="ios"     width="768" height="1004" />
+	<gap:splash src="imagenes/splashscreen/Default-Portrait~ipad_h.png"      gap:platform="ios"     width="1004" height="768" />
 	
 	
    <plugin name="NetworkStatus" value="CDVConnection" />
