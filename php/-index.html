@@ -226,7 +226,7 @@
 			}
 			function slideVertical()
 			{
-				alert("slide vertical");
+				
 				$.ajax({
 					type: "POST",
 				url: "http://166.78.193.53/APPSintesis/php/slide_vertical.php",
@@ -374,12 +374,12 @@
 		 
 	}
 
-/*
-//CargarNoticiasHome();
 
-/*$(window).load(function() {
+CargarNoticiasHome();
+
+(window).load(function() {
       $('#cargando').hide();
-});*/
+});
 
 function LeerNota(id)
 	{
@@ -453,7 +453,7 @@ function LeerNota(id)
 
 </head>
 <body onload="initialize();">
-<!--<div class="lb-overlay" id="cargando" style="display:'none'"> <img src="imagenes/loading.gif"> </div>-->
+<div class="lb-overlay" id="cargando" style="display:'none'"> <img src="imagenes/loading.gif"> </div>
 
 <!-- Home -->
 <div id="home" class="content" >
