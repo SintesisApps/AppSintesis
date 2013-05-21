@@ -41,9 +41,13 @@
    
 
    
-    
+    <!--
 	<gap:splash src="imagenes/splashscreen/hdpi.png"     gap:platform="ios"     width="1536" height="1152" />
 	<gap:splash src="imagenes/splashscreen/hdpi_v.png"     gap:platform="ios"     width="1152" height="1536" />
+	<gap:splash src="imagenes/splashscreen/mdpi.png"      gap:platform="ios"     width="1024" height="768" />
+	<gap:splash src="imagenes/splashscreen/mdpi_v.png"      gap:platform="ios"     width="768" height="1024" />-->
+	<gap:splash src="imagenes/splashscreen/xhdpi.png"     gap:platform="ios"     width="2048" height="1536" />
+	<gap:splash src="imagenes/splashscreen/xhdpi_v.png"     gap:platform="ios"     width="1536" height="2048" />
 	<gap:splash src="imagenes/splashscreen/mdpi.png"      gap:platform="ios"     width="1024" height="768" />
 	<gap:splash src="imagenes/splashscreen/mdpi_v.png"      gap:platform="ios"     width="768" height="1024" />
 	
