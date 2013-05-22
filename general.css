@@ -111,8 +111,8 @@ lb-overlay_loadin
 	padding: 0px;
 	z-index: 99;
 	text-align: center;
-	background: #666;
-	opacity: 0.8;
+	background: #000;
+	opacity: 0;
 }
 .lb-overlay img{
 	margin-top:20%;}
