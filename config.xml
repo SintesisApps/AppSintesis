@@ -49,7 +49,6 @@
 	
 	
    <plugin name="NetworkStatus" value="CDVConnection" />
-	<plugin name="SplashScreen" value="CDVSplashScreen" />
 
 
 	
