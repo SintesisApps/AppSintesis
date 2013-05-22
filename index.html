@@ -251,7 +251,7 @@
 	
 	function CargarNoticiasPlaza(plaza)
 	{
-		document.getElementById("cargando2").style.display='';
+		document.getElementById("cargando").style.display='';
 		/*$('.ContenedorPrincipalSeccion').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
 		$('.DivVertical').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
 		$('#minuto_plaza').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
@@ -286,7 +286,7 @@
 						
 						$(".Video_seccion").html(datos[i].video)
 						
-						setInterval(function(){document.getElementById("cargando2").style.display='none'},12000);
+						setInterval(function(){document.getElementById("cargando").style.display='none'},12000);
 					}
 					
 				
@@ -297,7 +297,7 @@
 	} 
 	function cargar_seccion(seccion)
 	{
-		document.getElementById("cargando2").style.display='';
+		document.getElementById("cargando").style.display='';
 		//$('.ContenedorPrincipalSeccion').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
 		//$('.DivVertical').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
 		//$('#minuto_plaza').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
@@ -332,7 +332,7 @@
 						$("#minuto_plaza").html(datos[i].ultimas_noticias)
 						$(".Video_seccion").html(datos[i].video)
 						
-						setInterval(function(){document.getElementById("cargando2").style.display='none'},12000);
+						setInterval(function(){document.getElementById("cargando").style.display='none'},12000);
 						
 					}
 					
@@ -348,7 +348,7 @@
 function LeerNota(id)
 	{ CargarNoticiasHome();
 		//$('.ExtrasPlaza').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
-			document.getElementById("cargando2").style.display='';
+			document.getElementById("cargando").style.display='';
 		document.getElementById("div_nt").innerHTML="";
 						document.getElementById("div_ns").innerHTML="";
 						document.getElementById("div_na").innerHTML="";
@@ -409,7 +409,7 @@ function LeerNota(id)
 					
 					//setInterval($('.ExtrasPlaza').html(datos[i].nota_extra),5000);
 					$('.ExtrasPlaza').html(datos[i].nota_extra)
-					setInterval(function(){document.getElementById("cargando2").style.display='none'},12000);
+					setInterval(function(){document.getElementById("cargando").style.display='none'},12000);
 					
 					}
 				
@@ -430,7 +430,6 @@ function LeerNota(id)
 </head>
 <body>
 <div class="lb-overlay_loading" id="cargando" style="display:''"> <img src="imagenes/loading.gif"> </div>
-<div class="lb-overlay" id="cargando2" style="display:'none'"> <img src="imagenes/loading.gif"> </div>
 <!-- Home -->
 <div id="home" class="content" >
 <div class="HeaderAlternativo">
