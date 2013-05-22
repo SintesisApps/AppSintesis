@@ -41,14 +41,15 @@
    
 
 
-<gap:splash src="imagenes/splashscreen/Default-Portrait@2x~ipad.png"     gap:platform="ios"     width="1536" height="2008" />
-<gap:splash src="imagenes/splashscreen/Default-Portrait@2x~ipad-h.png"     gap:platform="ios"     width="2008" height="1536" />
+<gap:splash src="imagenes/splashscreen/Default-Portrait@2x~ipad.png"     gap:platform="ios"     width="1536" height="2048" />
+<gap:splash src="imagenes/splashscreen/Default-Landscape@2x~ipad.png"     gap:platform="ios"     width="2048" height="1536" />
 <gap:splash src="imagenes/splashscreen/mdpi.png"      gap:platform="ios"     width="1024" height="768" />
 	<gap:splash src="imagenes/splashscreen/mdpi_v.png"      gap:platform="ios"     width="768" height="1024" />
 	
 	
 	
    <plugin name="NetworkStatus" value="CDVConnection" />
+	<plugin name="SplashScreen" value="CDVSplashScreen" />
 
 
 	
