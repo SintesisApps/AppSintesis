@@ -112,7 +112,7 @@ body{
 	z-index: 99;
 	text-align: center;
 	background: #000;
-	opacity: 0;
+	opacity: 0.5;
 }
 .lb-overlay img{
 	margin-top:20%;}
