@@ -219,7 +219,7 @@
 	
 	function CargarNoticiasHome()
 	{
-
+		document.getElementById("cargando").style.display='';
 		
 		slideVertical2();
 		slidePrincipal();
@@ -245,7 +245,7 @@
 				}
 				});
 			}
-		
+		setInterval(function(){document.getElementById("cargando").style.display='none'},12000);
 		
 	} 
 	
