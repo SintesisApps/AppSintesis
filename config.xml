@@ -42,7 +42,7 @@
 
 
 <gap:splash src="imagenes/splashscreen/Default-Portrait@2x~ipad.png"     gap:platform="ios"     width="1536" height="2008" />
-<gap:splash src="imagenes/splashscreen/Default-Landscape@2x~ipad.png"     gap:platform="ios"     width="2048" height="1500" />
+<gap:splash src="imagenes/splashscreen/Default-Landscape@2x~ipad.png"     gap:platform="ios"     width="2048" height="1507" />
 <gap:splash src="imagenes/splashscreen/mdpi.png"      gap:platform="ios"     width="1024" height="768" />
 	<gap:splash src="imagenes/splashscreen/mdpi_v.png"      gap:platform="ios"     width="768" height="1024" />
 	
