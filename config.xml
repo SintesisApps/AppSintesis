@@ -37,6 +37,8 @@
     <icon src="imagenes/iconos/iconos/72.png"            gap:platform="ios"        width="72" height="72" />
     <icon src="imagenes/iconos/iconos/114.png"         gap:platform="ios"        width="114" height="114" />
     <icon src="imagenes/iconos/iconos/144.png"         gap:platform="ios"        width="144" height="144" />
+	<icon src="imagenes/iconos/iconos/512.png"         gap:platform="ios"        width="512" height="512" />
+    <icon src="imagenes/iconos/iconos/1024.png"         gap:platform="ios"        width="1024" height="1024" />
 
    
 
