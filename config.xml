@@ -33,12 +33,12 @@
 	 <preference name="ios-statusbarstyle" value="black-translucen" />
 
  
-    <icon src="icon.png"            gap:platform="ios"        width="57" height="57" />
-    <icon src="icon-72.png"            gap:platform="ios"        width="72" height="72" />
-    <icon src="icon@2x.png"         gap:platform="ios"        width="114" height="114" />
-	<icon src="icon-72@2x.png"         gap:platform="ios"        width="144" height="144" />
-	<icon src="iTunesArtwork.png"         gap:platform="ios"        width="512" height="512" />
-    <icon src="iTunesArtwork@2x.png"         gap:platform="ios"        width="1024" height="1024" />
+    <icon src="res/icon/ios/icon.png"            gap:platform="ios"        width="57" height="57" />
+    <icon src="res/icon/ios/icon-72.png"            gap:platform="ios"        width="72" height="72" />
+    <icon src="res/icon/ios/icon@2x.png"         gap:platform="ios"        width="114" height="114" />
+	<icon src="res/icon/ios/icon-72@2x.png"         gap:platform="ios"        width="144" height="144" />
+	<icon src="res/icon/ios/iTunesArtwork.png"         gap:platform="ios"        width="512" height="512" />
+    <icon src="res/icon/ios/iTunesArtwork@2x.png"         gap:platform="ios"        width="1024" height="1024" />
 
    
 
