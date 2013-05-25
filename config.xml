@@ -3,7 +3,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.app.sintesis"
         version   = "1.0.0">
-    <name>Síntesis</name>
+    <name>Sintesis</name>
 
     <description>
         Sintesis 
