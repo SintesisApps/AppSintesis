@@ -229,7 +229,7 @@
 		CargarNoticiasHomeGal();
 		function slideVertical2()
 			{//ContenedorDivMedio
-				//$('#vertical_home').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
+				
 				$.ajax({
 				type: "POST",
 				url: "http://166.78.193.53/RecursosApp/ios/php/slide_vertical.php",
@@ -252,10 +252,6 @@
 	function CargarNoticiasPlaza(plaza)
 	{
 		document.getElementById("cargando").style.display='';
-		/*$('.ContenedorPrincipalSeccion').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
-		$('.DivVertical').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
-		$('#minuto_plaza').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
-		$('.Video_seccion').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');*/
 			$.ajax(
 			{
 
@@ -298,10 +294,6 @@
 	function cargar_seccion(seccion)
 	{
 		document.getElementById("cargando").style.display='';
-		//$('.ContenedorPrincipalSeccion').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
-		//$('.DivVertical').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
-		//$('#minuto_plaza').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
-		//$('.Video_seccion').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
 		 $.ajax(
 			{
 
@@ -360,7 +352,7 @@ function LeerNota(id)
 			{
 
 				type: "POST",
-				url: "http://166.78.193.53/RecursosApp/ios/php/Nota_pr.php",
+				url: "http://166.78.193.53/RecursosApp/ios/php/Nota_ios.php",
 				data: "id="+id,
 				cache: false,
 				success: function(message)
@@ -499,7 +491,7 @@ function LeerNota(id)
   <div class="back_nacion NotaSeccion" id="name_section">
 
   </div>
-  <div id="contenedor_Nota" id="ref_contenedor_Nota">
+  <div id="contenedor_Nota" >
   	<div class="NotaContenedor" >
             
    		<div id="img_cont">

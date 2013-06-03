@@ -544,9 +544,12 @@ body{
 .NotaContenedor {
 	background: rgba(204,204,204,.4);
 	text-shadow:none;
-	width:98%;
+	width:100%;
 	margin:auto;
+	height:auto;
 }
+#contenedor_Nota
+{}
 
 
 .NotaContenedor img {

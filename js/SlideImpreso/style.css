@@ -18,7 +18,7 @@
 }
 .appstore.swiper-container, .appstore .swiper-slide {
 	width: auto;
-	height: 90%;
+	height: 100%;
 }
 .swiper-slide{
 	 background-repeat:no-repeat;}
