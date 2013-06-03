@@ -23,24 +23,33 @@
 
 
 <script type="text/javascript">
+
 	$(document).ready(function(e){
 	document.addEventListener("deviceready", function(){
 
+		/*
+		if(checkConnection()== "WiFi connection")
+		{alert("conectado");}
+		else
+		{alert("No conectado");
+		}
+		alert("conexion:"+checkConnection());
+	*/
+				
+		slidePrincipal();
+		slideMiniatura();
+		slideVertical();
+		galeria_video('nacionales');	
+		minuto_minuto();
+		CargarNoticiasHomeGal();
 		
-		//alert("conectado");
-			slidePrincipal();
-			slideMiniatura();
-			slideVertical();
-			galeria_video('nacionales');	
-			minuto_minuto();
-			CargarNoticiasHomeGal();	
-	
-		
-	
+		setInterval(function(){document.getElementById("cargando").style.display='none'},12000);
 		
 	
 	});	
 });
+
+
 	function checkConnection() {
         var networkState = navigator.network.connection.type;
 
@@ -71,12 +80,11 @@
 	
 		
 			
-			
 			function CargarNoticiasHomeGal()
 			{
 				$.ajax({
 						type: "POST",
-						url: "http://166.78.193.53/APPSintesis/php/CargarGaleriaImagenes2.php",
+						url: "http://166.78.193.53/RecursosApp/ios/php/CargarGaleriaImagenes2.php",
 						data: "",
 						cache: false,
 						success: function(message)
@@ -92,16 +100,17 @@
 	
 			function slidePrincipal()
 			{
-				$('#cont_slideprincipal').html('<img src="imagenes/loading.gif" />');
+				//$('#cont_slideprincipal').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
 				 $.ajax({
 				
 				type: "POST",
-				url: "http://166.78.193.53/APPSintesis/php/slideprincipal.php",
+				url: "http://166.78.193.53/RecursosApp/ios/php/slideprincipal.php",
 				data: "",
 				cache: false,
 				success: function(message)
 				{
-				setInterval($('#cont_slideprincipal').html(message),5000);
+				//setInterval($('#cont_slideprincipal').html(message),5000);
+				$('#cont_slideprincipal').html(message)
 				}
 				
 				});
@@ -110,30 +119,32 @@
 			}
 			function slideMiniatura()
 			{
-				$('#cont_slidemini').html('<img src="imagenes/loading.gif" />');
+				//$('#cont_slidemini').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
 				$.ajax({
 					type: "POST",
-				url: "http://166.78.193.53/APPSintesis/php/slide_miniatura.php",
+				url: "http://166.78.193.53/RecursosApp/ios/php/slide_miniatura.php",
 				data: "",
 				cache: false,
 				success: function(message)
 				{	
-				setInterval($('#cont_slidemini').html(message),5000);
+				//setInterval($('#cont_slidemini').html(message),5000);
+				$('#cont_slidemini').html(message)
 				
 				}
 				});
 			}
 			function slideVertical()
 			{
-				$('#content_slideVertical').html('<img src="imagenes/loading.gif" />');
+				//$('#content_slideVertical').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
 				$.ajax({
 					type: "POST",
-				url: "http://166.78.193.53/APPSintesis/php/slide_vertical.php",
+				url: "http://166.78.193.53/RecursosApp/ios/php/slide_vertical.php",
 				data: "",
 				cache: false,
 				success: function(message)
 				{	
-				setInterval($('#content_slideVertical').html(message),5000);
+				//setInterval($('#content_slideVertical').html(message),5000);
+				$('#content_slideVertical').html(message)
 				}
 				});
 			}
@@ -142,7 +153,7 @@
 			{
 				$.ajax({
 					type: "POST",
-				url: "http://166.78.193.53/APPSintesis/php/galeria_imagenes.php",
+				url: "http://166.78.193.53/RecursosApp/ios/php/galeria_imagenes.php",
 				data: "",
 				cache: false,
 				success: function(message)
@@ -157,7 +168,7 @@
 
 				$.ajax({
 					type: "POST",
-				url: "http://166.78.193.53/APPSintesis/php/galeria_video.php",
+				url: "http://166.78.193.53/RecursosApp/ios/php/galeria_video.php",
 				//data: "",
 				data: "plaza="+plaza,
 				cache: false,
@@ -170,16 +181,16 @@
 			
 			function minuto_minuto()
 			{
-			$('#minuto_home').html('<img src="imagenes/loading.gif" />');
+			//$('#minuto_home').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
 				$.ajax({
 					type: "POST",
-				url: "http://166.78.193.53/APPSintesis/php/minutoaminuto.php",
+				url: "http://166.78.193.53/RecursosApp/ios/php/minutoaminuto.php",
 				data: "",
 				cache: false,
 				success: function(message)
 				{	
-				setInterval($('#minuto_home').html(message),5000);
-					
+				//setInterval($('#minuto_home').html(message),5000);
+					$('#minuto_home').html(message)
 				
 				}
 				});
@@ -208,7 +219,7 @@
 	
 	function CargarNoticiasHome()
 	{
-		//setTimeout(CargarNoticiasHome(),10000);
+		document.getElementById("cargando").style.display='';
 		
 		slideVertical2();
 		slidePrincipal();
@@ -218,10 +229,10 @@
 		CargarNoticiasHomeGal();
 		function slideVertical2()
 			{//ContenedorDivMedio
-				$('#vertical_home').html('<img src="imagenes/loading.gif" />');
+				//$('#vertical_home').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
 				$.ajax({
 				type: "POST",
-				url: "http://166.78.193.53/APPSintesis/php/slide_vertical.php",
+				url: "http://166.78.193.53/RecursosApp/ios/php/slide_vertical.php",
 				data: "",
 				cache: false,
 				success: function(message)
@@ -234,21 +245,22 @@
 				}
 				});
 			}
-		
+		setInterval(function(){document.getElementById("cargando").style.display='none'},7000);
 		
 	} 
 	
 	function CargarNoticiasPlaza(plaza)
 	{
-		$('.ContenedorPrincipalSeccion').html('<img src="imagenes/loading.gif" />');
-		$('.DivVertical').html('<img src="imagenes/loading.gif" />');
-		$('#minuto_plaza').html('<img src="imagenes/loading.gif" />');
-		$('.Video_seccion').html('<img src="imagenes/loading.gif" />');
+		document.getElementById("cargando").style.display='';
+		/*$('.ContenedorPrincipalSeccion').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
+		$('.DivVertical').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
+		$('#minuto_plaza').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
+		$('.Video_seccion').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');*/
 			$.ajax(
 			{
 
 				type: "POST",
-				url: "http://166.78.193.53/APPSintesis/php/CargarNoticiasPlazas.php",
+				url: "http://166.78.193.53/RecursosApp/ios/php/CargarNoticiasPlazas.php",
 				data: "plaza="+plaza,
 				cache: false,
 				success: function(message)
@@ -266,14 +278,15 @@
 					//color
 					//$("#name_SeccionSeccion").css({'background':'#5abfcf'});
 						
-						setInterval($(".ContenedorPrincipalSeccion").html(datos[i].slide_principal),5000);
+						$(".ContenedorPrincipalSeccion").html(datos[i].slide_principal)
 						
-						setInterval($(".DivVertical").html(datos[i].slide_vertical),5000);
+						$(".DivVertical").html(datos[i].slide_vertical)
 						
-						setInterval($("#minuto_plaza").html(datos[i].ultimas_noticias),5000);
+						$("#minuto_plaza").html(datos[i].ultimas_noticias)
 						
-						setInterval($(".Video_seccion").html(datos[i].video),5000);
+						$(".Video_seccion").html(datos[i].video)
 						
+						setInterval(function(){document.getElementById("cargando").style.display='none'},12000);
 					}
 					
 				
@@ -284,15 +297,16 @@
 	} 
 	function cargar_seccion(seccion)
 	{
-		$('.ContenedorPrincipalSeccion').html('<img src="imagenes/loading.gif" />');
-		$('.DivVertical').html('<img src="imagenes/loading.gif" />');
-		$('#minuto_plaza').html('<img src="imagenes/loading.gif" />');
-		$('.Video_seccion').html('<img src="imagenes/loading.gif" />');
+		document.getElementById("cargando").style.display='';
+		//$('.ContenedorPrincipalSeccion').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
+		//$('.DivVertical').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
+		//$('#minuto_plaza').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
+		//$('.Video_seccion').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
 		 $.ajax(
 			{
 
 				type: "POST",
-				url: "http://166.78.193.53/APPSintesis/php/cargar_seccion.php",
+				url: "http://166.78.193.53/RecursosApp/ios/php/cargar_seccion.php",
 				data: "seccion="+seccion,
 				cache: false,
 				success: function(message)
@@ -313,10 +327,12 @@
 						
 						
 						
-						setInterval($(".ContenedorPrincipalSeccion").html(datos[i].slide_principal),5000);
-						setInterval($(".DivVertical").html(datos[i].slide_vertical),5000);
-						setInterval($("#minuto_plaza").html(datos[i].ultimas_noticias),5000);
-						setInterval($(".Video_seccion").html(datos[i].video),5000);
+						$(".ContenedorPrincipalSeccion").html(datos[i].slide_principal)
+						$(".DivVertical").html(datos[i].slide_vertical)
+						$("#minuto_plaza").html(datos[i].ultimas_noticias)
+						$(".Video_seccion").html(datos[i].video)
+						
+						setInterval(function(){document.getElementById("cargando").style.display='none'},12000);
 						
 					}
 					
@@ -331,12 +347,20 @@
 
 function LeerNota(id)
 	{ CargarNoticiasHome();
-		$('.ExtrasPlaza').html('<img src="imagenes/loading.gif" />');
+		//$('.ExtrasPlaza').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
+			document.getElementById("cargando").style.display='';
+		document.getElementById("div_nt").innerHTML="";
+						document.getElementById("div_ns").innerHTML="";
+						document.getElementById("div_na").innerHTML="";
+						document.getElementById("div_nfc").innerHTML="";
+						document.getElementById("div_nc").innerHTML="";
+						document.getElementById("div_nep").innerHTML="";
+						document.getElementById("img_cont").innerHTML="";
 			$.ajax(
 			{
 
 				type: "POST",
-				url: "http://166.78.193.53/APPSintesis/php/Nota_pr.php",
+				url: "http://166.78.193.53/RecursosApp/ios/php/Nota_pr.php",
 				data: "id="+id,
 				cache: false,
 				success: function(message)
@@ -344,26 +368,15 @@ function LeerNota(id)
 					datos = JSON.parse(message);
 					for(i=0;i<datos.length;i++)
 					{
-						//limpiamos contenidos
-						$('#div_nt').empty();
-						$('#div_ns').empty();
-						$('#div_na').empty();
-						$('#div_nfc').empty();
-						$('#div_nc').empty();
-						$('#div_nep').empty();
+						
 						
 						//modificamos las imagenes
 					
-					$('.ImagenesNotaImagen').html(
-					
-					'<img src="http://166.78.193.53/images/'+datos[i].imagen+'">'+
-					'<div class="ZoomImagenNota">'+
-						'<a href="http://166.78.193.53/images/'+datos[i].imagen+'" >'+
-						'</a>'+
-					'</div>'+
-					'<div class="MasImagenNota">'+
-					'</div>'
+					//$('#Gallery').html(
+					$('#img_cont').html(
+					datos[i].imagen
 					);
+					
 					
 					document.getElementById("name_section").innerHTML="";
 					$('.NotaSeccion').html(
@@ -394,9 +407,9 @@ function LeerNota(id)
 					datos[i].nota
 					);
 					
-					//$('.ExtrasPlaza').html(datos[i].nota_extra);
-					setInterval($('.ExtrasPlaza').html(datos[i].nota_extra),5000);
-					
+					//setInterval($('.ExtrasPlaza').html(datos[i].nota_extra),5000);
+					$('.ExtrasPlaza').html(datos[i].nota_extra)
+					setInterval(function(){document.getElementById("cargando").style.display='none'},12000);
 					
 					}
 				
@@ -410,11 +423,13 @@ function LeerNota(id)
 
  <script>
  
+
   
   </script>
 
 </head>
 <body>
+<div class="lb-overlay_loading" id="cargando" style="display:''"> <img src="imagenes/loading.gif"> </div>
 <!-- Home -->
 <div id="home" class="content" >
 <div class="HeaderAlternativo">
@@ -487,35 +502,10 @@ function LeerNota(id)
   <div id="contenedor_Nota" id="ref_contenedor_Nota">
   	<div class="NotaContenedor" >
             
-   		<div id="Gallery"  class="SlidePrincipal ImagenesNota" >
-   		
-        <div style="display:inline-block; overflow:hidden">
-          <div class="ImagenesNotaImagen">
-          	<!--<img src="imagenes/imagenes-articulos/1.jpg">
-          	<div class="ZoomImagenNota">
-                <a href="imagenes/imagenes-articulos/1.jpg" id="">
-                <img src="imagenes/iconos/azules/ampliar@2x.png">
-                </a>
-            </div>
-            <div class="MasImagenNota">
-              	<img src="imagenes/iconos/azules/otras@2x.png">
-          	</div>-->
-         </div>
+   		<div id="img_cont">
+        
+        
         </div>
-       <!-- <div style="display:inline-block; overflow:hidden">
-          <div class="ImagenesNotaImagen">
-              <img src="imagenes/imagenes-articulos/2.jpg">
-              <div class="ZoomImagenNota">
-                  <a href="imagenes/imagenes-articulos/2.jpg">
-                    <img src="imagenes/iconos/azules/ampliar@2x.png">
-                  </a>
-              </div>
-          
-          </div>
-        </div>-->
-      
-      
-   		 </div>
   
   
         <div class="NotaTitulo" id="div_nt"></div>
@@ -662,7 +652,7 @@ return false;
     
   </div>
   <div style="height:100%; width:100%;">
-    <div class="contNav" style="width:100%; height:100%; background:url(imagenes/guia.png) no-repeat; background-size:770px; background-position:center center; margin-top:-20px;">
+    <div class="contNav" style="width:100%; height:100%; background:url(http://166.78.193.53/RecursosApp/ios/imagenes/guia.png) no-repeat; background-size:770px; background-position:center center; margin-top:-20px;">
     </div>
  
   </div>
@@ -710,8 +700,7 @@ return false;
 	}*/
 	
 </script>
-
- <link rel="stylesheet" href="js/SlideImpreso/style.css">
+<link rel="stylesheet" href="js/SlideImpreso/style.css">
 
 <script src="js/SlideImpreso/idangerous.swiper.js"></script>
 <script src="js/SlideImpreso/idangerous.swiper.3dflow.js"></script>
@@ -970,36 +959,36 @@ function ImprimirImpresoTodas(plaza)
 
 <div id="panelSecciones"  class="panelSeccion"> 
   <a href="#home" onClick="$('#panelSecciones').css('left','-250%'),CargarNoticiasHome();">
-  <div class="panelSeccionTitulo" style="background-image:url(imagenes/iconos/azules/home@2x.png);"> Home </div>
+  <div class="panelSeccionTitulo" style="background-image:url(http://166.78.193.53/RecursosApp/ios/imagenes/iconos/azules/home@2x.png);"> Home </div>
   
   <div class="paneSeccionEdicion"> Secciones </div>
   </a>
   <a href="#secciones" onClick="$('#panelSecciones').css('left','-250%'), CargarNoticiasPlaza('nacionales');">
-  <div class="panelSeccionTitulo" style="background-image:url(imagenes/iconos/azules/nacion@2x.png);"> Nación </div>
+  <div class="panelSeccionTitulo" style="background-image:url(http://166.78.193.53/RecursosApp/ios/imagenes/iconos/azules/nacion@2x.png);"> Nación </div>
   </a>
   <div class="panelSeccionSpacer"> </div>
   <a href="#secciones" onClick="$('#panelSecciones').css('left','-250%'), cargar_seccion('orbe');">
-  <div class="panelSeccionTitulo" style="background-image:url(imagenes/iconos/azules/orbe@2x.png);"> Orbe </div>
+  <div class="panelSeccionTitulo" style="background-image:url(http://166.78.193.53/RecursosApp/ios/imagenes/iconos/azules/orbe@2x.png);"> Orbe </div>
   </a>
   <div class="panelSeccionSpacer"> </div>
   <a href="#secciones" onClick="$('#panelSecciones').css('left','-250%'), cargar_seccion('percapita');">
-  <div class="panelSeccionTitulo" style="background-image:url(imagenes/iconos/azules/percapita@2x.png);"> Per Cápita </div>
+  <div class="panelSeccionTitulo" style="background-image:url(http://166.78.193.53/RecursosApp/ios/imagenes/iconos/azules/percapita@2x.png);"> Per Cápita </div>
   </a>
   <div class="panelSeccionSpacer"> </div>
   <a href="#secciones" onClick="$('#panelSecciones').css('left','-250%'), cargar_seccion('cronos');">
-  <div class="panelSeccionTitulo" style="background-image:url(imagenes/iconos/azules/cronos@2x.png);"> Cronos </div>
+  <div class="panelSeccionTitulo" style="background-image:url(http://166.78.193.53/RecursosApp/ios/imagenes/iconos/azules/cronos@2x.png);"> Cronos </div>
   </a>
   <div class="panelSeccionSpacer"> </div>
   <a href="#secciones" onClick="$('#panelSecciones').css('left','-250%'), cargar_seccion('circus');">
-  <div class="panelSeccionTitulo" style="background-image:url(imagenes/iconos/azules/circus@2x.png);"> Circus </div>
+  <div class="panelSeccionTitulo" style="background-image:urlhttp://166.78.193.53/RecursosApp/ios/(imagenes/iconos/azules/circus@2x.png);"> Circus </div>
   </a>
   <div class="panelSeccionSpacer"> </div>
   <a href="#secciones" onClick="$('#panelSecciones').css('left','-250%'), cargar_seccion('vox');">
-  <div class="panelSeccionTitulo" style="background-image:url(imagenes/iconos/azules/vox@2x.png);"> Vox </div>
+  <div class="panelSeccionTitulo" style="background-image:url(http://166.78.193.53/RecursosApp/ios/imagenes/iconos/azules/vox@2x.png);"> Vox </div>
   </a>
   <div class="panelSeccionSpacer"> </div>
   <a href="#secciones" onClick="$('#panelSecciones').css('left','-250%'), cargar_seccion('tecno');">
-  <div class="panelSeccionTitulo" style="background-image:url(imagenes/iconos/azules/tecno@2x.png);"> Tecno </div>
+  <div class="panelSeccionTitulo" style="background-image:url(http://166.78.193.53/RecursosApp/ios/imagenes/iconos/azules/tecno@2x.png);"> Tecno </div>
   </a>
   <div class="panelSeccionSpacer"> </div>
   <div class="paneSeccionEdicion"> Estados </div>
